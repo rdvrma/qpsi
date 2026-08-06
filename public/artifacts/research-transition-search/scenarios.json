@@ -1,0 +1,302 @@
+[
+  {
+    "scenario_id": "scenario_01",
+    "title": "Synthetic Research Scenario #01",
+    "description": "Bounded 2-character transition selection scenario #1",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_02",
+    "title": "Synthetic Research Scenario #02",
+    "description": "Bounded 2-character transition selection scenario #2",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_03",
+    "title": "Synthetic Research Scenario #03",
+    "description": "Bounded 2-character transition selection scenario #3",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_04",
+    "title": "Synthetic Research Scenario #04",
+    "description": "Bounded 2-character transition selection scenario #4",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_05",
+    "title": "Synthetic Research Scenario #05",
+    "description": "Bounded 2-character transition selection scenario #5",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_06",
+    "title": "Synthetic Research Scenario #06",
+    "description": "Bounded 2-character transition selection scenario #6",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_07",
+    "title": "Synthetic Research Scenario #07",
+    "description": "Bounded 2-character transition selection scenario #7",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_08",
+    "title": "Synthetic Research Scenario #08",
+    "description": "Bounded 2-character transition selection scenario #8",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_09",
+    "title": "Synthetic Research Scenario #09",
+    "description": "Bounded 2-character transition selection scenario #9",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_10",
+    "title": "Synthetic Research Scenario #10",
+    "description": "Bounded 2-character transition selection scenario #10",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_11",
+    "title": "Synthetic Research Scenario #11",
+    "description": "Bounded 2-character transition selection scenario #11",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_12",
+    "title": "Synthetic Research Scenario #12",
+    "description": "Bounded 2-character transition selection scenario #12",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_13",
+    "title": "Synthetic Research Scenario #13",
+    "description": "Bounded 2-character transition selection scenario #13",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_14",
+    "title": "Synthetic Research Scenario #14",
+    "description": "Bounded 2-character transition selection scenario #14",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_15",
+    "title": "Synthetic Research Scenario #15",
+    "description": "Bounded 2-character transition selection scenario #15",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_16",
+    "title": "Synthetic Research Scenario #16",
+    "description": "Bounded 2-character transition selection scenario #16",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_17",
+    "title": "Synthetic Research Scenario #17",
+    "description": "Bounded 2-character transition selection scenario #17",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_18",
+    "title": "Synthetic Research Scenario #18",
+    "description": "Bounded 2-character transition selection scenario #18",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_19",
+    "title": "Synthetic Research Scenario #19",
+    "description": "Bounded 2-character transition selection scenario #19",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  },
+  {
+    "scenario_id": "scenario_20",
+    "title": "Synthetic Research Scenario #20",
+    "description": "Bounded 2-character transition selection scenario #20",
+    "candidates": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  }
+]

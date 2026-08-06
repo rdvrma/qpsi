@@ -4,8 +4,8 @@ test.describe("Q-Psi Live Prototype E2E Suite", () => {
   test("1. Open /prototype page and verify header disclosures", async ({ page }) => {
     await page.goto("/prototype");
     await expect(page.locator("h1")).toContainText("Two characters. One room.");
-    await expect(page.getByText("FUNCTIONAL CLASSICAL PROTOTYPE")).toBeVisible();
-    await expect(page.getByText("NO QUANTUM ADVANTAGE CLAIM")).toBeVisible();
+    await expect(page.getByText("FUNCTIONAL CLASSICAL PROTOTYPE").first()).toBeVisible();
+    await expect(page.getByText("NO QUANTUM ADVANTAGE CLAIM").first()).toBeVisible();
   });
 
   test("2. Execute 60-second proof scenario step-by-step", async ({ page }) => {
@@ -26,7 +26,7 @@ test.describe("Q-Psi Live Prototype E2E Suite", () => {
     const page2 = await context2.newPage();
     await page2.goto("/prototype");
 
-    // Both contexts should load without errors
+    // Both contexts load without errors
     await expect(page1.locator("h1")).toContainText("Two characters");
     await expect(page2.locator("h1")).toContainText("Two characters");
 

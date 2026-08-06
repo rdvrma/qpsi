@@ -1,0 +1,11 @@
+{
+  "has_cudaq": false,
+  "cudaq_version": "N/A (Host environment missing cudaq package)",
+  "operating_system": "Windows-10-10.0.19045-SP0",
+  "python_version": "3.14.5",
+  "cpu_model": "Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",
+  "gpu_available": false,
+  "gpu_count": 0,
+  "gpu_model": "None",
+  "selected_target": "qpp-cpu"
+}

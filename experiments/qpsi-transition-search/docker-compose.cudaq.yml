@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  cudaq-experiment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qpsi-cudaq-experiment
+    environment:
+      - CUDAQ_TARGET=qpp-cpu
+      - CUDAQ_SHOTS=1000
+      - CUDAQ_SEED=42
+    volumes:
+      - ./artifacts:/app/artifacts
+    command: python -m qpsi_transition_search.cli --run-benchmarks
