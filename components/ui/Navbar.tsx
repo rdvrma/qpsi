@@ -26,7 +26,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#050505]/90 backdrop-blur-md border-b border-white/10 py-3'
+          ? 'bg-white/90 backdrop-blur-md border-b border-black/10 py-3 shadow-sm'
           : 'bg-transparent py-5'
       }`}
     >
@@ -36,7 +36,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
           <span className="font-serif text-2xl font-bold tracking-tight text-primaryWhite group-hover:opacity-80 transition-opacity">
             {siteConfig.company.mark}
           </span>
-          <div className="h-4 w-px bg-white/20 hidden sm:block" />
+          <div className="h-4 w-px bg-black/20 hidden sm:block" />
           <div className="flex flex-col">
             <span className="text-xs font-mono tracking-widest uppercase text-primaryWhite font-semibold">
               {siteConfig.company.name}
@@ -53,7 +53,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             <a
               key={item.href}
               href={item.href}
-              className="text-xs font-mono text-midGray hover:text-primaryWhite transition-colors uppercase tracking-wider"
+              className="text-xs font-mono text-midGray hover:text-primaryWhite transition-colors uppercase tracking-wider font-medium"
             >
               {item.label}
             </a>
@@ -64,14 +64,14 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         <div className="hidden sm:flex items-center space-x-3">
           <Link
             href="/prototype"
-            className="px-3.5 py-2 bg-white text-black hover:bg-white/90 transition-all text-xs font-mono font-bold uppercase tracking-wider border border-white"
+            className="px-3.5 py-2 bg-black text-white hover:bg-black/80 transition-all text-xs font-mono font-bold uppercase tracking-wider border border-black shadow-sm"
           >
             RUN PROTOTYPE
           </Link>
 
           <button
             onClick={() => onOpenModal('deck')}
-            className="inline-flex items-center space-x-1.5 px-4 py-2 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 transition-all text-xs font-mono font-semibold uppercase tracking-wider"
+            className="inline-flex items-center space-x-1.5 px-4 py-2 border border-black/20 bg-black/[0.04] text-primaryWhite hover:bg-black/10 transition-all text-xs font-mono font-semibold uppercase tracking-wider"
           >
             <span>Deck (PDF)</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -95,7 +95,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#0A0A0A] border-b border-white/14 px-4 py-6 space-y-4"
+            className="lg:hidden bg-white border-b border-black/10 px-4 py-6 space-y-4 shadow-lg"
           >
             <div className="flex flex-col space-y-3">
               {siteConfig.navigation.map((item) => (
@@ -103,14 +103,14 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-mono text-softWhite hover:text-primaryWhite py-1 border-b border-white/5 uppercase tracking-wider"
+                  className="text-sm font-mono text-softWhite hover:text-primaryWhite py-1 border-b border-black/5 uppercase tracking-wider"
                 >
                   {item.label}
                 </a>
               ))}
             </div>
 
-            <div className="pt-4 border-t border-white/10 space-y-3">
+            <div className="pt-4 border-t border-black/10 space-y-3">
               <div className="text-[10px] font-mono text-midGray uppercase tracking-widest">
                 {siteConfig.company.stageBadge}
               </div>
@@ -119,7 +119,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onOpenModal('deck');
                 }}
-                className="w-full text-center px-4 py-3 bg-primaryWhite text-bgBlack text-xs font-mono font-semibold uppercase tracking-wider"
+                className="w-full text-center px-4 py-3 bg-black text-white text-xs font-mono font-semibold uppercase tracking-wider"
               >
                 Request Investor Deck
               </button>

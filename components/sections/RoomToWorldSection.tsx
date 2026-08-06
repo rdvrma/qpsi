@@ -7,7 +7,7 @@ import { ShieldCheck } from 'lucide-react';
 
 export function RoomToWorldSection() {
   return (
-    <section id="expansion" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section id="expansion" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
@@ -26,10 +26,10 @@ export function RoomToWorldSection() {
         <ExpansionTimeline />
 
         {/* Permanent Original IP Clarification Notice */}
-        <div className="p-6 border border-white/20 bg-white/[0.02] flex items-start space-x-4">
-          <ShieldCheck className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
+        <div className="p-6 border border-black/15 bg-white flex items-start space-x-4 shadow-sm">
+          <ShieldCheck className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-primaryWhite font-bold block">
+            <span className="text-xs font-mono uppercase tracking-widest text-black font-bold block">
               Permanent Intellectual Property & Format Clarification
             </span>
             <p className="text-xs font-mono text-midGray leading-relaxed">

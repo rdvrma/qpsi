@@ -35,7 +35,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="relative bg-[#050505] min-h-screen text-primaryWhite selection:bg-primaryWhite selection:text-bgBlack overflow-x-hidden">
+    <main className="relative bg-[#FAFAFA] min-h-screen text-primaryWhite selection:bg-bgBlack selection:text-white overflow-x-hidden">
       {/* Custom Desktop Cursor */}
       <CustomCursor />
 

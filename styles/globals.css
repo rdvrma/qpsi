@@ -5,12 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --bg-black: #050505;
-  --primary-white: #F5F5F2;
-  --soft-white: #D8D8D2;
-  --dark-gray: #111111;
-  --mid-gray: #777777;
-  --border-gray: rgba(255, 255, 255, 0.14);
+  --bg-black: #FAFAFA;
+  --primary-white: #09090B;
+  --soft-white: #27272A;
+  --dark-gray: #FFFFFF;
+  --mid-gray: #52525B;
+  --border-gray: rgba(0, 0, 0, 0.12);
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Inter', system-ui, sans-serif;
 }
@@ -24,27 +24,25 @@ html {
 }
 
 body {
-  background-color: #050505;
-  color: #F5F5F2;
+  background-color: #FAFAFA;
+  color: #09090B;
   position: relative;
   min-height: 100vh;
-  selection-background-color: #F5F5F2;
-  selection-color: #050505;
 }
 
 ::selection {
-  background: #F5F5F2;
-  color: #050505;
+  background: #09090B;
+  color: #FFFFFF;
 }
 
 /* Subtle Noise Background */
 .bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
 }
 
 /* Glassmorphic border utility */
 .border-subtle {
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .border-subtle-hover {
@@ -52,8 +50,8 @@ body {
 }
 
 .border-subtle-hover:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 /* Scrollbar styling */
@@ -62,16 +60,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #FAFAFA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* Serif Headline Helper */

@@ -49,16 +49,16 @@ export function LedgerTimeline() {
   }, []);
 
   return (
-    <div className="w-full border border-white/14 bg-[#060606] p-4 space-y-3 font-mono text-xs">
-      <div className="flex items-center justify-between border-b border-white/10 pb-2">
+    <div className="w-full border border-black/12 bg-white p-4 space-y-3 font-mono text-xs shadow-sm">
+      <div className="flex items-center justify-between border-b border-black/10 pb-2">
         <div className="flex items-center space-x-2 text-midGray">
-          <Database className="w-3.5 h-3.5 text-white/80" />
+          <Database className="w-3.5 h-3.5 text-black/80" />
           <span className="text-[11px] uppercase tracking-wider font-semibold text-primaryWhite">
             INTERACTIVE ARCHITECTURE SIMULATION
           </span>
         </div>
         <div className="flex items-center space-x-2 text-[10px] text-midGray">
-          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
           <span>Illustrative behavior — not live prototype data</span>
         </div>
       </div>
@@ -70,7 +70,7 @@ export function LedgerTimeline() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="flex items-center justify-between p-2 bg-[#0C0C0C] border border-white/5 hover:border-white/20 transition-colors text-[11px]"
+            className="flex items-center justify-between p-2 bg-[#F8F9FA] border border-black/5 hover:border-black/20 transition-colors text-[11px]"
           >
             <div className="flex items-center space-x-3 text-softWhite">
               <span className="text-midGray font-bold">#{evt.step}</span>

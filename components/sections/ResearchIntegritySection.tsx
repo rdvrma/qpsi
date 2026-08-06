@@ -9,7 +9,7 @@ export function ResearchIntegritySection() {
   const notAllowed = siteConfig.claimsComparison.notAllowed;
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
@@ -27,10 +27,10 @@ export function ResearchIntegritySection() {
         {/* Dual Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column 1: Claims Allowed Today */}
-          <div className="p-6 border border-white/20 bg-[#090909] space-y-6">
-            <div className="flex items-center space-x-2 border-b border-white/10 pb-4">
-              <CheckCircle2 className="w-5 h-5 text-white" />
-              <h3 className="text-xl font-serif font-bold text-primaryWhite">
+          <div className="p-6 border border-emerald-300 bg-emerald-50/50 space-y-6 shadow-xs">
+            <div className="flex items-center space-x-2 border-b border-emerald-200 pb-4">
+              <CheckCircle2 className="w-5 h-5 text-emerald-800" />
+              <h3 className="text-xl font-serif font-bold text-emerald-950">
                 What We Claim Today (Truthful Baseline)
               </h3>
             </div>
@@ -39,9 +39,9 @@ export function ResearchIntegritySection() {
               {allowed.map((item, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start space-x-3 text-xs font-mono text-softWhite leading-relaxed"
+                  className="flex items-start space-x-3 text-xs font-mono text-emerald-950 leading-relaxed font-medium"
                 >
-                  <span className="text-white font-bold">✓</span>
+                  <span className="text-emerald-800 font-bold">✓</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -49,10 +49,10 @@ export function ResearchIntegritySection() {
           </div>
 
           {/* Column 2: Claims NOT Allowed Today */}
-          <div className="p-6 border border-white/14 bg-[#0A0606] space-y-6">
-            <div className="flex items-center space-x-2 border-b border-white/10 pb-4">
-              <XCircle className="w-5 h-5 text-white/60" />
-              <h3 className="text-xl font-serif font-bold text-primaryWhite">
+          <div className="p-6 border border-red-200 bg-red-50/50 space-y-6 shadow-xs">
+            <div className="flex items-center space-x-2 border-b border-red-200 pb-4">
+              <XCircle className="w-5 h-5 text-red-800" />
+              <h3 className="text-xl font-serif font-bold text-red-950">
                 What We Do NOT Claim Today (No-Hype Policy)
               </h3>
             </div>
@@ -61,9 +61,9 @@ export function ResearchIntegritySection() {
               {notAllowed.map((item, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start space-x-3 text-xs font-mono text-midGray leading-relaxed"
+                  className="flex items-start space-x-3 text-xs font-mono text-red-950 leading-relaxed font-medium"
                 >
-                  <span className="text-white/60 font-bold">✕</span>
+                  <span className="text-red-800 font-bold">✕</span>
                   <span>{item}</span>
                 </li>
               ))}

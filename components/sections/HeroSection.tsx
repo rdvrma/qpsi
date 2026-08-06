@@ -29,9 +29,9 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
   }, []);
 
   return (
-    <section className="relative min-w-full min-h-screen bg-[#050505] flex flex-col justify-between pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-white/14 overflow-hidden">
+    <section className="relative min-w-full min-h-screen bg-[#FAFAFA] flex flex-col justify-between pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-black/10 overflow-hidden">
       {/* Background Grid Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
       {/* Cinematic Intro Animation Sequence */}
       <AnimatePresence mode="wait">
@@ -69,7 +69,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                   filter: ['blur(10px)', 'blur(0px)', 'blur(2px)', 'blur(0px)'],
                 }}
                 transition={{ duration: 2, delay: idx * 0.25 }}
-                className="font-mono text-sm sm:text-lg tracking-widest text-white/70 border border-white/10 px-4 py-2 bg-white/[0.02]"
+                className="font-mono text-sm sm:text-lg tracking-widest text-black/80 border border-black/10 px-4 py-2 bg-black/[0.03]"
               >
                 {frag}
               </motion.span>
@@ -87,8 +87,8 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
           >
             {/* Top Stage Badge */}
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center space-x-2 px-3 py-1 border border-white/20 bg-white/[0.02] text-xs font-mono text-softWhite uppercase tracking-widest">
-                <Shield className="w-3.5 h-3.5 text-white" />
+              <span className="inline-flex items-center space-x-2 px-3 py-1 border border-black/15 bg-black/[0.03] text-xs font-mono text-softWhite uppercase tracking-widest font-medium">
+                <Shield className="w-3.5 h-3.5 text-black" />
                 <span>{siteConfig.company.stageBadge}</span>
               </span>
               <span className="text-xs font-mono text-midGray">
@@ -99,15 +99,15 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
             {/* QΨ Mark & Brand Title */}
             <div className="space-y-2">
               <div className="flex items-center space-x-4">
-                <span className="font-serif text-5xl sm:text-6xl font-bold tracking-tight text-white">
+                <span className="font-serif text-5xl sm:text-6xl font-bold tracking-tight text-black">
                   {siteConfig.company.mark}
                 </span>
-                <div className="h-10 w-px bg-white/20" />
+                <div className="h-10 w-px bg-black/20" />
                 <div>
                   <h2 className="text-xl font-mono uppercase font-bold tracking-widest text-primaryWhite">
                     {siteConfig.company.name}
                   </h2>
-                  <span className="text-xs font-mono uppercase tracking-wider text-midGray">
+                  <span className="text-xs font-mono uppercase tracking-wider text-midGray font-medium">
                     {siteConfig.company.tagline}
                   </span>
                 </div>
@@ -128,15 +128,15 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
               <a
                 href="/prototype"
-                className="px-8 py-4 bg-white text-black font-mono text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-all text-center border border-white shadow-xl flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-black text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-black/85 transition-all text-center border border-black shadow-lg flex items-center justify-center gap-2"
               >
                 <span>RUN LIVE PROTOTYPE</span>
-                <ArrowUpRight className="w-4 h-4 text-black" />
+                <ArrowUpRight className="w-4 h-4 text-white" />
               </a>
 
               <a
                 href="#problem"
-                className="px-8 py-4 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 transition-all font-mono text-xs font-semibold uppercase tracking-widest text-center"
+                className="px-8 py-4 border border-black/20 bg-black/[0.03] text-primaryWhite hover:bg-black/10 transition-all font-mono text-xs font-semibold uppercase tracking-widest text-center"
               >
                 {siteConfig.hero.primaryCta}
               </a>
@@ -146,7 +146,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 download="QPsi_Investor_Deck_Final_10_Pages.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 px-8 py-4 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 hover:border-white transition-all font-mono text-xs font-semibold uppercase tracking-widest text-center"
+                className="inline-flex items-center justify-center space-x-2 px-8 py-4 border border-black/20 bg-black/[0.03] text-primaryWhite hover:bg-black/10 hover:border-black transition-all font-mono text-xs font-semibold uppercase tracking-widest text-center"
               >
                 <span>{siteConfig.hero.secondaryCta} (PDF)</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -154,17 +154,17 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
             </div>
 
             {/* Founder Proof Strip */}
-            <div className="bg-[#111111] border border-white/10 rounded p-3 font-mono text-xs text-white/80 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px]">
-              <span className="text-white font-semibold">FOUNDER PROOF STRIP:</span>
-              <span className="text-emerald-400 font-semibold">✓ Classical state engine verified</span>
-              <span className="text-white/40">•</span>
-              <span className="text-emerald-400 font-semibold">✓ Append-only ledger</span>
-              <span className="text-white/40">•</span>
-              <span className="text-emerald-400 font-semibold">✓ Belief separation</span>
-              <span className="text-white/40">•</span>
-              <span className="text-emerald-400 font-semibold">✓ Contradiction rejection</span>
-              <span className="text-white/40">•</span>
-              <span className="text-emerald-400 font-semibold">✓ Deterministic replay</span>
+            <div className="bg-white border border-black/12 rounded p-3 font-mono text-xs text-black/80 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] shadow-sm">
+              <span className="text-black font-bold">FOUNDER PROOF STRIP:</span>
+              <span className="text-emerald-700 font-semibold">✓ Classical state engine verified</span>
+              <span className="text-black/30">•</span>
+              <span className="text-emerald-700 font-semibold">✓ Append-only ledger</span>
+              <span className="text-black/30">•</span>
+              <span className="text-emerald-700 font-semibold">✓ Belief separation</span>
+              <span className="text-black/30">•</span>
+              <span className="text-emerald-700 font-semibold">✓ Contradiction rejection</span>
+              <span className="text-black/30">•</span>
+              <span className="text-emerald-700 font-semibold">✓ Deterministic replay</span>
             </div>
 
             {/* Live Ledger Micro Stream */}
@@ -176,9 +176,9 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
       </AnimatePresence>
 
       {/* Bottom Scroll Cue */}
-      <div className="flex items-center justify-between text-xs font-mono text-midGray border-t border-white/10 pt-4">
+      <div className="flex items-center justify-between text-xs font-mono text-midGray border-t border-black/10 pt-4">
         <span>Q-Psi Persistent World Engine</span>
-        <a href="#problem" className="flex items-center space-x-1 hover:text-white transition-colors">
+        <a href="#problem" className="flex items-center space-x-1 hover:text-black transition-colors">
           <span>Scroll down</span>
           <ArrowDown className="w-3.5 h-3.5" />
         </a>

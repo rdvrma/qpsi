@@ -10,7 +10,7 @@ interface FooterProps {
 
 export function Footer({ onOpenModal }: FooterProps) {
   return (
-    <footer className="bg-[#030303] border-t border-white/14 pt-16 pb-12 text-primaryWhite">
+    <footer className="bg-white border-t border-black/10 pt-16 pb-12 text-primaryWhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
@@ -28,7 +28,7 @@ export function Footer({ onOpenModal }: FooterProps) {
               {siteConfig.company.fullName} is an idea-stage deep-tech research initiative developing an authoritative state-first reality operating system for persistent AI worlds.
             </p>
             <div className="text-[11px] font-mono text-midGray">
-              Parent Entity: <span className="text-softWhite">{siteConfig.company.parentCompany}</span>
+              Parent Entity: <span className="text-softWhite font-medium">{siteConfig.company.parentCompany}</span>
             </div>
           </div>
 
@@ -105,12 +105,12 @@ export function Footer({ onOpenModal }: FooterProps) {
         </div>
 
         {/* Legal Disclaimer Box */}
-        <div className="p-4 border border-white/10 bg-white/[0.01] text-[11px] font-mono text-midGray leading-relaxed">
+        <div className="p-4 border border-black/10 bg-black/[0.02] text-[11px] font-mono text-midGray leading-relaxed">
           <p>{siteConfig.finalCallout.footerLegal}</p>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-midGray gap-4">
+        <div className="pt-6 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-midGray gap-4">
           <div>{siteConfig.finalCallout.copyright}</div>
           <div className="flex items-center space-x-6">
             <a

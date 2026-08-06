@@ -14,7 +14,7 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-4xl mx-auto space-y-12">
         {/* Header Block */}
         <div className="space-y-3 text-center">
@@ -36,7 +36,7 @@ export function FaqSection() {
             return (
               <div
                 key={idx}
-                className="border border-white/14 bg-[#080808] transition-colors"
+                className="border border-black/15 bg-white transition-colors shadow-xs"
               >
                 <button
                   onClick={() => toggle(idx)}
@@ -45,8 +45,8 @@ export function FaqSection() {
                   <span className="font-serif text-xl font-bold text-primaryWhite">
                     {item.question}
                   </span>
-                  <div className="p-1 border border-white/20 text-midGray">
-                    {isOpen ? <Minus className="w-4 h-4 text-white" /> : <Plus className="w-4 h-4 text-white" />}
+                  <div className="p-1 border border-black/20 text-midGray bg-black/[0.02]">
+                    {isOpen ? <Minus className="w-4 h-4 text-black" /> : <Plus className="w-4 h-4 text-black" />}
                   </div>
                 </button>
 
@@ -58,7 +58,7 @@ export function FaqSection() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25 }}
                     >
-                      <div className="px-6 pb-6 pt-2 text-sm text-softWhite font-mono leading-relaxed border-t border-white/10">
+                      <div className="px-6 pb-6 pt-2 text-sm text-softWhite leading-relaxed border-t border-black/10 font-sans">
                         {item.answer}
                       </div>
                     </motion.div>

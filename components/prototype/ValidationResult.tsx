@@ -13,17 +13,17 @@ export const ValidationResult: React.FC<ValidationResultProps> = ({ result }) =>
 
   return (
     <div
-      className={`border rounded-lg p-4 my-4 font-mono text-xs ${
+      className={`border rounded-lg p-4 my-4 font-mono text-xs shadow-xs ${
         isSuccess
-          ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300"
-          : "bg-red-500/10 border-red-500/30 text-red-300"
+          ? "bg-emerald-50 border-emerald-300 text-emerald-950"
+          : "bg-red-50 border-red-300 text-red-950"
       }`}
     >
       <div className="flex items-start gap-3">
         {isSuccess ? (
-          <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+          <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
         ) : (
-          <ShieldAlert className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+          <ShieldAlert className="w-5 h-5 text-red-700 shrink-0 mt-0.5" />
         )}
 
         <div className="flex-1">
@@ -32,22 +32,22 @@ export const ValidationResult: React.FC<ValidationResultProps> = ({ result }) =>
               {isSuccess ? "Command Validated & Committed" : `Command Rejected: ${result.code}`}
             </span>
             {result.sequence_number && (
-              <span className="text-[11px] opacity-70">Sequence #{result.sequence_number}</span>
+              <span className="text-[11px] font-bold">Sequence #{result.sequence_number}</span>
             )}
           </div>
 
-          <p className="opacity-90 leading-relaxed">
+          <p className="leading-relaxed font-medium">
             {result.error_message || (isSuccess ? "State transition applied cleanly to canonical reality." : "Validation failed.")}
           </p>
 
           {!isSuccess && (
-            <div className="mt-2 pt-2 border-t border-red-500/20 text-[11px] opacity-80">
+            <div className="mt-2 pt-2 border-t border-red-200 text-[11px] font-semibold text-red-900">
               ⚡ <strong>Fail-Safe Rule Enforced</strong>: Canonical state remained 100% unchanged. No event was appended to the immutable ledger.
             </div>
           )}
 
           {result.event_hash && (
-            <div className="mt-2 text-[10px] text-emerald-400/80 truncate">
+            <div className="mt-2 text-[10px] text-emerald-800 font-bold truncate">
               Event SHA-256 Hash: {result.event_hash}
             </div>
           )}

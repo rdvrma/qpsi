@@ -6,7 +6,7 @@ import { ArchitectureFlow } from '../visualizations/ArchitectureFlow';
 
 export function ArchitectureSection() {
   return (
-    <section id="architecture" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section id="architecture" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">

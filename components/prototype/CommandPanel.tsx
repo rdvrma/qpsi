@@ -75,10 +75,10 @@ export const CommandPanel: React.FC<CommandPanelProps> = ({
   };
 
   return (
-    <div className="bg-[#111111] border border-white/10 rounded-lg p-5 my-6">
-      <div className="flex items-center gap-2 border-b border-white/10 pb-3 mb-4">
-        <Terminal className="w-4 h-4 text-white/70" />
-        <h3 className="font-mono text-xs uppercase tracking-wider text-white font-semibold">
+    <div className="bg-white border border-black/15 shadow-sm rounded-lg p-5 my-6 text-black">
+      <div className="flex items-center gap-2 border-b border-black/10 pb-3 mb-4">
+        <Terminal className="w-4 h-4 text-black/70" />
+        <h3 className="font-mono text-xs uppercase tracking-wider text-black font-bold">
           Controlled Manual Demo Actions
         </h3>
       </div>
@@ -87,63 +87,63 @@ export const CommandPanel: React.FC<CommandPanelProps> = ({
         <button
           onClick={() => runCommand("elena_leave", "elena", "leave_room", undefined, "main_room", "hallway")}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-white/10 hover:bg-white/10 text-white p-2.5 rounded text-left transition disabled:opacity-50"
+          className="bg-[#F8F9FA] border border-black/15 hover:bg-black/5 text-black p-2.5 rounded text-left transition disabled:opacity-50 font-medium"
         >
-          <span className="text-white/50 block text-[10px]">Action 1</span>
+          <span className="text-midGray block text-[10px]">Action 1</span>
           Elena leaves room
         </button>
 
         <button
           onClick={() => runCommand("move_book", "marcus", "move_object", "book", "shelf", "table")}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-white/10 hover:bg-white/10 text-white p-2.5 rounded text-left transition disabled:opacity-50"
+          className="bg-[#F8F9FA] border border-black/15 hover:bg-black/5 text-black p-2.5 rounded text-left transition disabled:opacity-50 font-medium"
         >
-          <span className="text-white/50 block text-[10px]">Action 2</span>
+          <span className="text-midGray block text-[10px]">Action 2</span>
           Move book (shelf→table)
         </button>
 
         <button
           onClick={() => runCommand("contradiction", "marcus", "pick_up_object", "book", "shelf")}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-red-500/30 hover:bg-red-500/10 text-red-300 p-2.5 rounded text-left transition disabled:opacity-50"
+          className="bg-red-50 border border-red-300 hover:bg-red-100 text-red-950 p-2.5 rounded text-left transition disabled:opacity-50 font-bold"
         >
-          <span className="text-red-400/60 block text-[10px]">Test Rejection</span>
+          <span className="text-red-700 block text-[10px]">Test Rejection</span>
           Attempt Contradiction
         </button>
 
         <button
           onClick={() => runCommand("elena_enter", "elena", "enter_room", undefined, undefined, "main_room")}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-white/10 hover:bg-white/10 text-white p-2.5 rounded text-left transition disabled:opacity-50"
+          className="bg-[#F8F9FA] border border-black/15 hover:bg-black/5 text-black p-2.5 rounded text-left transition disabled:opacity-50 font-medium"
         >
-          <span className="text-white/50 block text-[10px]">Action 3</span>
+          <span className="text-midGray block text-[10px]">Action 3</span>
           Elena enters room
         </button>
 
         <button
           onClick={() => runCommand("elena_inspect", "elena", "inspect_object", "book")}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-white/10 hover:bg-white/10 text-white p-2.5 rounded text-left transition disabled:opacity-50"
+          className="bg-[#F8F9FA] border border-black/15 hover:bg-black/5 text-black p-2.5 rounded text-left transition disabled:opacity-50 font-medium"
         >
-          <span className="text-white/50 block text-[10px]">Action 4</span>
+          <span className="text-midGray block text-[10px]">Action 4</span>
           Elena inspects book
         </button>
 
         <button
           onClick={() => onStateUpdate()}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-white/10 hover:bg-white/10 text-white p-2.5 rounded text-left transition disabled:opacity-50"
+          className="bg-[#F8F9FA] border border-black/15 hover:bg-black/5 text-black p-2.5 rounded text-left transition disabled:opacity-50 font-medium"
         >
-          <span className="text-white/50 block text-[10px]">Persistence</span>
+          <span className="text-midGray block text-[10px]">Persistence</span>
           Reload from Persistence
         </button>
 
         <button
           onClick={handleResetDemo}
           disabled={loadingAction !== null}
-          className="bg-[#050505] border border-white/10 hover:bg-white/10 text-white p-2.5 rounded text-left transition disabled:opacity-50 col-span-2 sm:col-span-1"
+          className="bg-[#F8F9FA] border border-black/15 hover:bg-black/5 text-black p-2.5 rounded text-left transition disabled:opacity-50 col-span-2 sm:col-span-1 font-medium"
         >
-          <span className="text-white/50 block text-[10px]">Reset</span>
+          <span className="text-midGray block text-[10px]">Reset</span>
           Reset My Demo
         </button>
       </div>

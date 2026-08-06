@@ -7,7 +7,7 @@ import { AlertCircle } from 'lucide-react';
 
 export function QuantumSection() {
   return (
-    <section id="quantum" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#030303] border-b border-white/14">
+    <section id="quantum" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
@@ -26,12 +26,12 @@ export function QuantumSection() {
         <QuantumToggle />
 
         {/* Strict Disclaimers */}
-        <div className="p-6 border border-white/14 bg-[#080808] space-y-3 font-mono text-xs text-midGray">
-          <div className="flex items-center space-x-2 text-white font-bold uppercase tracking-wider">
-            <AlertCircle className="w-4 h-4 text-white" />
+        <div className="p-6 border border-black/15 bg-white space-y-3 font-mono text-xs text-midGray shadow-sm">
+          <div className="flex items-center space-x-2 text-black font-bold uppercase tracking-wider">
+            <AlertCircle className="w-4 h-4 text-black" />
             <span>Strict Truthfulness Disclosures</span>
           </div>
-          <ul className="space-y-1 pl-6 list-disc text-softWhite">
+          <ul className="space-y-1 pl-6 list-disc text-black/80 font-medium">
             {siteConfig.quantum.disclaimerNotes.map((note, idx) => (
               <li key={idx}>{note}</li>
             ))}
