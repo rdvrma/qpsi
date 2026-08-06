@@ -55,11 +55,11 @@ export function CustomCursor() {
       }}
     >
       <div
-        className={`w-6 h-6 rounded-full border border-white/40 transition-all duration-150 flex items-center justify-center ${
-          isPointer ? 'scale-150 bg-white/10 border-white' : 'scale-100'
+        className={`w-6 h-6 rounded-full border border-black/40 transition-all duration-150 flex items-center justify-center ${
+          isPointer ? 'scale-150 bg-black/10 border-black' : 'scale-100'
         }`}
       >
-        <div className="w-1 h-1 bg-white rounded-full" />
+        <div className="w-1.5 h-1.5 rounded-full bg-black" />
       </div>
     </div>
   );

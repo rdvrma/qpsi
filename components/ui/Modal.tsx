@@ -50,7 +50,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            className="absolute inset-0 bg-black/40 backdrop-blur-md"
           />
 
           {/* Modal Card */}
@@ -59,25 +59,25 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-lg bg-[#0A0A0A] border border-white/20 rounded-none p-6 sm:p-8 shadow-2xl z-10 text-primaryWhite overflow-hidden"
+            className="relative w-full max-w-lg bg-white border border-black/20 rounded-none p-6 sm:p-8 shadow-2xl z-10 text-primaryWhite overflow-hidden"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-midGray hover:text-primaryWhite transition-colors p-2"
+              className="absolute top-4 right-4 text-midGray hover:text-black transition-colors p-2"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Header Tabs */}
-            <div className="flex border-b border-white/10 mb-6 pb-2 space-x-6">
+            <div className="flex border-b border-black/10 mb-6 pb-2 space-x-6">
               <button
                 onClick={() => setType('deck')}
                 className={`text-sm font-mono tracking-wider uppercase transition-colors pb-2 ${
                   type === 'deck'
-                    ? 'border-b-2 border-white text-primaryWhite font-semibold'
-                    : 'text-midGray hover:text-white'
+                    ? 'border-b-2 border-black text-black font-bold'
+                    : 'text-midGray hover:text-black'
                 }`}
               >
                 Request Deck
@@ -86,8 +86,8 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                 onClick={() => setType('contact')}
                 className={`text-sm font-mono tracking-wider uppercase transition-colors pb-2 ${
                   type === 'contact'
-                    ? 'border-b-2 border-white text-primaryWhite font-semibold'
-                    : 'text-midGray hover:text-white'
+                    ? 'border-b-2 border-black text-black font-bold'
+                    : 'text-midGray hover:text-black'
                 }`}
               >
                 Contact Founder
@@ -100,11 +100,11 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                 animate={{ opacity: 1, y: 0 }}
                 className="py-8 text-center space-y-4"
               >
-                <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center mx-auto text-primaryWhite">
+                <div className="w-12 h-12 border border-black/20 rounded-full flex items-center justify-center mx-auto text-black bg-black/[0.03]">
                   <CheckCircle className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-serif tracking-tight">Request Received</h3>
-                <p className="text-sm text-softWhite max-w-xs mx-auto leading-relaxed">
+                <h3 className="text-2xl font-serif tracking-tight font-bold">Request Received</h3>
+                <p className="text-sm text-softWhite max-w-xs mx-auto leading-relaxed font-sans">
                   {type === 'deck'
                     ? 'Thank you for your interest in Q-Psi. You can download the investor deck immediately below or access it via your email.'
                     : 'Your message has been sent directly to Nishant Kumar Sinha (Founder, Q-Psi). We will respond within 24 hours.'}
@@ -116,7 +116,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                     download="QPsi_Investor_Deck_Final_10_Pages.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 px-6 py-3 bg-white text-bgBlack font-mono text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-all mt-4 border border-white"
+                    className="inline-flex items-center space-x-2 px-6 py-3 bg-black text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-black/85 transition-all mt-4 border border-black shadow-sm"
                   >
                     <span>Download Investor Deck PDF</span>
                     <ArrowRight className="w-4 h-4" />
@@ -126,7 +126,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                 <div>
                   <button
                     onClick={handleReset}
-                    className="mt-4 px-6 py-2.5 border border-white/20 text-softWhite text-xs font-mono tracking-widest uppercase hover:bg-white/10 transition-colors"
+                    className="mt-4 px-6 py-2.5 border border-black/20 text-black text-xs font-mono tracking-widest uppercase hover:bg-black/5 transition-colors font-semibold"
                   >
                     Close Window
                   </button>
@@ -136,7 +136,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-serif tracking-tight">
+                    <h3 className="text-2xl font-serif tracking-tight font-bold">
                       {title || (type === 'deck' ? 'Request Investor Deck' : 'Direct Founder Dialogue')}
                     </h3>
                     {type === 'deck' && (
@@ -145,7 +145,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                         download="QPsi_Investor_Deck_Final_10_Pages.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[11px] font-mono uppercase tracking-wider text-white underline decoration-white/40 hover:text-white"
+                        className="text-[11px] font-mono uppercase tracking-wider text-black underline decoration-black/40 hover:text-black font-semibold"
                       >
                         Direct PDF
                       </a>
@@ -160,7 +160,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
 
                 <div className="space-y-3 pt-2">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1 font-medium">
                       Full Name *
                     </label>
                     <input
@@ -169,12 +169,12 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Eleanor Vance"
-                      className="w-full bg-[#111111] border border-white/14 px-3 py-2 text-sm text-primaryWhite focus:outline-none focus:border-white transition-colors"
+                      className="w-full bg-[#F8F9FA] border border-black/15 px-3 py-2 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1 font-medium">
                       Work Email *
                     </label>
                     <input
@@ -183,13 +183,13 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="eleanor@venturecapital.com"
-                      className="w-full bg-[#111111] border border-white/14 px-3 py-2 text-sm text-primaryWhite focus:outline-none focus:border-white transition-colors"
+                      className="w-full bg-[#F8F9FA] border border-black/15 px-3 py-2 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1">
+                      <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1 font-medium">
                         Organization
                       </label>
                       <input
@@ -197,11 +197,11 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                         value={organization}
                         onChange={(e) => setOrganization(e.target.value)}
                         placeholder="Fund / Studio"
-                        className="w-full bg-[#111111] border border-white/14 px-3 py-2 text-sm text-primaryWhite focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-[#F8F9FA] border border-black/15 px-3 py-2 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1">
+                      <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1 font-medium">
                         Role
                       </label>
                       <input
@@ -209,13 +209,13 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                         value={role}
                         onChange={(e) => setRole(e.target.value)}
                         placeholder="Partner / Founder"
-                        className="w-full bg-[#111111] border border-white/14 px-3 py-2 text-sm text-primaryWhite focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-[#F8F9FA] border border-black/15 px-3 py-2 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-midGray mb-1 font-medium">
                       Note / Context (Optional)
                     </label>
                     <textarea
@@ -227,19 +227,19 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                           ? 'Specific areas of interest (e.g. quantum simulator baseline, persistent room proof)...'
                           : 'Share your background or question...'
                       }
-                      className="w-full bg-[#111111] border border-white/14 px-3 py-2 text-sm text-primaryWhite focus:outline-none focus:border-white transition-colors resize-none"
+                      className="w-full bg-[#F8F9FA] border border-black/15 px-3 py-2 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition-colors resize-none"
                     />
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+                <div className="pt-3 border-t border-black/10 flex items-center justify-between">
                   <p className="text-[11px] text-midGray font-mono">
                     Confidential | No spam guarantee
                   </p>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center space-x-2 px-5 py-2.5 bg-primaryWhite text-bgBlack text-xs font-mono font-semibold tracking-wider uppercase hover:bg-white transition-all disabled:opacity-50"
+                    className="inline-flex items-center space-x-2 px-5 py-2.5 bg-black text-white text-xs font-mono font-semibold tracking-wider uppercase hover:bg-black/85 transition-all disabled:opacity-50 shadow-sm"
                   >
                     <span>{isSubmitting ? 'Transmitting...' : type === 'deck' ? 'Send Request' : 'Submit Message'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />

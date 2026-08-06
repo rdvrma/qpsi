@@ -8,7 +8,7 @@ export function FounderEvidenceSection() {
   const ev = siteConfig.founderEvidence;
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
@@ -25,10 +25,10 @@ export function FounderEvidenceSection() {
           {ev.projects.map((proj, idx) => (
             <div
               key={idx}
-              className="p-6 border border-white/14 bg-[#090909] space-y-4 flex flex-col justify-between hover:border-white/30 transition-colors"
+              className="p-6 border border-black/15 bg-white space-y-4 flex flex-col justify-between hover:border-black/30 transition-colors shadow-xs"
             >
               <div className="space-y-3">
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div className="flex items-center justify-between border-b border-black/10 pb-3">
                   <span className="text-xs font-mono font-bold text-midGray">
                     {proj.subtitle}
                   </span>
@@ -37,7 +37,7 @@ export function FounderEvidenceSection() {
                       href={proj.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-mono text-white flex items-center space-x-1 hover:underline"
+                      className="text-xs font-mono text-black flex items-center space-x-1 hover:underline font-semibold"
                     >
                       <span>Visit</span>
                       <ExternalLink className="w-3 h-3" />
@@ -56,11 +56,11 @@ export function FounderEvidenceSection() {
         </div>
 
         {/* Capital Efficiency Callout */}
-        <div className="p-6 border border-white/20 bg-white/[0.02] flex items-start space-x-4">
-          <ShieldCheck className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
+        <div className="p-6 border border-black/15 bg-white flex items-start space-x-4 shadow-sm">
+          <ShieldCheck className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-primaryWhite font-bold block">
-              {ev.resourcefulness.title}
+            <span className="text-xs font-mono uppercase tracking-widest text-black font-bold block">
+              Execution Evidence Principle
             </span>
             <p className="text-xs font-mono text-midGray leading-relaxed">
               {ev.resourcefulness.statement}

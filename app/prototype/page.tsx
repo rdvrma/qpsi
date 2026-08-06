@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrototypePage() {
   return (
-    <main className="min-h-screen bg-[#050505] pt-20 pb-16">
+    <main className="min-h-screen bg-[#FAFAFA] pt-20 pb-16">
       <PrototypeErrorBoundary>
         <PrototypeShell />
       </PrototypeErrorBoundary>

@@ -14,15 +14,15 @@ export function MarketVisualization() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Ring Diagram Graphic */}
         <div className="lg:col-span-5 flex justify-center py-6">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-white/20 flex items-center justify-center p-6 bg-[#080808]">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-black/20 flex items-center justify-center p-6 bg-white shadow-sm">
             {/* Outer Ring 4 */}
-            <div className="absolute inset-2 rounded-full border border-white/10 flex items-center justify-center">
+            <div className="absolute inset-2 rounded-full border border-black/10 flex items-center justify-center">
               {/* Ring 3 */}
-              <div className="absolute inset-8 rounded-full border border-white/20 flex items-center justify-center">
+              <div className="absolute inset-8 rounded-full border border-black/15 flex items-center justify-center">
                 {/* Ring 2 */}
-                <div className="absolute inset-14 rounded-full border border-white/30 flex items-center justify-center">
+                <div className="absolute inset-14 rounded-full border border-black/25 flex items-center justify-center">
                   {/* Center Core Wedge */}
-                  <div className="w-24 h-24 rounded-full bg-white text-bgBlack flex flex-col items-center justify-center p-2 text-center shadow-2xl">
+                  <div className="w-24 h-24 rounded-full bg-black text-white flex flex-col items-center justify-center p-2 text-center shadow-xl">
                     <span className="text-[9px] font-mono uppercase tracking-widest font-bold">
                       INITIAL WEDGE
                     </span>
@@ -41,13 +41,13 @@ export function MarketVisualization() {
           {wedge.map((layer, idx) => (
             <div
               key={idx}
-              className="p-4 border border-white/14 bg-[#090909] space-y-1 hover:border-white/30 transition-colors"
+              className="p-4 border border-black/15 bg-white space-y-1 hover:border-black/30 transition-colors shadow-xs"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono tracking-widest uppercase text-midGray">
+                <span className="text-[10px] font-mono tracking-widest uppercase text-midGray font-medium">
                   Phase 0{idx + 1} — {layer.layer}
                 </span>
-                <span className="text-[10px] font-mono text-softWhite">
+                <span className="text-[10px] font-mono text-black font-semibold">
                   {idx === 0 ? 'Current Wedge' : `Expansion Layer ${idx}`}
                 </span>
               </div>
@@ -63,7 +63,7 @@ export function MarketVisualization() {
       </div>
 
       {/* Source-Backed Data Table */}
-      <div className="space-y-4 pt-6 border-t border-white/14">
+      <div className="space-y-4 pt-6 border-t border-black/10">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <h4 className="text-lg font-serif font-bold text-primaryWhite">
             Source-Backed & Verified Category Valuation Table
@@ -73,10 +73,10 @@ export function MarketVisualization() {
           </span>
         </div>
 
-        <div className="border border-white/14 bg-[#070707] overflow-x-auto">
+        <div className="border border-black/15 bg-white overflow-x-auto shadow-sm">
           <table className="w-full text-left border-collapse text-xs font-mono">
             <thead>
-              <tr className="border-b border-white/14 bg-white/[0.02] text-midGray uppercase tracking-wider text-[11px]">
+              <tr className="border-b border-black/10 bg-[#F8F9FA] text-midGray uppercase tracking-wider text-[11px]">
                 <th className="p-4 font-semibold">Category</th>
                 <th className="p-4 font-semibold">Value</th>
                 <th className="p-4 font-semibold">Year</th>
@@ -84,11 +84,11 @@ export function MarketVisualization() {
                 <th className="p-4 font-semibold">Definition & Notes</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/10 text-softWhite">
+            <tbody className="divide-y divide-black/10 text-softWhite">
               {sources.map((item, idx) => (
-                <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="p-4 font-semibold text-primaryWhite">{item.category}</td>
-                  <td className="p-4 font-bold text-white">{item.value ? item.value : 'N/A (Category)'}</td>
+                <tr key={idx} className="hover:bg-black/[0.02] transition-colors">
+                  <td className="p-4 font-semibold text-black">{item.category}</td>
+                  <td className="p-4 font-bold text-black">{item.value ? item.value : 'N/A (Category)'}</td>
                   <td className="p-4 text-midGray">{item.year ? item.year : '—'}</td>
                   <td className="p-4 text-midGray">
                     {item.sourceUrl ? (
@@ -96,7 +96,7 @@ export function MarketVisualization() {
                         href={item.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-1 hover:text-white underline decoration-white/30"
+                        className="inline-flex items-center space-x-1 hover:text-black underline decoration-black/30"
                       >
                         <span>{item.sourceName}</span>
                         <ExternalLink className="w-3 h-3" />

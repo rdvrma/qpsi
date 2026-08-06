@@ -32,13 +32,13 @@ export const ProofRunner: React.FC<ProofRunnerProps> = ({ worldId, onProofComple
   };
 
   return (
-    <div className="bg-[#111111] border border-white/10 rounded-lg p-6 my-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-4">
+    <div className="bg-white border border-black/15 shadow-sm rounded-lg p-6 my-6 text-black">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-black/10 pb-4 mb-4">
         <div>
-          <h3 className="font-mono text-base uppercase tracking-wider text-white font-bold flex items-center gap-2">
+          <h3 className="font-mono text-base uppercase tracking-wider text-black font-bold flex items-center gap-2">
             60-Second Automated Proof Scenario
           </h3>
-          <p className="text-xs text-[#777777] font-mono mt-1">
+          <p className="text-xs text-[#52525B] font-mono mt-1">
             Executes the 7-step deterministic validation suite live against the Q-Psi engine backend.
           </p>
         </div>
@@ -46,16 +46,16 @@ export const ProofRunner: React.FC<ProofRunnerProps> = ({ worldId, onProofComple
         <button
           onClick={handleRunProof}
           disabled={isRunning}
-          className="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-wider bg-white text-black font-bold rounded hover:bg-white/90 disabled:opacity-50 transition shrink-0"
+          className="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-wider bg-black text-white font-bold rounded hover:bg-black/85 disabled:opacity-50 transition shrink-0 border border-black shadow-sm"
         >
           {isRunning ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin text-black" />
+              <Loader2 className="w-4 h-4 animate-spin text-white" />
               EXECUTING PROOF STEPS...
             </>
           ) : (
             <>
-              <Play className="w-4 h-4 text-black fill-black" />
+              <Play className="w-4 h-4 text-white fill-white" />
               RUN THE 60-SECOND PROOF
             </>
           )}
@@ -63,27 +63,27 @@ export const ProofRunner: React.FC<ProofRunnerProps> = ({ worldId, onProofComple
       </div>
 
       {errorMsg && (
-        <div className="bg-red-500/10 border border-red-500/30 p-4 rounded text-xs font-mono text-red-300 mb-4">
+        <div className="bg-red-50 border border-red-200 p-4 rounded text-xs font-mono text-red-900 mb-4">
           Error executing proof: {errorMsg}
         </div>
       )}
 
       {proofResult && (
         <div>
-          <div className="flex items-center justify-between bg-black/40 border border-white/10 p-4 rounded mb-4">
-            <span className="font-mono text-xs uppercase text-[#777777]">Final Verification Verdict</span>
+          <div className="flex items-center justify-between bg-[#F8F9FA] border border-black/10 p-4 rounded mb-4">
+            <span className="font-mono text-xs uppercase text-[#52525B] font-medium">Final Verification Verdict</span>
             <span
               className={`font-mono text-sm font-bold flex items-center gap-2 ${
-                proofResult.verdict === "ACCEPTED" ? "text-emerald-400" : "text-red-400"
+                proofResult.verdict === "ACCEPTED" ? "text-emerald-800" : "text-red-800"
               }`}
             >
               {proofResult.verdict === "ACCEPTED" ? (
                 <>
-                  <CheckCircle2 className="w-5 h-5" /> PROOF PASSED
+                  <CheckCircle2 className="w-5 h-5 text-emerald-700" /> PROOF PASSED
                 </>
               ) : (
                 <>
-                  <XCircle className="w-5 h-5" /> PROOF FAILED
+                  <XCircle className="w-5 h-5 text-red-700" /> PROOF FAILED
                 </>
               )}
             </span>
@@ -94,23 +94,23 @@ export const ProofRunner: React.FC<ProofRunnerProps> = ({ worldId, onProofComple
             {proofResult.steps.map((step: ProofStepResult) => (
               <div
                 key={step.step}
-                className="bg-[#050505] border border-white/10 rounded p-3 flex flex-col gap-1"
+                className="bg-[#F8F9FA] border border-black/10 rounded p-3 flex flex-col gap-1"
               >
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold text-white">
+                  <span className="font-bold text-black">
                     Step {step.step}: {step.title}
                   </span>
                   <span
-                    className={`px-2 py-0.5 rounded text-[10px] ${
+                    className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                       step.status === "PASS"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                        : "bg-red-500/20 text-red-300 border border-red-500/30"
+                        ? "bg-emerald-100 text-emerald-900 border border-emerald-300"
+                        : "bg-red-100 text-red-900 border border-red-300"
                     }`}
                   >
                     {step.status}
                   </span>
                 </div>
-                <p className="text-white/70 text-[11px]">{step.description}</p>
+                <p className="text-black/80 text-[11px] font-medium">{step.description}</p>
               </div>
             ))}
           </div>

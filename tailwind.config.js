@@ -9,14 +9,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgBlack: '#050505',
-        primaryWhite: '#F5F5F2',
-        softWhite: '#D8D8D2',
-        darkGray: '#111111',
-        midGray: '#777777',
-        borderGray: 'rgba(255, 255, 255, 0.14)',
-        cardBg: 'rgba(17, 17, 17, 0.6)',
-        cardBorder: 'rgba(255, 255, 255, 0.12)',
+        bgBlack: '#FAFAFA',
+        primaryWhite: '#09090B',
+        softWhite: '#27272A',
+        darkGray: '#FFFFFF',
+        midGray: '#52525B',
+        borderGray: 'rgba(0, 0, 0, 0.12)',
+        cardBg: '#FFFFFF',
+        cardBorder: 'rgba(0, 0, 0, 0.12)',
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
@@ -45,4 +45,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

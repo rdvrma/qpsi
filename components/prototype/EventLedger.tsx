@@ -24,11 +24,11 @@ export const EventLedger: React.FC<EventLedgerProps> = ({ events, isConnected, i
   };
 
   return (
-    <div className="bg-[#111111] border border-white/10 rounded-lg p-5 my-6">
-      <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+    <div className="bg-white border border-black/15 shadow-sm rounded-lg p-5 my-6 text-black">
+      <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-4">
         <div className="flex items-center gap-2">
-          <Database className="w-4 h-4 text-white/70" />
-          <h3 className="font-mono text-xs uppercase tracking-wider text-white font-bold">
+          <Database className="w-4 h-4 text-black/70" />
+          <h3 className="font-mono text-xs uppercase tracking-wider text-black font-bold">
             {getLedgerTitle()}
           </h3>
         </div>
@@ -36,17 +36,17 @@ export const EventLedger: React.FC<EventLedgerProps> = ({ events, isConnected, i
         <div className="flex items-center gap-2">
           <span
             className={`w-2 h-2 rounded-full ${
-              isConnected ? "bg-emerald-400 animate-pulse" : "bg-red-400"
+              isConnected ? "bg-emerald-700 animate-pulse" : "bg-red-600"
             }`}
           />
-          <span className="font-mono text-[11px] text-white/60 uppercase">
+          <span className="font-mono text-[11px] text-midGray uppercase font-medium">
             {events.length} Committed Events
           </span>
         </div>
       </div>
 
       {events.length === 0 ? (
-        <div className="bg-[#050505] border border-white/10 p-6 rounded text-center text-xs font-mono text-[#777777]">
+        <div className="bg-[#F8F9FA] border border-black/10 p-6 rounded text-center text-xs font-mono text-midGray">
           No events committed to ledger yet. Run the 60-second proof or execute a manual action to append events.
         </div>
       ) : (
@@ -56,72 +56,52 @@ export const EventLedger: React.FC<EventLedgerProps> = ({ events, isConnected, i
             return (
               <div
                 key={evt.event_id}
-                className="bg-[#050505] border border-white/10 rounded p-3 text-white/90 hover:border-white/20 transition"
+                className="bg-[#F8F9FA] border border-black/10 rounded p-3 text-black hover:border-black/25 transition"
               >
                 <div
-                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 cursor-pointer"
                   onClick={() => toggleExpand(evt.event_id)}
+                  className="flex items-center justify-between cursor-pointer select-none"
                 >
-                  <div className="flex items-center gap-2 flex-wrap">
-                    {isExpanded ? (
-                      <ChevronDown className="w-3.5 h-3.5 text-white/50 shrink-0" />
-                    ) : (
-                      <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
-                    )}
-                    <span className="bg-white/10 text-white px-2 py-0.5 rounded font-bold text-[11px]">
-                      #{evt.sequence_number}
+                  <div className="flex items-center gap-3">
+                    <span className="font-bold text-black text-xs">#{evt.sequence_number}</span>
+                    <span className="bg-black/10 px-2 py-0.5 rounded text-[11px] font-bold uppercase text-black">
+                      {evt.event_type}
                     </span>
-                    <span className="text-white font-bold">{evt.event_type}</span>
-                    <span className="text-[#777777]">by</span>
-                    <span className="text-white/90 font-semibold">{evt.actor_id}</span>
-                    {evt.target_id && (
-                      <>
-                        <span className="text-[#777777]">target:</span>
-                        <span className="text-white/90">{evt.target_id}</span>
-                      </>
-                    )}
+                    <span className="text-midGray hidden sm:inline">actor: <strong className="text-black">{evt.actor_id}</strong></span>
                   </div>
 
-                  <div className="flex items-center gap-3 text-[11px] text-white/50">
-                    <span className="flex items-center gap-1">
-                      <Lock className="w-3 h-3 text-emerald-400/80" />
-                      Hash: {evt.event_hash.slice(0, 8)}...
+                  <div className="flex items-center gap-3">
+                    <span className="text-[11px] text-midGray font-mono truncate max-w-[100px] hidden md:inline" title={evt.event_hash}>
+                      {evt.event_hash ? `${evt.event_hash.slice(0, 8)}...` : "—"}
                     </span>
-                    <span className="flex items-center gap-1 hidden md:inline-flex">
-                      <Clock className="w-3 h-3 text-white/30" />
-                      {new Date(evt.timestamp).toLocaleTimeString()}
-                    </span>
+                    {isExpanded ? (
+                      <ChevronDown className="w-4 h-4 text-midGray" />
+                    ) : (
+                      <ChevronRight className="w-4 h-4 text-midGray" />
+                    )}
                   </div>
                 </div>
 
-                {/* Expanded Details */}
                 {isExpanded && (
-                  <div className="mt-3 pt-3 border-t border-white/10 space-y-2 text-[11px] bg-black/40 p-3 rounded">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white/70">
+                  <div className="mt-3 pt-3 border-t border-black/10 space-y-2 text-[11px] text-black/80">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <div>
-                        <span className="text-[#777777] block text-[10px]">Previous State:</span>
-                        <pre className="bg-[#050505] p-2 rounded text-[10px] text-white/80 overflow-x-auto">
-                          {JSON.stringify(evt.previous_state, null, 2)}
-                        </pre>
+                        <span className="text-midGray block font-medium">EVENT ID:</span>
+                        <span className="font-mono text-black font-semibold">{evt.event_id}</span>
                       </div>
                       <div>
-                        <span className="text-[#777777] block text-[10px]">Resulting State:</span>
-                        <pre className="bg-[#050505] p-2 rounded text-[10px] text-emerald-400/90 overflow-x-auto">
-                          {JSON.stringify(evt.resulting_state, null, 2)}
-                        </pre>
+                        <span className="text-midGray block font-medium">PREVIOUS HASH:</span>
+                        <span className="font-mono text-black font-semibold truncate block" title={evt.previous_event_hash || ""}>
+                          {evt.previous_event_hash || "GENESIS (0x0000)"}
+                        </span>
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4 text-[10px] text-white/60 pt-2 border-t border-white/5">
-                      <div>
-                        <span className="text-[#777777]">Observer IDs:</span> {evt.observer_ids.join(", ") || "None"}
-                      </div>
-                      <div>
-                        <span className="text-[#777777]">Prev Hash:</span> {evt.previous_event_hash}
-                      </div>
-                      <div>
-                        <span className="text-[#777777]">Full Hash:</span> {evt.event_hash}
-                      </div>
+                    <div>
+                      <span className="text-midGray block mb-1 font-medium">RESULTING STATE DELTA:</span>
+                      <pre className="bg-white border border-black/10 p-2 rounded text-[10px] overflow-x-auto text-black font-mono">
+                        {JSON.stringify(evt.resulting_state || {}, null, 2)}
+                      </pre>
                     </div>
                   </div>
                 )}

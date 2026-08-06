@@ -7,7 +7,7 @@ import { FailureVisualization } from '../visualizations/FailureVisualization';
 
 export function ProblemSection() {
   return (
-    <section id="problem" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section id="problem" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
@@ -26,11 +26,11 @@ export function ProblemSection() {
         <FailureVisualization />
 
         {/* Closing Thesis Statement */}
-        <div className="p-8 border border-white/20 bg-white/[0.02] text-center space-y-2">
+        <div className="p-8 border border-black/15 bg-white text-center space-y-2 shadow-sm">
           <p className="font-serif text-xl sm:text-2xl font-bold text-primaryWhite">
             “{siteConfig.problem.finalStatement}”
           </p>
-          <p className="text-xs font-mono text-midGray uppercase tracking-widest">
+          <p className="text-xs font-mono text-midGray uppercase tracking-widest font-medium">
             State OS &gt; Generative Model Sampling
           </p>
         </div>

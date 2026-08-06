@@ -12,7 +12,7 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
   const f = siteConfig.founder;
 
   return (
-    <section id="founder" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] border-b border-white/14">
+    <section id="founder" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header Block */}
         <div className="max-w-3xl space-y-4">
@@ -27,15 +27,15 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
         {/* Profile Card & Bio */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Official Identity Card */}
-          <div className="lg:col-span-5 border border-white/20 bg-[#090909] p-6 space-y-6">
-            <div className="space-y-2 border-b border-white/10 pb-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-midGray">
+          <div className="lg:col-span-5 border border-black/15 bg-white p-6 space-y-6 shadow-sm">
+            <div className="space-y-2 border-b border-black/10 pb-6">
+              <span className="text-xs font-mono uppercase tracking-widest text-midGray font-medium">
                 Official Founder Identity
               </span>
               <h3 className="text-3xl font-serif font-bold text-primaryWhite">
                 {f.officialIdentity.name}
               </h3>
-              <p className="text-xs font-mono text-softWhite font-semibold">
+              <p className="text-xs font-mono text-black font-semibold">
                 {f.officialIdentity.title}
               </p>
               <p className="text-xs font-mono text-midGray">
@@ -44,14 +44,14 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
             </div>
 
             {/* Education Record */}
-            <div className="space-y-2 border-b border-white/10 pb-6">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-midGray block">
+            <div className="space-y-2 border-b border-black/10 pb-6">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-midGray block font-medium">
                 Education & Background Record
               </span>
               <p className="text-xs text-softWhite leading-relaxed font-mono">
                 {f.education}
               </p>
-              <div className="p-3 border border-white/10 bg-black/40 text-[11px] font-mono text-midGray">
+              <div className="p-3 border border-black/10 bg-[#F8F9FA] text-[11px] font-mono text-midGray">
                 {f.educationTruthfulnessNotice}
               </div>
             </div>
@@ -59,7 +59,7 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
             {/* Contact CTA */}
             <button
               onClick={() => onOpenModal('contact')}
-              className="w-full py-3 border border-white bg-primaryWhite text-bgBlack hover:bg-white transition-colors text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center space-x-2"
+              className="w-full py-3 border border-black bg-black text-white hover:bg-black/85 transition-colors text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm"
             >
               <span>Connect with Nishant</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -79,11 +79,11 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
             </div>
 
             {/* Philosophy Quote */}
-            <div className="p-6 border-l-2 border-white bg-white/[0.02] space-y-2">
+            <div className="p-6 border-l-2 border-black bg-white shadow-xs space-y-2">
               <p className="font-serif text-xl sm:text-2xl text-primaryWhite italic">
                 {f.philosophyQuote}
               </p>
-              <span className="text-xs font-mono text-midGray block uppercase tracking-widest">
+              <span className="text-xs font-mono text-midGray block uppercase tracking-widest font-medium">
                 — Nishant Kumar Sinha
               </span>
             </div>
@@ -97,9 +97,9 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
                 {f.operatingModel.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-3 border border-white/10 bg-[#0A0A0A] flex items-center space-x-2.5 text-xs font-mono text-softWhite"
+                    className="p-3 border border-black/10 bg-[#F8F9FA] flex items-center space-x-2.5 text-xs font-mono text-black/80 font-medium"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-black flex-shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -107,7 +107,7 @@ export function FounderSection({ onOpenModal }: FounderSectionProps) {
             </div>
 
             {/* Cofounder Statement */}
-            <div className="p-6 border border-white/14 bg-[#080808] space-y-2">
+            <div className="p-6 border border-black/15 bg-white space-y-2 shadow-xs">
               <span className="text-xs font-mono uppercase tracking-widest text-primaryWhite font-bold block">
                 Open Co-Founder Alignment Policy
               </span>

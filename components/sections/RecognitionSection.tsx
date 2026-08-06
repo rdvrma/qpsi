@@ -8,10 +8,10 @@ export function RecognitionSection() {
   const rec = siteConfig.recognition;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#040404] border-b border-white/14">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] border-b border-black/10">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header Block */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 gap-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-black/10 gap-4">
           <div>
             <span className="text-xs font-mono tracking-widest uppercase text-midGray block font-semibold">
               ECOSYSTEM SUPPORT & ACCELERATOR MEMBERSHIPS
@@ -30,10 +30,10 @@ export function RecognitionSection() {
           {rec.items.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 border border-white/10 bg-[#090909] space-y-2 hover:border-white/20 transition-colors"
+              className="p-5 border border-black/10 bg-white space-y-2 hover:border-black/25 transition-colors shadow-xs"
             >
-              <div className="flex items-center space-x-2 text-primaryWhite">
-                <Award className="w-4 h-4 text-white" />
+              <div className="flex items-center space-x-2 text-black">
+                <Award className="w-4 h-4 text-black" />
                 <h3 className="text-sm font-mono font-bold uppercase tracking-wider">
                   {item.name}
                 </h3>
@@ -46,9 +46,9 @@ export function RecognitionSection() {
         </div>
 
         {/* Important Disclosure Box */}
-        <div className="p-6 border border-white/20 bg-[#090909] space-y-2 text-xs font-mono text-midGray">
-          <div className="flex items-center space-x-2 text-white font-bold uppercase tracking-wider">
-            <ShieldAlert className="w-4 h-4 text-white" />
+        <div className="p-6 border border-black/15 bg-white space-y-2 text-xs font-mono text-midGray shadow-xs">
+          <div className="flex items-center space-x-2 text-black font-bold uppercase tracking-wider">
+            <ShieldAlert className="w-4 h-4 text-black" />
             <span>Important Ecosystem Participation Disclosure</span>
           </div>
           <p className="text-softWhite leading-relaxed pl-6">
