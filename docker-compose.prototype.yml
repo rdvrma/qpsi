@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  qpsi-engine:
+    build:
+      context: ./services/qpsi-engine
+      dockerfile: Dockerfile
+    container_name: qpsi-engine-prototype
+    ports:
+      - "8000:8000"
+    environment:
+      - QPSI_ENGINE_ENV=production
+      - QPSI_DATABASE_URL=sqlite:////app/data/qpsi_world.db
+      - QPSI_ENABLE_RESET=true
+    volumes:
+      - qpsi_data:/app/data
+
+volumes:
+  qpsi_data:

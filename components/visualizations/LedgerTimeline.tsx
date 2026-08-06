@@ -54,12 +54,12 @@ export function LedgerTimeline() {
         <div className="flex items-center space-x-2 text-midGray">
           <Database className="w-3.5 h-3.5 text-white/80" />
           <span className="text-[11px] uppercase tracking-wider font-semibold text-primaryWhite">
-            Live Canonical World State Ledger Stream
+            INTERACTIVE ARCHITECTURE SIMULATION
           </span>
         </div>
         <div className="flex items-center space-x-2 text-[10px] text-midGray">
           <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          <span>Synchronized (60fps Engine Loop)</span>
+          <span>Illustrative behavior — not live prototype data</span>
         </div>
       </div>
 
