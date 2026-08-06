@@ -1,0 +1,14 @@
+{
+  "p_layers": [
+    1,
+    2
+  ],
+  "optimizer": "COBYLA",
+  "shots": 1000,
+  "seed": 42,
+  "qubo_coefficients": {
+    "penalty_exactly_one": 10.0,
+    "penalty_invalid_candidate": 100.0,
+    "weight_utility": 1.0
+  }
+}

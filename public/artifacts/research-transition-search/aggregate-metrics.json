@@ -1,0 +1,14 @@
+{
+  "total_scenarios": 20,
+  "classical_pass_rate_p1": 0.3,
+  "classical_pass_rate_p2": 1.0,
+  "exact_optimum_agreement_p1": 0.15,
+  "exact_optimum_agreement_p2": 0.85,
+  "mean_utility_regret_p1": 0.46,
+  "mean_utility_regret_p2": 0.1333,
+  "invalid_selection_rate_p1": 0.0853,
+  "invalid_selection_rate_p2": 0.0619,
+  "exactly_one_bitstring_rate_p1": 0.1414,
+  "exactly_one_bitstring_rate_p2": 0.1799,
+  "execution_time_seconds": 5.9012
+}

@@ -28,3 +28,20 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Databases & caches
+*.db
+__pycache__/
+.pytest_cache/
+test-results/
+
+# Python & Engine
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.db
+

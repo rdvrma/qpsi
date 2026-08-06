@@ -61,16 +61,19 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         </nav>
 
         {/* Right Status & Actions */}
-        <div className="hidden sm:flex items-center space-x-4">
-          <div className="px-2.5 py-1 border border-white/14 bg-white/[0.02] text-[10px] font-mono text-midGray uppercase tracking-widest hidden xl:block">
-            {siteConfig.company.stageBadge}
-          </div>
+        <div className="hidden sm:flex items-center space-x-3">
+          <Link
+            href="/prototype"
+            className="px-3.5 py-2 bg-white text-black hover:bg-white/90 transition-all text-xs font-mono font-bold uppercase tracking-wider border border-white"
+          >
+            RUN PROTOTYPE
+          </Link>
 
           <button
             onClick={() => onOpenModal('deck')}
-            className="inline-flex items-center space-x-1.5 px-4 py-2 bg-primaryWhite text-bgBlack hover:bg-white transition-all text-xs font-mono font-semibold uppercase tracking-wider border border-primaryWhite"
+            className="inline-flex items-center space-x-1.5 px-4 py-2 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 transition-all text-xs font-mono font-semibold uppercase tracking-wider"
           >
-            <span>Investor Deck</span>
+            <span>Deck (PDF)</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         </div>

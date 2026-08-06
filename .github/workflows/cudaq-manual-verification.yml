@@ -1,0 +1,19 @@
+name: Manual CUDA-Q Experiment Verification
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-cudaq-container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run CUDA-Q Experiment Container
+        run: |
+          cd experiments/qpsi-transition-search
+          docker-compose -f docker-compose.cudaq.yml up --build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cudaq-experiment-artifacts
+          path: experiments/qpsi-transition-search/artifacts/

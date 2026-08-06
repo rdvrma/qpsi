@@ -1,0 +1,58 @@
+{
+  "manifest": [
+    {
+      "filename": "environment.json",
+      "checksum_sha256": "6e82e2fc8f71d7c8f0fa2c8eca4000220846d5dad2fa53fba7bcefa6d72386cb",
+      "generating_command": "python -m qpsi_transition_search.cli --run-benchmarks",
+      "timestamp": "2026-08-06T11:55:50Z",
+      "git_commit_sha": "ea3ef0707023c7bc49005474f80c5997bcab1f51",
+      "cudaq_version": "N/A (Host environment missing cudaq package)",
+      "environment_id": "qpp-cpu"
+    },
+    {
+      "filename": "scenarios.json",
+      "checksum_sha256": "8c83e23c2e09def8848975fb3db996a9e284ec187868e4589847d19a2c0194a4",
+      "generating_command": "python -m qpsi_transition_search.cli --run-benchmarks",
+      "timestamp": "2026-08-06T11:55:50Z",
+      "git_commit_sha": "ea3ef0707023c7bc49005474f80c5997bcab1f51",
+      "cudaq_version": "N/A (Host environment missing cudaq package)",
+      "environment_id": "qpp-cpu"
+    },
+    {
+      "filename": "benchmark-results.json",
+      "checksum_sha256": "4daaa4e3c9078f7ded32a0b5fa89c767450c2d1f8535ff05c0e1b8dd89c1282c",
+      "generating_command": "python -m qpsi_transition_search.cli --run-benchmarks",
+      "timestamp": "2026-08-06T11:55:50Z",
+      "git_commit_sha": "ea3ef0707023c7bc49005474f80c5997bcab1f51",
+      "cudaq_version": "N/A (Host environment missing cudaq package)",
+      "environment_id": "qpp-cpu"
+    },
+    {
+      "filename": "benchmark-results.csv",
+      "checksum_sha256": "682063a283bed166f21c29ee759d79d1cb35b960f9653e6d242c30bf34863584",
+      "generating_command": "python -m qpsi_transition_search.cli --run-benchmarks",
+      "timestamp": "2026-08-06T11:55:50Z",
+      "git_commit_sha": "ea3ef0707023c7bc49005474f80c5997bcab1f51",
+      "cudaq_version": "N/A (Host environment missing cudaq package)",
+      "environment_id": "qpp-cpu"
+    },
+    {
+      "filename": "aggregate-metrics.json",
+      "checksum_sha256": "dd1b2bd1815d9e9186b474d292b8c4b83d93052aa65e3c04c60360064f826741",
+      "generating_command": "python -m qpsi_transition_search.cli --run-benchmarks",
+      "timestamp": "2026-08-06T11:55:50Z",
+      "git_commit_sha": "ea3ef0707023c7bc49005474f80c5997bcab1f51",
+      "cudaq_version": "N/A (Host environment missing cudaq package)",
+      "environment_id": "qpp-cpu"
+    },
+    {
+      "filename": "qaoa-parameters.json",
+      "checksum_sha256": "f5a0dd066fc4c51d78803be7379cb6222aa684a38c05fca27e97e7a8846783d3",
+      "generating_command": "python -m qpsi_transition_search.cli --run-benchmarks",
+      "timestamp": "2026-08-06T11:55:50Z",
+      "git_commit_sha": "ea3ef0707023c7bc49005474f80c5997bcab1f51",
+      "cudaq_version": "N/A (Host environment missing cudaq package)",
+      "environment_id": "qpp-cpu"
+    }
+  ]
+}
