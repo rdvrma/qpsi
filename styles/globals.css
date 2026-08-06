@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-black: #050505;
+  --primary-white: #F5F5F2;
+  --soft-white: #D8D8D2;
+  --dark-gray: #111111;
+  --mid-gray: #777777;
+  --border-gray: rgba(255, 255, 255, 0.14);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-black);
+  color: var(--primary-white);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #050505;
+  color: #F5F5F2;
+  position: relative;
+  min-height: 100vh;
+  selection-background-color: #F5F5F2;
+  selection-color: #050505;
+}
+
+::selection {
+  background: #F5F5F2;
+  color: #050505;
+}
+
+/* Subtle Noise Background */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Glassmorphic border utility */
+.border-subtle {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.border-subtle-hover {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.border-subtle-hover:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Serif Headline Helper */
+.font-serif-headline {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
