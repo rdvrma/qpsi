@@ -802,7 +802,7 @@ export const siteConfig = {
       secondary: 'Discuss the first proof',
       email: 'nishant@darkcloud.co.in',
       linkedin: 'https://linkedin.com/in/nishant-sinha-qpsi',
-      deckPdf: '/docs/Q-Psi-Investor-Deck-2026.pdf',
+      deckPdf: '/QPsi_Investor_Deck_Final_10_Pages.pdf',
     },
   },
 

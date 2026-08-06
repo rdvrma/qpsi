@@ -133,13 +133,16 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 {siteConfig.hero.primaryCta}
               </a>
 
-              <button
-                onClick={() => onOpenModal('deck')}
-                className="inline-flex items-center justify-center space-x-2 px-8 py-4 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 hover:border-white transition-all font-mono text-xs font-semibold uppercase tracking-widest"
+              <a
+                href="/QPsi_Investor_Deck_Final_10_Pages.pdf"
+                download="QPsi_Investor_Deck_Final_10_Pages.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center space-x-2 px-8 py-4 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 hover:border-white transition-all font-mono text-xs font-semibold uppercase tracking-widest text-center"
               >
-                <span>{siteConfig.hero.secondaryCta}</span>
+                <span>{siteConfig.hero.secondaryCta} (PDF)</span>
                 <ArrowUpRight className="w-4 h-4" />
-              </button>
+              </a>
 
               <button
                 onClick={() => onOpenModal('contact')}

@@ -106,22 +106,51 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                 <h3 className="text-2xl font-serif tracking-tight">Request Received</h3>
                 <p className="text-sm text-softWhite max-w-xs mx-auto leading-relaxed">
                   {type === 'deck'
-                    ? 'Thank you for your interest in Q-Psi. The private investor presentation deck and data-room link will be sent to your email shortly.'
+                    ? 'Thank you for your interest in Q-Psi. You can download the investor deck immediately below or access it via your email.'
                     : 'Your message has been sent directly to Nishant Kumar Sinha (Founder, Q-Psi). We will respond within 24 hours.'}
                 </p>
-                <button
-                  onClick={handleReset}
-                  className="mt-6 px-6 py-2.5 bg-primaryWhite text-bgBlack text-xs font-mono tracking-widest uppercase hover:bg-white transition-colors"
-                >
-                  Close Window
-                </button>
+
+                {type === 'deck' && (
+                  <a
+                    href="/QPsi_Investor_Deck_Final_10_Pages.pdf"
+                    download="QPsi_Investor_Deck_Final_10_Pages.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 px-6 py-3 bg-white text-bgBlack font-mono text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-all mt-4 border border-white"
+                  >
+                    <span>Download Investor Deck PDF</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                )}
+
+                <div>
+                  <button
+                    onClick={handleReset}
+                    className="mt-4 px-6 py-2.5 border border-white/20 text-softWhite text-xs font-mono tracking-widest uppercase hover:bg-white/10 transition-colors"
+                  >
+                    Close Window
+                  </button>
+                </div>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <h3 className="text-2xl font-serif tracking-tight">
-                    {title || (type === 'deck' ? 'Request Investor Deck' : 'Direct Founder Dialogue')}
-                  </h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-serif tracking-tight">
+                      {title || (type === 'deck' ? 'Request Investor Deck' : 'Direct Founder Dialogue')}
+                    </h3>
+                    {type === 'deck' && (
+                      <a
+                        href="/QPsi_Investor_Deck_Final_10_Pages.pdf"
+                        download="QPsi_Investor_Deck_Final_10_Pages.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-mono uppercase tracking-wider text-white underline decoration-white/40 hover:text-white"
+                      >
+                        Direct PDF
+                      </a>
+                    )}
+                  </div>
                   <p className="text-xs text-midGray mt-1 font-mono">
                     {type === 'deck'
                       ? 'Pre-seed round | Confidential research & financial overview'

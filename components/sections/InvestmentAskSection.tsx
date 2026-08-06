@@ -95,18 +95,21 @@ export function InvestmentAskSection({ onOpenModal }: InvestmentAskSectionProps)
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+            <a
+              href="/QPsi_Investor_Deck_Final_10_Pages.pdf"
+              download="QPsi_Investor_Deck_Final_10_Pages.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 bg-bgBlack text-primaryWhite hover:bg-black transition-all font-mono text-xs font-bold uppercase tracking-widest flex items-center justify-center space-x-2 text-center"
+            >
+              <span>Download PDF Deck</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
             <button
               onClick={() => onOpenModal('deck')}
-              className="w-full sm:w-auto px-8 py-4 bg-bgBlack text-primaryWhite hover:bg-black transition-all font-mono text-xs font-bold uppercase tracking-widest flex items-center justify-center space-x-2"
-            >
-              <span>{ask.ctas.primary}</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => onOpenModal('contact')}
               className="w-full sm:w-auto px-8 py-4 border border-black text-bgBlack hover:bg-black/5 transition-all font-mono text-xs font-bold uppercase tracking-widest"
             >
-              {ask.ctas.secondary}
+              Request Access
             </button>
           </div>
         </div>
