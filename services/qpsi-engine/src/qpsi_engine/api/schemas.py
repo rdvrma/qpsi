@@ -8,6 +8,20 @@ class HealthResponse(BaseModel):
     version: str = "0.1.0"
 
 
+class ReadyResponse(BaseModel):
+    status: str = "ready"
+    service: str = "qpsi-engine"
+    database_ready: bool = True
+    public_demo_enabled: bool = True
+
+
+class SessionResponse(BaseModel):
+    session_id: str
+    world_id: str
+    created_at: str
+    is_new: bool
+
+
 class CommandRequest(BaseModel):
     actor_id: str = Field(..., description="ID of the character initiating the command")
     command_type: str = Field(..., description="Type of command (e.g. move_object, pick_up_object, enter_room)")

@@ -87,12 +87,13 @@ export const siteConfig = {
     fullName: 'Q-Psi Persistent World Engine',
     mark: 'QΨ',
     tagline: 'Persistent World Engine',
-    stageBadge: 'Founder-led | Idea stage | Pre-prototype',
+    stageBadge: 'EARLY FUNCTIONAL PROTOTYPE | PRE-CUSTOMER',
     parentCompany: 'Darkcloud Infosystems Pvt. Ltd.',
     copyrightYear: '2026',
   },
 
   navigation: [
+    { label: 'PROTOTYPE', href: '/prototype' },
     { label: 'Problem', href: '#problem' },
     { label: 'Smallest Unit', href: '#smallest-unit' },
     { label: 'Expansion', href: '#expansion' },

@@ -1,5 +1,3 @@
-
-
 def test_api_health(client):
     """Test 16: API GET /health returns 200 OK."""
     response = client.get("/health")
@@ -7,6 +5,15 @@ def test_api_health(client):
     data = response.json()
     assert data["status"] == "ok"
     assert data["service"] == "qpsi-engine"
+
+
+def test_api_readiness(client):
+    """Test API GET /ready returns 200 OK and database_ready = True."""
+    response = client.get("/ready")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "ready"
+    assert data["database_ready"] is True
 
 
 def test_api_world_creation(client):
@@ -88,3 +95,45 @@ def test_api_replay_and_integrity_verification(client):
     assert integrity_data["integrity_valid"] is True, f"Integrity errors: {integrity_data.get('errors')}"
     assert integrity_data["event_count"] >= 1
     assert len(integrity_data["errors"]) == 0
+
+
+def test_api_demo_session_creation(client):
+    """Test POST /sessions creates isolated session & seeded world."""
+    response = client.post("/sessions")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["session_id"].startswith("sess_")
+    assert data["world_id"].startswith("w_")
+    assert data["is_new"] is True
+
+
+def test_api_session_isolation(client):
+    """Test two demo sessions receive different isolated worlds."""
+    resp1 = client.post("/sessions")
+    sess1 = resp1.json()
+
+    resp2 = client.post("/sessions")
+    sess2 = resp2.json()
+
+    assert sess1["session_id"] != sess2["session_id"]
+    assert sess1["world_id"] != sess2["world_id"]
+
+    # Session 1 moves book
+    client.post(
+        f"/worlds/{sess1['world_id']}/commands",
+        json={
+            "actor_id": "marcus",
+            "command_type": "move_object",
+            "target_id": "book",
+            "source_location": "shelf",
+            "destination_location": "table",
+        },
+    )
+
+    # World 1 book surface is table
+    w1_resp = client.get(f"/worlds/{sess1['world_id']}")
+    assert w1_resp.json()["canonical_state"]["objects"]["book"]["container_surface"] == "table"
+
+    # World 2 book surface remains shelf (unaffected!)
+    w2_resp = client.get(f"/worlds/{sess2['world_id']}")
+    assert w2_resp.json()["canonical_state"]["objects"]["book"]["container_surface"] == "shelf"

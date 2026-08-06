@@ -44,3 +44,12 @@ class SnapshotModel(Base):  # type: ignore[misc]
     state_digest = Column(String, nullable=False)
     snapshot_json = Column(JSON, nullable=False)
     created_at = Column(DateTime, server_default=func.now())
+
+
+class DemoSessionModel(Base):  # type: ignore[misc]
+    __tablename__ = "demo_sessions"
+
+    session_id = Column(String, primary_key=True, index=True)
+    world_id = Column(String, nullable=False, index=True)
+    created_at = Column(String, nullable=False)
+    last_accessed_at = Column(String, nullable=False)

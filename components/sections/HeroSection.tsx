@@ -127,8 +127,16 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
               <a
+                href="/prototype"
+                className="px-8 py-4 bg-white text-black font-mono text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-all text-center border border-white shadow-xl flex items-center justify-center gap-2"
+              >
+                <span>RUN LIVE PROTOTYPE</span>
+                <ArrowUpRight className="w-4 h-4 text-black" />
+              </a>
+
+              <a
                 href="#problem"
-                className="px-8 py-4 bg-primaryWhite text-bgBlack font-mono text-xs font-semibold uppercase tracking-widest hover:bg-white transition-all text-center border border-primaryWhite shadow-xl"
+                className="px-8 py-4 border border-white/20 bg-white/[0.02] text-primaryWhite hover:bg-white/10 transition-all font-mono text-xs font-semibold uppercase tracking-widest text-center"
               >
                 {siteConfig.hero.primaryCta}
               </a>
@@ -143,13 +151,20 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 <span>{siteConfig.hero.secondaryCta} (PDF)</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
+            </div>
 
-              <button
-                onClick={() => onOpenModal('contact')}
-                className="text-xs font-mono text-midGray hover:text-white transition-colors underline decoration-white/30 text-center py-2 sm:py-0"
-              >
-                {siteConfig.hero.tertiaryLink}
-              </button>
+            {/* Founder Proof Strip */}
+            <div className="bg-[#111111] border border-white/10 rounded p-3 font-mono text-xs text-white/80 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px]">
+              <span className="text-white font-semibold">FOUNDER PROOF STRIP:</span>
+              <span className="text-emerald-400 font-semibold">✓ Classical state engine verified</span>
+              <span className="text-white/40">•</span>
+              <span className="text-emerald-400 font-semibold">✓ Append-only ledger</span>
+              <span className="text-white/40">•</span>
+              <span className="text-emerald-400 font-semibold">✓ Belief separation</span>
+              <span className="text-white/40">•</span>
+              <span className="text-emerald-400 font-semibold">✓ Contradiction rejection</span>
+              <span className="text-white/40">•</span>
+              <span className="text-emerald-400 font-semibold">✓ Deterministic replay</span>
             </div>
 
             {/* Live Ledger Micro Stream */}
