@@ -11,6 +11,16 @@ This repository is the single authoritative monorepo containing:
 
 ---
 
+## Prototype Evidence
+
+- **Live Prototype**: [https://qpsi.vercel.app/prototype](https://qpsi.vercel.app/prototype)
+- **Main Website**: [https://qpsi.vercel.app](https://qpsi.vercel.app)
+- **Public Repository**: [https://github.com/rdvrma/qpsi](https://github.com/rdvrma/qpsi)
+
+The prototype demonstrates the smallest persistent-world unit: two characters, one room, canonical state persistence, replayable event history, and state surviving process restart. It is text/state-based, not a finished visual world or commercial product.
+
+---
+
 ## Technical Stack & Services
 
 ### Website Frontend
@@ -65,7 +75,7 @@ docker-compose -f docker-compose.prototype.yml up --build
 
 ## Truthfulness & Disclosure Guidelines
 
-- **Pre-Prototype Status**: Q-Psi is an idea-stage deep-tech research initiative. No working commercial Q-Psi product or paying customer is claimed today.
+- **Prototype Status**: Q-Psi has a working classical technical prototype demonstrating the smallest persistent-world unit: two characters, one room, canonical state persistence and replayable history that survives restart. It is a prototype-stage, classical-first, evidence-based deep-tech initiative — not yet a commercial production system. No paying users or production deployment are claimed.
 - **Quantum Claims**: Quantum methods are evaluated strictly as experimental candidate search backends against a mandatory classical baseline. No quantum advantage is claimed.
 - **Founder Background**: Nishant Kumar Sinha has 10+ years of software-business execution experience at Darkcloud Infosystems Pvt. Ltd. He discontinued his CSE B.Tech in 3rd year (2009) to pursue technology entrepreneurship. He is not described as a quantum scientist or completed degree holder.
 
