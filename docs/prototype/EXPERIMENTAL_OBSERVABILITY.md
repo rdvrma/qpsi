@@ -13,6 +13,7 @@ Provides reproducible, telemetry-backed scientific evidence for classical state-
 4. **Intentionally Rejected Contradiction Cases**: In the baseline workload, intentionally invalid/adversarial transitions (e.g. non-existent objects, unknown actors, unconnected rooms) are tested to verify that the engine correctly enforces physical state validity rules. Rejection of invalid transitions is an **engine invariant success**, not an engine failure. Metrics report **Expected Outcome Match Rate** (100% target).
 5. **Environment-Dependent Latency**: Recorded transition latencies (`mean_transition_latency_ms`, `p95_transition_latency_ms`) are host-environment dependent. Deterministic state verification relies on bit-exact state digest matching (`final_state_digest`).
 6. **Triple Reproducibility**: Bit-exact state determinism requires matching `scenario_id`, `engine_version`, and `git_commit_sha`.
+7. **Two-Commit Evidence Model**: The evidence record file (`docs/prototype/evidence/classical-baseline-v1.json`) explicitly references `benchmark_code_commit_sha` (`9d16192c1d78be77aca9c94e2ef184adaccac962`), ensuring the benchmark code commit tested remains clean and unambiguously identifiable.
 
 ---
 
