@@ -440,7 +440,7 @@ def run_full_benchmark_suite(
     }
 
     print("=" * 70)
-    print(" Q-PSI SCALABLE CLASSICAL VALIDATION BENCHMARK SUITE (100 → 1,000)")
+    print(" Q-PSI SCALABLE CLASSICAL VALIDATION BENCHMARK SUITE (100 -> 1,000)")
     print("=" * 70)
 
     for sz in sizes:
