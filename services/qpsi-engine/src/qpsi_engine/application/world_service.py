@@ -1,3 +1,4 @@
+import time
 from typing import Tuple, Optional, List
 from sqlalchemy.orm import Session
 from qpsi_engine.domain.character import Character
@@ -12,16 +13,19 @@ from qpsi_engine.application.command_handler import CommandHandler
 from qpsi_engine.application.replay_engine import ReplayEngine
 from qpsi_engine.infrastructure.world_repository import WorldRepository
 from qpsi_engine.infrastructure.event_repository import EventRepository
+from qpsi_engine.infrastructure.observability import ObservabilityAdapter, default_observability_adapter
 
 
 class WorldService:
-    def __init__(self, db: Session):
+    def __init__(self, db: Session, observability: Optional[ObservabilityAdapter] = None):
         self.db = db
         self.world_repo = WorldRepository(db)
         self.event_repo = EventRepository(db)
+        self.observability = observability or default_observability_adapter
 
     def seed_world(self, world_id: str = "world-001") -> WorldState:
         """Seeds the mandatory M1 reference world with Marcus, Elena, main_room, book, key, glass."""
+        t_start = time.perf_counter()
         marcus = Character(id="marcus", name="Marcus", location_id="main_room", inventory=[])
         elena = Character(id="elena", name="Elena", location_id="main_room", inventory=[])
 
@@ -58,12 +62,25 @@ class WorldService:
 
         # Save active state and initial seed snapshot
         self.world_repo.save_world(world_state, initial_seed_state=world_state)
+        elapsed_ms = (time.perf_counter() - t_start) * 1000.0
+
+        self.observability.trace_operation(
+            "seed_world",
+            {
+                "world_id": world_id,
+                "sequence_number": 0,
+                "state_digest": world_state.calculate_digest(),
+                "elapsed_ms": elapsed_ms,
+            },
+        )
+
         return world_state
 
     def get_world(self, world_id: str) -> Optional[WorldState]:
         return self.world_repo.get_world(world_id)
 
     def execute_command(self, command: Command) -> Tuple[ValidationResult, Optional[Event]]:
+        t_start = time.perf_counter()
         world_state = self.world_repo.get_world(command.world_id)
         if not world_state:
             val_res = ValidationResult(
@@ -71,17 +88,68 @@ class WorldService:
                 code="WORLD_NOT_FOUND",
                 error_message=f"World '{command.world_id}' does not exist.",
             )
+            elapsed_ms = (time.perf_counter() - t_start) * 1000.0
+            self.observability.trace_operation(
+                "state_transition",
+                {
+                    "world_id": command.world_id,
+                    "actor_id": command.actor_id,
+                    "command_type": command.command_type,
+                    "valid": False,
+                    "code": "WORLD_NOT_FOUND",
+                    "error_message": val_res.error_message,
+                    "elapsed_ms": elapsed_ms,
+                },
+            )
             return val_res, None
 
+        prev_digest = world_state.calculate_digest()
         last_event = self.event_repo.get_last_event(command.world_id)
         last_hash = last_event.event_hash if last_event else "0" * 64
 
         val_result, event = CommandHandler.handle_command(command, world_state, last_event_hash=last_hash)
+        persistence_success = False
 
         if val_result.valid and event:
             # Save committed event to ledger and update canonical world state
+            t_persist_start = time.perf_counter()
             self.event_repo.save_event(event)
             self.world_repo.save_world(world_state)
+            persist_ms = (time.perf_counter() - t_persist_start) * 1000.0
+            persistence_success = True
+
+            self.observability.trace_operation(
+                "canonical_persistence",
+                {
+                    "world_id": command.world_id,
+                    "sequence_number": event.sequence_number,
+                    "state_digest": world_state.calculate_digest(),
+                    "event_hash": event.event_hash,
+                    "success": True,
+                    "elapsed_ms": persist_ms,
+                },
+            )
+
+        elapsed_ms = (time.perf_counter() - t_start) * 1000.0
+        resulting_digest = world_state.calculate_digest() if world_state else ""
+
+        self.observability.trace_operation(
+            "state_transition",
+            {
+                "world_id": command.world_id,
+                "actor_id": command.actor_id,
+                "command_type": command.command_type,
+                "target_id": command.target_id or "",
+                "sequence_number": event.sequence_number if event else world_state.sequence_number,
+                "previous_state_digest": prev_digest,
+                "resulting_state_digest": resulting_digest,
+                "valid": val_result.valid,
+                "code": val_result.code,
+                "error_message": val_result.error_message or "",
+                "persistence_success": persistence_success,
+                "elapsed_ms": elapsed_ms,
+            },
+        )
 
         return val_result, event
 
@@ -90,6 +158,7 @@ class WorldService:
 
     def replay_world(self, world_id: str) -> Tuple[WorldState, bool, str]:
         """Reconstructs state from scratch from initial seed + event ledger, returning (replayed_state, matches, active_digest)."""
+        t_start = time.perf_counter()
         active_state = self.world_repo.get_world(world_id)
         if not active_state:
             raise ValueError(f"World '{world_id}' not found.")
@@ -104,9 +173,38 @@ class WorldService:
         active_digest = active_state.calculate_digest()
         replayed_digest = replayed_state.calculate_digest()
         matches = (active_digest == replayed_digest)
+        elapsed_ms = (time.perf_counter() - t_start) * 1000.0
+
+        self.observability.trace_operation(
+            "replay",
+            {
+                "world_id": world_id,
+                "events_replayed_count": len(events),
+                "active_digest": active_digest,
+                "replayed_digest": replayed_digest,
+                "digest_match": matches,
+                "success": matches,
+                "elapsed_ms": elapsed_ms,
+            },
+        )
 
         return replayed_state, matches, active_digest
 
     def verify_integrity(self, world_id: str) -> Tuple[bool, List[str]]:
+        t_start = time.perf_counter()
         events = self.event_repo.get_events(world_id)
-        return ReplayEngine.verify_integrity(events)
+        is_valid, errors = ReplayEngine.verify_integrity(events)
+        elapsed_ms = (time.perf_counter() - t_start) * 1000.0
+
+        self.observability.trace_operation(
+            "integrity_verification",
+            {
+                "world_id": world_id,
+                "events_checked": len(events),
+                "valid": is_valid,
+                "errors_count": len(errors),
+                "elapsed_ms": elapsed_ms,
+            },
+        )
+
+        return is_valid, errors

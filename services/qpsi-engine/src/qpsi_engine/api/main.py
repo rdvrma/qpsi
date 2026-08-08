@@ -7,10 +7,15 @@ from qpsi_engine.infrastructure.database import init_db
 from qpsi_engine.api.routes import health, sessions, worlds, commands, events
 
 
+from qpsi_engine.infrastructure.observability import default_observability_adapter
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     init_db()
+    default_observability_adapter.initialize()
     yield
+    default_observability_adapter.flush()
 
 
 app = FastAPI(

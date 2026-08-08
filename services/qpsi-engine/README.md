@@ -39,3 +39,9 @@ It proves the smallest repeatable Q-Psi unit:
    ```bash
    curl -X POST http://localhost:8000/worlds/world-001/demo
    ```
+
+5. **Run Classical Baseline Experiment Benchmark**:
+   ```bash
+   python -m qpsi_engine.experiments.classical_baseline
+   ```
+   *(Optional W&B Weave telemetry setup detailed in [`docs/prototype/EXPERIMENTAL_OBSERVABILITY.md`](../../docs/prototype/EXPERIMENTAL_OBSERVABILITY.md)).*
