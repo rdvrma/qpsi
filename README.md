@@ -1,43 +1,55 @@
-# Q-Psi — Persistent World Engine Monorepo
+# Q-Psi — Independent Quantum Research
 
-Official authoritative repository for **Q-Psi (Persistent World Engine)**, built for an ambitious deep-tech research initiative led by **Nishant Kumar Sinha** (Director, Darkcloud Infosystems Pvt. Ltd.).
+Q-Psi is an independent quantum research initiative of The Oneness Project.
 
-This repository is the single authoritative monorepo containing:
-1. The live Next.js Q-Psi website;
-2. The **M1 Classical Reference State Engine** (`services/qpsi-engine`);
-3. Technical documentation and acceptance evidence (`docs/prototype`);
-4. Prototype automation scripts (`scripts/`);
-5. Docker prototype orchestration (`docker-compose.prototype.yml`).
-
----
-
-## Prototype Evidence
-
-- **Live Prototype**: [https://qpsi.vercel.app/prototype](https://qpsi.vercel.app/prototype)
-- **Main Website**: [https://qpsi.vercel.app](https://qpsi.vercel.app)
-- **Public Repository**: [https://github.com/rdvrma/qpsi](https://github.com/rdvrma/qpsi)
-
-The prototype demonstrates the smallest persistent-world unit: two characters, one room, canonical state persistence, replayable event history, and state surviving process restart. It is text/state-based, not a finished visual world or commercial product.
+Focus areas:
+- physical-QPU experiments
+- quantum compiler research
+- reproducible evidence
+- algorithmic/query-complexity experiments
+- publication of positive, negative and inconclusive results
 
 ---
 
-## Technical Stack & Services
+## Current Q-Psi Research
 
-### Website Frontend
-- **Framework**: Next.js 15 (App Router) + React 19 + TypeScript
-- **Styling**: Tailwind CSS + Vanilla CSS tokens (`#050505`, `#F5F5F2`, `#D8D8D2`, `#111111`)
-- **Animation & Motion**: Framer Motion
-- **Deployment**: Vercel (`https://qpsi.vercel.app`)
+Q-Psi investigates quantum computational architectures by executing transpiled and compiled quantum circuits directly on physical superconducting quantum processors (IBM Quantum Heron architecture: `ibm_marrakesh`, 156 programmable qubits).
 
-### Classical State Engine (`services/qpsi-engine`)
-- **Framework**: Python 3.14 + FastAPI + Pydantic v2 + SQLAlchemy 2.0
-- **Database**: Persistent SQLite (`qpsi_world.db`)
-- **Ledger**: SHA-256 append-only cryptographic event hash chain
-- **Testing**: `pytest` (20 automated tests) + `ruff` + `mypy`
+### Quantum Claim Boundaries
+
+All empirical claims are bound to explicit verification artifacts, cryptographic SHA256 hashes, and IBM Quantum job IDs:
+
+- **Dynamic Bernstein-Vazirani Oracle Experiment**: **SUPPORTED**
+  - Demonstrated bounded query-complexity advantage under single-shot Pokharel-Lidar sampling methodology on physical IBM quantum hardware ($\alpha_Q = 0.1532 \pm 0.0177$ vs classical baseline $\alpha_C = 0.6963$, $t = -30.65, p = 3.47 \times 10^{-7}$).
+- **Q-Psi State-Space Compiler (Stage-6F)**: **INTEROPERABILITY PASS / COMPILER ADVANTAGE NOT YET ESTABLISHED**
+  - Mapped discrete software repair interaction graphs from 8 programming ecosystems to QUBO/Ising Hamiltonians; recovered exact classical optimum on all tested instances with $N \le 10$ variables (4/4, 100%). Gate-depth noise degraded quality on $N \ge 18$. Compiler-specific quantum advantage over classical solvers is not yet established.
+- **Restricted-Hamming-Weight Simon Experiment**: **SPEEDUP INCONCLUSIVE**
+  - Constant-depth (15-16 layer) hardware-aware circuits executed across 16 to 56 physical qubits; exact period recovered on a subset of instances. Universal asymptotic speedup remains inconclusive on raw unmitigated hardware.
+- **Mantra State Encoding**: **EXPLORATORY**
+  - Deterministic SHA256 parameter mapping of text inputs onto 16-qubit entangled states generating distinct measured output distributions (TVD ~0.98-0.99). Zero metaphysical, causal, or consciousness claims.
+
+*Note: Q-Psi does not claim general-purpose quantum computing supremacy.*
 
 ---
 
-## Quick Start — Running & Testing Engine
+## Research Support & Funding Disclosures
+
+- **Parent Initiative**: The Oneness Project
+- **Sibling Initiative**: SattvaOS (Governed Intelligence / AI)
+- **Founder-Funded Research to Date**: USD $9,850
+- **Public Research Fund Goal**: USD $50,000
+- **Authoritative Contact**: `aadisatv@sattvaos.tech`
+- **Live Research Support**: [https://www.paypal.com/ncp/payment/8FW5GHBJGG9AA](https://www.paypal.com/ncp/payment/8FW5GHBJGG9AA)
+
+---
+
+## Prior Research: Persistent World Engine
+
+Prior to expanding into physical-QPU compilation and query-complexity benchmarks, Q-Psi developed a classical reference state engine for persistent reality modeling (the "Persistent World Engine").
+
+The reference engine prototype demonstrates canonical state persistence across process restarts using an append-only SQLite ledger with SHA256 event-hash chaining.
+
+### Running the Historical Classical Engine
 
 ```bash
 # 1. Run Classical Reference State Engine API (Port 8000)
@@ -54,33 +66,29 @@ docker-compose -f docker-compose.prototype.yml up --build
 
 ---
 
-## Monorepo Directory Layout
+## Public Repository Layout
 
 ```
-├── app/                        # Next.js 15 Website Frontend
-├── components/                 # UI & Visualization Components
-├── content/                    # Structured Site Config & Copy
-├── docs/                       # Monorepo Documentation & Prototype Proof Logs
-│   └── prototype/              # Architecture, Limits, M1 Engine & Acceptance Evidence
-├── lib/                        # Website utilities
-├── public/                     # Static assets & Investor Deck PDF
-├── scripts/                    # Engine launch & test automation scripts
+├── app/                        # Next.js 15 Quantum Research Website
+├── components/                 # UI, 3D WebGL Bloch Sphere & Visualization Components
+├── content/                    # Structured Research Config, Manuscripts & Evidence
+├── docs/                       # Historical Prototype Proof Logs & Baseline Architecture
+├── public/                     # Static Web Assets & Social Previews
+├── scripts/                    # Historical engine launch & test automation scripts
 ├── services/
-│   └── qpsi-engine/            # M1 Classical Reference State Engine Service
-├── styles/                     # CSS design tokens & global styles
-└── docker-compose.prototype.yml# Production container orchestration for engine
+│   └── qpsi-engine/            # Classical Reference State Engine Service
+└── styles/                     # Deep Quantum Obsidian CSS Tokens & Global Styles
 ```
 
 ---
 
-## Truthfulness & Disclosure Guidelines
+## Founder Background & Execution
 
-- **Prototype Status**: Q-Psi has a working classical technical prototype demonstrating the smallest persistent-world unit: two characters, one room, canonical state persistence and replayable history that survives restart. It is a prototype-stage, classical-first, evidence-based deep-tech initiative — not yet a commercial production system. No paying users or production deployment are claimed.
-- **Quantum Claims**: Quantum methods are evaluated strictly as experimental candidate search backends against a mandatory classical baseline. No quantum advantage is claimed.
-- **Founder Background**: Nishant Kumar Sinha has 10+ years of software-business execution experience at Darkcloud Infosystems Pvt. Ltd. He discontinued his CSE B.Tech in 3rd year (2009) to pursue technology entrepreneurship. He is not described as a quantum scientist or completed degree holder.
+Q-Psi was founded by **Nishant Kumar Sinha** (10+ years of software-business operations and execution). B.Tech studies in Computer Science & Engineering were discontinued in 3rd year (2009) to focus on systems engineering and technology entrepreneurship.
 
 ---
 
-## License & Copyright
+## Correspondence & Collaboration
 
-© 2026 Q-Psi / Darkcloud Infosystems Pvt. Ltd. All rights reserved.
+For research collaboration, academic access, compiler evaluation inquiries, or licensing correspondence:
+**Email**: `aadisatv@sattvaos.tech`

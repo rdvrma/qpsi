@@ -43,6 +43,7 @@ export default function EvidencePage() {
               const isSupported = claim.status === 'SUPPORTED';
               const isQualified = claim.status === 'QUALIFIED';
               const isInconclusive = claim.status === 'INCONCLUSIVE';
+              const isExploratory = claim.status === 'EXPLORATORY';
               const isNotSupported = claim.status === 'NOT_SUPPORTED';
 
               return (
@@ -60,6 +61,8 @@ export default function EvidencePage() {
                           ? 'bg-status-pass-bg text-status-pass'
                           : isInconclusive
                           ? 'bg-status-inconclusive-bg text-status-inconclusive'
+                          : isExploratory
+                          ? 'bg-status-exploratory-bg text-status-exploratory'
                           : 'bg-status-fail-bg text-status-fail'
                       }`}
                     >

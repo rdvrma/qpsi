@@ -2,7 +2,7 @@ export interface ClaimItem {
   id: string;
   statement: string;
   experiment: string;
-  status: 'SUPPORTED' | 'QUALIFIED' | 'INCONCLUSIVE' | 'NOT_SUPPORTED';
+  status: 'SUPPORTED' | 'QUALIFIED' | 'INCONCLUSIVE' | 'NOT_SUPPORTED' | 'EXPLORATORY';
   qpu: string;
   jobId: string;
   sha256: string;
@@ -192,7 +192,7 @@ export const siteConfig = {
       id: 'CLAIM-06-MANTRA-EXPLORATORY',
       statement: 'Deterministic cryptographic hash mapping of text strings onto 16-qubit entangled states generates distinct measured output distributions with TVD ~0.98-0.99; no metaphysical, causal, or consciousness claims.',
       experiment: 'Exploratory Mantra Quantum State Encoding',
-      status: 'SUPPORTED',
+      status: 'EXPLORATORY',
       qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da19q86g52gs73clcd7g',
       sha256: '6d24837313ca01b52f1d602ef0249f0bcc1b6714bb5ba974ec967153674d838f',
@@ -210,7 +210,7 @@ export const siteConfig = {
       qubits: '5 to 17 Qubits',
       status: 'SUPPORTED',
       advantageBadge: 'QUANTUM ADVANTAGE — SUPPORTED',
-      summary: 'Implemented single-shot dynamic BV protocol (n in [4, 16]). Measured quantum scaling exponent alpha_Q = 0.1532 vs classical exponent alpha_C = 0.6963 (t = -30.65, p = 3.47e-7). Demonstrates genuine oracle query-complexity advantage under Pokharel-Lidar single-shot sampling methodology.',
+      summary: 'Implemented single-shot dynamic BV protocol (n in [4, 16]). Measured quantum scaling exponent alpha_Q = 0.1532 vs classical exponent alpha_C = 0.6963 (t = -30.65, p = 3.47e-7). Demonstrates quantum query-complexity advantage under the audited Pokharel-Lidar single-shot sampling methodology on physical IBM quantum hardware.',
     },
     {
       code: 'QPSI-EXP-COMPILER-6F',

@@ -337,10 +337,10 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between border-b border-border/80 pb-4 gap-4">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
-                PUBLICATIONS &amp; PREPRINTS
+                MANUSCRIPTS &amp; RESEARCH NOTES
               </span>
               <h2 className="text-3xl font-serif font-bold text-text-primary mt-1">
-                Papers &amp; Scientific Research Notes
+                Manuscripts &amp; Research Notes
               </h2>
             </div>
             <Link
@@ -402,7 +402,7 @@ export default function HomePage() {
               href="/blog"
               className="inline-flex items-center space-x-2 px-6 py-3.5 bg-accent text-bgBlack font-mono text-xs font-bold uppercase tracking-wider rounded shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:bg-accent-hover transition-all shrink-0"
             >
-              <span>READ FULL REPORT</span>
+              <span>VIEW RESEARCH REPORT OVERVIEW</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
@@ -538,7 +538,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-accent font-bold">•</span>
-                  <span><strong>Open Data:</strong> All IBM job IDs and raw SHA256 hashes are published for independent post-hoc verification.</span>
+                  <span><strong>Public Evidence:</strong> IBM job IDs, cryptographic evidence hashes, audited metrics and claim boundaries are published for independent verification.</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-accent font-bold">•</span>

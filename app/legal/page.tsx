@@ -22,7 +22,7 @@ export default function LegalPage() {
         </Link>
 
         <div className="space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-card border border-border rounded-full">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               DISCLOSURES &amp; POLICY
             </span>
@@ -35,14 +35,14 @@ export default function LegalPage() {
           </p>
         </div>
 
-        <div className="space-y-6 text-sm text-text-secondary leading-relaxed border-t border-border pt-6 font-sans">
-          <section className="p-5 border border-border bg-surface-raised rounded-lg space-y-2">
+        <div className="space-y-6 text-sm text-text-secondary leading-relaxed border-t border-border/80 pt-6 font-sans">
+          <section className="p-5 border border-border/80 bg-surface-card rounded-xl space-y-2 glass-panel">
             <div className="flex items-center space-x-2 text-text-primary font-bold font-mono text-xs uppercase">
               <ShieldAlert className="w-4 h-4 text-accent" />
               <span>Experimental Quantum Software &amp; Open Science Disclaimer</span>
             </div>
             <p className="text-xs font-mono text-text-secondary leading-relaxed">
-              Q-Psi quantum research software, compiler outputs, and physical QPU benchmarks are provided for research and evaluation purposes. All experiments are conducted on real physical hardware (IBM Quantum ibm_marrakesh) and published under open-science principles.
+              Q-Psi quantum research software, compiler outputs, and physical QPU benchmarks are provided for research and evaluation purposes. Experiments identified as physical-QPU experiments were executed on real quantum hardware (IBM Quantum ibm_marrakesh) and published under open-science principles.
             </p>
           </section>
 
@@ -56,7 +56,7 @@ export default function LegalPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-serif font-bold text-text-primary">2. Research Evaluation Access Terms</h2>
             <p>
-              Evaluation access to compiler benchmarks and output binaries does NOT grant source code ownership, intellectual property transfer, or commercial production rights. Full commercial project licenses are handled via separate agreements with the research team.
+              When external compiler evaluation access is opened, evaluation access will allow researchers to test compiled benchmarks under designated evaluation agreements. Evaluation access does NOT grant source code ownership, intellectual property transfer, or commercial production rights. Full commercial project licenses are handled via separate agreements with the research team.
             </p>
           </section>
 
@@ -70,7 +70,10 @@ export default function LegalPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-serif font-bold text-text-primary">4. Intellectual Property &amp; Correspondence</h2>
             <p>
-              All research notes, mark definitions (QΨ), paper outlines, and compiler architectures are intellectual property of The Oneness Project and Q-Psi. For scientific licensing or inquiry correspondence: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent font-bold hover:underline">{siteConfig.contact.email}</a>.
+              Q-Psi research materials, compiler technology, marks and unpublished implementation materials remain proprietary unless explicitly released under a stated public license. Legal ownership and licensing terms are defined in the applicable agreement.
+            </p>
+            <p className="text-xs font-mono text-text-muted">
+              For scientific licensing or inquiry correspondence: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent font-bold hover:underline">{siteConfig.contact.email}</a>.
             </p>
           </section>
         </div>

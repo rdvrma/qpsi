@@ -64,7 +64,7 @@ export function Footer({ onOpenModal }: FooterProps = {}) {
               </li>
               <li>
                 <Link href="/papers" className="hover:text-accent transition-colors">
-                  Paper Outlines &amp; Preprints
+                  Manuscripts &amp; Research Notes
                 </Link>
               </li>
               <li>
