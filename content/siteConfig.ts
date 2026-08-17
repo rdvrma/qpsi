@@ -123,6 +123,49 @@ export const siteConfig = {
       'General research support is voluntary. It directly funds physical QPU runtime, open dataset generation, compute infrastructure, and scientific publication. It does not constitute an investment, purchase of securities, commercial license entitlement, or guarantee of commercial quantum advantage.',
   },
 
+  capsule: {
+    title: 'Q-Psi Research Capsule',
+    tagline: 'Evaluate the Q-Psi State-Space Compiler on your own eligible research workload without receiving or exposing the proprietary compiler.',
+    apiBaseUrl: 'https://qpsi-research-capsule-prod-596385402822.us-central1.run.app',
+    maxRuntimeSeconds: 600,
+    supportUrl: 'https://www.paypal.com/ncp/payment/8FW5GHBJGG9AA',
+    contactEmail: 'aadisatv@sattvaos.tech',
+    supportModel: 'SUPPORT_BASED_RESEARCH_ACCESS',
+    coreCopy:
+      'Advanced quantum-research software is often difficult for independent researchers and small research teams to access. Q-Psi is taking a different approach. Research Evaluation Licenses for the Q-Psi Research Capsule are offered through a support-based access model rather than a fixed public research-license price. Support Q-Psi research, describe your intended research use, and request access.',
+    confirmationNotice:
+      'Research Evaluation Licenses are issued only after support for the Q-Psi research program has been confirmed.',
+    futureProductsNotice:
+      'Supporters may also be considered for access to selected future Q-Psi research tools and premium experimental products as those programs become available.',
+    commercialNotice:
+      'Research Evaluation Licenses do not grant commercial deployment, redistribution, production integration or sublicensing rights. For commercial use, send your offer, intended use and organization details to: aadisatv@sattvaos.tech',
+    commercialSectionCopy:
+      'Interested in production integration, enterprise evaluation, strategic licensing or commercial deployment? Send your offer, intended use and organization details to: aadisatv@sattvaos.tech',
+    claimBoundary:
+      'Q-Psi demonstrated compiler-enabled quantum query advantage for candidate-state search on physical quantum hardware under a black-box verifier model. The Capsule allows researchers to evaluate the compiler on their own eligible workloads. The historical result does not imply that every workload will demonstrate quantum advantage.',
+    evidenceReference: {
+      experimentId: 'QPSI_COMPILER_GROVER_QUERY_ADVANTAGE_V1_1',
+      backend: 'ibm_marrakesh (156Q)',
+      shots: 18432,
+      casesWithAdvantage: '9/9',
+      problemSizes: '3/3 (N=4, N=8, N=16)',
+      auditStatus: 'SUPPORTED',
+    },
+    privacyNotice:
+      "Research workloads are processed through Q-Psi's controlled Capsule environment. Do not submit secrets, credentials, private keys or material you are not authorized to process.",
+    emailTemplate: {
+      subject: 'Q-Psi Research Capsule Access Request',
+      fields: [
+        { label: 'Name', key: 'name' },
+        { label: 'Organization / Research Group', key: 'organization' },
+        { label: 'Research Use', key: 'research_use' },
+        { label: 'Workload Description', key: 'workload_description' },
+        { label: 'Quantum / Computing Background', key: 'background' },
+        { label: 'Support Reference', key: 'support_reference' },
+      ],
+    },
+  },
+
   quantumSummary: {
     totalPhysicalShots: 96256,
     campaignsCount: 5,

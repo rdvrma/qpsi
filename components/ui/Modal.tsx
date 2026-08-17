@@ -107,7 +107,7 @@ export function Modal({ isOpen, onClose, title, defaultType = 'deck' }: ModalPro
                 <p className="text-sm text-softWhite max-w-xs mx-auto leading-relaxed font-sans">
                   {type === 'deck'
                     ? 'Thank you for your interest in Q-Psi. You can download the investor deck immediately below or access it via your email.'
-                    : 'Your message has been sent directly to Nishant Kumar Sinha (Founder, Q-Psi). We will respond within 24 hours.'}
+                    : 'Your message has been sent directly to Nishant Kumar Sinha (Founder, Q-Psi). We will review your inquiry and follow up.'}
                 </p>
 
                 {type === 'deck' && (

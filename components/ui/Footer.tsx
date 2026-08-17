@@ -54,6 +54,9 @@ export function Footer({ onOpenModal }: FooterProps = {}) {
           <Link href="/compiler" className="hover:text-accent transition-colors">
             Compiler
           </Link>
+          <Link href="/capsule" className="hover:text-accent transition-colors">
+            Research Capsule
+          </Link>
           <Link href="/papers" className="hover:text-accent transition-colors">
             Papers
           </Link>

@@ -24,10 +24,10 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
 
   const navItems = [
     { label: 'Research', href: '/research' },
-    { label: 'Experiments', href: '/experiments' },
     { label: 'Compiler', href: '/compiler' },
+    { label: 'Capsule', href: '/capsule' },
+    { label: 'Experiments', href: '/experiments' },
     { label: 'Papers', href: '/papers' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Evidence', href: '/evidence' },
     { label: 'About', href: '/about' },
   ];

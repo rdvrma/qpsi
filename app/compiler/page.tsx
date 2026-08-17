@@ -220,18 +220,25 @@ export default function CompilerPage() {
                       <li>PayPal contribution reference</li>
                     </ul>
                   </li>
-                  <li>Access instructions or direct response provided within <strong>24 hours</strong>.</li>
+                  <li>Access instructions and Research Evaluation License key issued upon review.</li>
                 </ol>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap gap-3">
+                <Link
+                  href="/capsule"
+                  className="inline-flex items-center space-x-2 px-5 py-2.5 bg-accent text-white font-sans text-xs font-semibold rounded hover:bg-accent-hover transition-colors shadow-xs"
+                >
+                  <span>Open Q-Psi Research Capsule</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
                 <a
                   href={siteConfig.funding.payPalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-5 py-2.5 bg-accent text-white font-sans text-xs font-semibold rounded hover:bg-accent-hover transition-colors shadow-xs"
+                  className="inline-flex items-center space-x-2 px-5 py-2.5 bg-surface border border-border text-text-primary font-sans text-xs font-semibold rounded hover:bg-surface-raised transition-colors"
                 >
-                  <span>Submit Research Access Contribution</span>
+                  <span>Support Q-Psi Research</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
