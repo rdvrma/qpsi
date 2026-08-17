@@ -7,16 +7,16 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '@/content/siteConfig';
 
 interface NavbarProps {
-  onOpenModal: (defaultType?: 'deck' | 'contact') => void;
+  onOpenModal?: (defaultType?: 'deck' | 'contact') => void;
 }
 
-export function Navbar({ onOpenModal }: NavbarProps) {
+export function Navbar({ onOpenModal }: NavbarProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,24 +24,24 @@ export function Navbar({ onOpenModal }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-md border-b border-black/10 py-3 shadow-sm'
+          ? 'bg-surface/90 backdrop-blur-md border-b border-border py-3 shadow-xs'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Mark & Title */}
         <Link href="/" className="flex items-center space-x-3 group">
-          <span className="font-serif text-2xl font-bold tracking-tight text-primaryWhite group-hover:opacity-80 transition-opacity">
+          <span className="font-serif text-2xl font-bold tracking-tight text-text-primary group-hover:text-accent transition-colors">
             {siteConfig.company.mark}
           </span>
-          <div className="h-4 w-px bg-black/20 hidden sm:block" />
+          <div className="h-4 w-px bg-border hidden sm:block" />
           <div className="flex flex-col">
-            <span className="text-xs font-mono tracking-widest uppercase text-primaryWhite font-semibold">
+            <span className="text-xs font-mono tracking-widest uppercase text-text-primary font-bold">
               {siteConfig.company.name}
             </span>
-            <span className="text-[10px] text-midGray font-mono uppercase tracking-wider hidden md:block">
+            <span className="text-[10px] text-text-secondary font-mono uppercase tracking-wider hidden md:block">
               {siteConfig.company.tagline}
             </span>
           </div>
@@ -50,38 +50,31 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center space-x-6">
           {siteConfig.navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
-              className="text-xs font-mono text-midGray hover:text-primaryWhite transition-colors uppercase tracking-wider font-medium"
+              className="text-xs font-mono text-text-secondary hover:text-text-primary hover:underline transition-colors uppercase tracking-wider font-semibold"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        {/* Right Status & Actions */}
+        {/* Right Status & Primary CTA */}
         <div className="hidden sm:flex items-center space-x-3">
           <Link
-            href="/prototype"
-            className="px-3.5 py-2 bg-black text-white hover:bg-black/80 transition-all text-xs font-mono font-bold uppercase tracking-wider border border-black shadow-sm"
+            href="/support"
+            className="inline-flex items-center space-x-1.5 px-4 py-2 bg-accent text-white hover:bg-accent-hover transition-all text-xs font-mono font-bold uppercase tracking-wider rounded shadow-xs"
           >
-            RUN PROTOTYPE
-          </Link>
-
-          <button
-            onClick={() => onOpenModal('deck')}
-            className="inline-flex items-center space-x-1.5 px-4 py-2 border border-black/20 bg-black/[0.04] text-primaryWhite hover:bg-black/10 transition-all text-xs font-mono font-semibold uppercase tracking-wider"
-          >
-            <span>Deck (PDF)</span>
+            <span>SUPPORT Q-PSI</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-primaryWhite hover:text-midGray transition-colors"
+          className="lg:hidden p-2 text-text-primary hover:text-text-secondary transition-colors"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -95,34 +88,28 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-black/10 px-4 py-6 space-y-4 shadow-lg"
+            className="lg:hidden bg-surface-raised border-b border-border px-4 py-6 space-y-4 shadow-lg"
           >
             <div className="flex flex-col space-y-3">
               {siteConfig.navigation.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-mono text-softWhite hover:text-primaryWhite py-1 border-b border-black/5 uppercase tracking-wider"
+                  className="text-sm font-mono text-text-primary hover:text-accent font-semibold uppercase tracking-wider py-1 border-b border-border/40"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-            </div>
-
-            <div className="pt-4 border-t border-black/10 space-y-3">
-              <div className="text-[10px] font-mono text-midGray uppercase tracking-widest">
-                {siteConfig.company.stageBadge}
+              <div className="pt-2">
+                <Link
+                  href="/support"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-center w-full py-2.5 bg-accent text-white font-mono font-bold text-xs uppercase tracking-wider rounded"
+                >
+                  SUPPORT Q-PSI
+                </Link>
               </div>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenModal('deck');
-                }}
-                className="w-full text-center px-4 py-3 bg-black text-white text-xs font-mono font-semibold uppercase tracking-wider"
-              >
-                Request Investor Deck
-              </button>
             </div>
           </motion.div>
         )}

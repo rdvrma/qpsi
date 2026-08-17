@@ -1,77 +1,84 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
-import { Modal } from '@/components/ui/Modal';
 import { siteConfig } from '@/content/siteConfig';
-import { ArrowLeft, Mail, Linkedin, Globe } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowLeft, Mail, Globe, ArrowUpRight } from 'lucide-react';
+
+export const metadata = {
+  title: 'Contact & Collaboration — Q-Psi Independent Quantum Research',
+  description: 'Contact Q-Psi for research collaboration, academic access, compiler evaluation, or project inquiries.',
+};
 
 export default function ContactPage() {
-  const [modalOpen, setModalOpen] = useState(true);
-  const [modalType, setModalType] = useState<'deck' | 'contact'>('contact');
-
   return (
-    <main className="bg-[#050505] min-h-screen text-primaryWhite pt-28 pb-16">
-      <Navbar onOpenModal={(t) => { setModalType(t || 'contact'); setModalOpen(true); }} />
+    <div className="min-h-screen bg-surface text-text-primary flex flex-col font-sans">
+      <Navbar />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <Link href="/" className="inline-flex items-center space-x-2 text-xs font-mono text-midGray hover:text-white transition-colors">
+      <main className="flex-grow pt-28 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <Link href="/" className="inline-flex items-center space-x-2 text-xs font-mono text-text-secondary hover:text-text-primary transition-colors">
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Homepage Overview</span>
+          <span>Back to Homepage</span>
         </Link>
 
         <div className="space-y-4">
-          <span className="text-xs font-mono tracking-widest uppercase text-midGray block">
-            DIRECT FOUNDER DIALOGUE
-          </span>
-          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-primaryWhite">
-            Contact Nishant Kumar Sinha
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
+              SCIENTIFIC CORRESPONDENCE
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
+            Research Collaboration &amp; Inquiries
           </h1>
-          <p className="text-base text-softWhite leading-relaxed font-light">
-            Founder, Q-Psi Persistent World Engine | Director, Darkcloud Infosystems Pvt. Ltd.
+          <p className="text-base text-text-secondary font-sans leading-relaxed">
+            Q-Psi welcomes collaboration with quantum computing laboratories, universities, independent researchers, and industry partners.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-          <div className="p-5 border border-white/14 bg-[#080808] space-y-2">
-            <Mail className="w-4 h-4 text-white" />
-            <div className="text-midGray uppercase">Direct Email</div>
-            <a href="mailto:nishant@darkcloud.co.in" className="text-primaryWhite hover:underline font-semibold block">
-              nishant@darkcloud.co.in
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-mono text-xs">
+          <div className="p-6 bg-surface-raised border border-border rounded-lg space-y-3">
+            <Mail className="w-5 h-5 text-accent" />
+            <div className="text-text-muted uppercase font-bold">AUTHORITATIVE RESEARCH CONTACT</div>
+            <a href={`mailto:${siteConfig.contact.email}`} className="text-text-primary hover:text-accent font-bold text-sm block">
+              {siteConfig.contact.email}
             </a>
+            <p className="text-[11px] font-sans text-text-secondary">
+              Use for research inquiries, paper correspondence, compiler access follow-up, or licensing inquiries.
+            </p>
           </div>
 
-          <div className="p-5 border border-white/14 bg-[#080808] space-y-2">
-            <Linkedin className="w-4 h-4 text-white" />
-            <div className="text-midGray uppercase">Professional Network</div>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primaryWhite hover:underline font-semibold block">
-              LinkedIn Profile
-            </a>
-          </div>
-
-          <div className="p-5 border border-white/14 bg-[#080808] space-y-2">
-            <Globe className="w-4 h-4 text-white" />
-            <div className="text-midGray uppercase">Corporate Entity</div>
-            <span className="text-primaryWhite font-semibold block">
-              Darkcloud Infosystems Pvt. Ltd.
-            </span>
+          <div className="p-6 bg-surface-raised border border-border rounded-lg space-y-3">
+            <Globe className="w-5 h-5 text-accent" />
+            <div className="text-text-muted uppercase font-bold">ORGANIZATIONAL HIERARCHY</div>
+            <div className="text-text-primary font-bold text-sm block">
+              The Oneness Project
+            </div>
+            <p className="text-[11px] font-sans text-text-secondary">
+              Mother initiative. Q-Psi operates as an independent quantum research initiative. Sibling: SattvaOS.
+            </p>
           </div>
         </div>
 
-        <div className="pt-6">
-          <button
-            onClick={() => setModalOpen(true)}
-            className="px-8 py-4 bg-primaryWhite text-bgBlack font-mono text-xs font-bold uppercase tracking-widest hover:bg-white transition-all"
-          >
-            Open Interactive Contact Form
-          </button>
+        <div className="bg-surface-raised border border-border p-8 rounded-lg space-y-4">
+          <h2 className="text-2xl font-serif font-bold text-text-primary">
+            Inquiry Guidance
+          </h2>
+          <div className="space-y-3 text-xs font-mono text-text-secondary">
+            <div>
+              <strong className="text-text-primary">Compiler Evaluation Access:</strong> Include your research organization, intended evaluation workload, and target backend requirements.
+            </div>
+            <div>
+              <strong className="text-text-primary">Academic Collaboration:</strong> For co-authoring physical QPU benchmarks or testing new oracle query protocols.
+            </div>
+            <div>
+              <strong className="text-text-primary">Commercial Licensing:</strong> For enterprise state-space compiler integration terms.
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
 
-      <Footer onOpenModal={(t) => { setModalType(t || 'contact'); setModalOpen(true); }} />
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} defaultType={modalType} />
-    </main>
+      <Footer />
+    </div>
   );
 }

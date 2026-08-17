@@ -1,0 +1,67 @@
+{
+  "index_version": "1.0.0",
+  "milestone": "QPSI-PUBLIC-EVIDENCE-INDEX",
+  "timestamp_utc": "2026-08-17T06:00:00+00:00",
+  "claims": [
+    {
+      "claim_id": "CLAIM-01-COMPILER-INTEROPERABILITY",
+      "claim_statement": "Q-Psi compiler states were successfully mapped to QUBO/Ising and executed on a physical IBM Quantum processor, recovering the exact classical optimum on all four tested instances with 10 or fewer variables.",
+      "experiment": "Q-Psi State Space Compiler (Stage-6F)",
+      "raw_evidence_file": "research/evidence/qpsi_stage6f_qpu_raw_results.jsonl",
+      "raw_evidence_sha256": "3f3b4c3982a267aa7fbf297adc4171ded2c8b1e24226a379df94bcfc53ac2783",
+      "ibm_quantum_job_id": "da16h8ug52gs73cl8uog",
+      "audit_file": "research/evidence/qpsi_stage6f_posthoc_numerical_audit.json",
+      "claim_status": "SUPPORTED"
+    },
+    {
+      "claim_id": "CLAIM-02-COMPILER-ADVANTAGE",
+      "claim_statement": "Q-Psi state compiler demonstrates quantum advantage over classical software-repair solvers.",
+      "experiment": "Q-Psi State Space Compiler (Stage-6F)",
+      "raw_evidence_file": "research/evidence/qpsi_stage6f_qpu_raw_results.jsonl",
+      "raw_evidence_sha256": "3f3b4c3982a267aa7fbf297adc4171ded2c8b1e24226a379df94bcfc53ac2783",
+      "ibm_quantum_job_id": "da16h8ug52gs73cl8uog",
+      "audit_file": "research/evidence/qpsi_stage6f_posthoc_numerical_audit.json",
+      "claim_status": "NOT_SUPPORTED"
+    },
+    {
+      "claim_id": "CLAIM-03-DYNAMIC-BV-ADVANTAGE",
+      "claim_statement": "Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the adopted Pokharel-Lidar-style single-shot methodology.",
+      "experiment": "Dynamic Bernstein-Vazirani Experiment",
+      "raw_evidence_file": "research/evidence/qpsi_dynamic_bv_advantage_evidence.json",
+      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "ibm_quantum_job_id": "da1a03mg52gs73clcj80",
+      "audit_file": "research/evidence/qpsi_advantage_claim_integrity_audit.json",
+      "claim_status": "QUALIFIED"
+    },
+    {
+      "claim_id": "CLAIM-04-RESTRICTED-SIMON-SPEEDUP",
+      "claim_statement": "Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware and recovered the hidden period on a subset of instances up to 56 physical qubits. Universal asymptotic speedup on the raw hardware results remained inconclusive.",
+      "experiment": "Restricted-Hamming-Weight Simon Experiment",
+      "raw_evidence_file": "research/evidence/qpsi_restricted_simon_advantage_evidence.json",
+      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "ibm_quantum_job_id": "da1a0piein7c73bd5beg",
+      "audit_file": "research/evidence/qpsi_advantage_claim_integrity_audit.json",
+      "claim_status": "INCONCLUSIVE"
+    },
+    {
+      "claim_id": "CLAIM-05-SIMON-ADVANTAGE",
+      "claim_statement": "Q-Psi demonstrated proven universal algorithmic quantum advantage for Simon's problem on raw unmitigated hardware.",
+      "experiment": "Restricted-Hamming-Weight Simon Experiment",
+      "raw_evidence_file": "research/evidence/qpsi_restricted_simon_advantage_evidence.json",
+      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "ibm_quantum_job_id": "da1a0piein7c73bd5beg",
+      "audit_file": "research/evidence/qpsi_advantage_claim_integrity_audit.json",
+      "claim_status": "NOT_SUPPORTED"
+    },
+    {
+      "claim_id": "CLAIM-06-MANTRA-EXPLORATORY",
+      "claim_statement": "Deterministic cryptographic hash mapping of text strings onto 16-qubit entangled states generates distinct orthogonal output distributions with TVD ~0.98-0.99; no metaphysical or consciousness claims.",
+      "experiment": "Exploratory Mantra Quantum State Encoding",
+      "raw_evidence_file": "research/evidence/qpsi_independent_qpu_experiments.json",
+      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "ibm_quantum_job_id": "da19q86g52gs73clcd7g",
+      "audit_file": "research/evidence/qpsi_independent_qpu_experiments_report.md",
+      "claim_status": "SUPPORTED"
+    }
+  ]
+}
