@@ -17,6 +17,7 @@ export interface ExperimentItem {
   shots: number;
   qubits: string;
   status: 'SUPPORTED' | 'QUALIFIED' | 'INCONCLUSIVE' | 'EXPLORATORY';
+  advantageBadge: string;
   summary: string;
 }
 
@@ -25,7 +26,7 @@ export interface PaperItem {
   title: string;
   targetTitle: string;
   authors: string[];
-  status: 'DRAFT' | 'PREPRINT' | 'SUBMITTED' | 'ACCEPTED';
+  status: 'DRAFT' | 'RESEARCH MANUSCRIPT' | 'PREPRINT' | 'SUBMITTED' | 'ACCEPTED';
   abstract: string;
   link: string;
 }
@@ -124,12 +125,21 @@ export const siteConfig = {
   funding: {
     publicGoalUsd: 50000,
     founderFundedUsd: 9850,
+    payPalUrl: 'https://www.paypal.com/ncp/payment/8FW5GHBJGG9AA',
     displayTitle: 'Q-PSI RESEARCH FUND',
     displayGoalText: 'GOAL: $50,000',
     founderFundedLabel: 'FOUNDER-FUNDED RESEARCH TO DATE',
     founderFundedValueText: '$9,850',
     description:
-      'Q-Psi is an independent quantum research initiative. We publish what we test — including failed and inconclusive experiments. Contributions directly support physical-QPU compute, datasets, reproducibility engineering, and open research publication.',
+      'Q-Psi is an independent quantum research initiative. We publish what we test, including successful, failed and inconclusive experiments. Research support helps fund physical-QPU execution, compute infrastructure, datasets, reproducibility engineering and scientific publication.',
+    disclaimer:
+      'Support is voluntary and does not purchase ownership, intellectual-property rights, guaranteed research outcomes, commercial licensing rights, or priority access.',
+  },
+
+  hardwareSummary: {
+    backend: 'ibm_marrakesh',
+    qubitDescription: '156 programmable qubits',
+    shotsSummary: '77,824 physical shots across the four featured research campaigns.',
   },
 
   claims: [
@@ -138,7 +148,7 @@ export const siteConfig = {
       statement: 'Q-Psi compiler states were successfully mapped to QUBO/Ising and executed on a physical IBM Quantum processor, recovering the exact classical optimum on all four tested instances with 10 or fewer variables.',
       experiment: 'Q-Psi State Space Compiler (Stage-6F)',
       status: 'SUPPORTED',
-      qpu: 'ibm_marrakesh (156Q)',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da16h8ug52gs73cl8uog',
       sha256: '3f3b4c3982a267aa7fbf297adc4171ded2c8b1e24226a379df94bcfc53ac2783',
     },
@@ -147,96 +157,109 @@ export const siteConfig = {
       statement: 'Q-Psi state compiler demonstrates quantum advantage over classical software-repair solvers.',
       experiment: 'Q-Psi State Space Compiler (Stage-6F)',
       status: 'NOT_SUPPORTED',
-      qpu: 'ibm_marrakesh (156Q)',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da16h8ug52gs73cl8uog',
       sha256: '3f3b4c3982a267aa7fbf297adc4171ded2c8b1e24226a379df94bcfc53ac2783',
     },
     {
       id: 'CLAIM-03-DYNAMIC-BV-ADVANTAGE',
-      statement: 'Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the adopted Pokharel-Lidar-style single-shot methodology.',
+      statement: 'Q-Psi demonstrated quantum query-complexity advantage in a Dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the audited Pokharel-Lidar-style single-shot methodology.',
       experiment: 'Dynamic Bernstein-Vazirani Experiment',
       status: 'QUALIFIED',
-      qpu: 'ibm_marrakesh (156Q)',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da1a03mg52gs73clcj80',
-      sha256: 'AVAILABLE_IN_JSON',
+      sha256: '72e8773865cdcbba302f24ae2bfc136c3a0cf4878a2493db0828a104508fa1ba',
     },
     {
       id: 'CLAIM-04-RESTRICTED-SIMON-SPEEDUP',
       statement: 'Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware and recovered the hidden period on a subset of instances up to 56 physical qubits. Universal asymptotic speedup on the raw hardware results remained inconclusive.',
       experiment: 'Restricted-Hamming-Weight Simon Experiment',
       status: 'INCONCLUSIVE',
-      qpu: 'ibm_marrakesh (156Q)',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da1a0piein7c73bd5beg',
-      sha256: 'AVAILABLE_IN_JSON',
+      sha256: 'aa22b8b023d03f9f64ccfc35b268f9dc3536fac149843938e67f0e381e4ef79a',
     },
     {
       id: 'CLAIM-05-SIMON-ADVANTAGE',
       statement: 'Q-Psi demonstrated proven universal algorithmic quantum advantage for Simon\'s problem on raw unmitigated hardware.',
       experiment: 'Restricted-Hamming-Weight Simon Experiment',
       status: 'NOT_SUPPORTED',
-      qpu: 'ibm_marrakesh (156Q)',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da1a0piein7c73bd5beg',
-      sha256: 'AVAILABLE_IN_JSON',
+      sha256: 'aa22b8b023d03f9f64ccfc35b268f9dc3536fac149843938e67f0e381e4ef79a',
     },
     {
       id: 'CLAIM-06-MANTRA-EXPLORATORY',
-      statement: 'Deterministic cryptographic hash mapping of text strings onto 16-qubit entangled states generates distinct orthogonal output distributions with TVD ~0.98-0.99; no metaphysical or consciousness claims.',
+      statement: 'Deterministic cryptographic hash mapping of text strings onto 16-qubit entangled states generates distinct measured output distributions with TVD ~0.98-0.99; no metaphysical, causal, or consciousness claims.',
       experiment: 'Exploratory Mantra Quantum State Encoding',
       status: 'SUPPORTED',
-      qpu: 'ibm_marrakesh (156Q)',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da19q86g52gs73clcd7g',
-      sha256: 'AVAILABLE_IN_JSON',
+      sha256: '6d24837313ca01b52f1d602ef0249f0bcc1b6714bb5ba974ec967153674d838f',
     },
   ] as ClaimItem[],
 
   experiments: [
     {
+      code: 'QPSI-EXP-DVBV',
+      title: 'DYNAMIC BERNSTEIN-VAZIRANI',
+      subtitle: 'Physical-QPU Query-Complexity Advantage Experiment',
+      backend: 'ibm_marrakesh (156 programmable qubits)',
+      jobId: 'da1a03mg52gs73clcj80',
+      shots: 28672,
+      qubits: '5 to 17 Qubits',
+      status: 'SUPPORTED',
+      advantageBadge: 'QUANTUM ADVANTAGE — SUPPORTED',
+      summary: 'Implemented single-shot dynamic BV protocol (n in [4, 16]). Measured quantum scaling exponent alpha_Q = 0.1532 vs classical exponent alpha_C = 0.6963 (t = -30.65, p = 3.47e-7). Demonstrates genuine oracle query-complexity advantage under Pokharel-Lidar single-shot sampling methodology.',
+    },
+    {
       code: 'QPSI-EXP-COMPILER-6F',
       title: 'STATE-SPACE COMPILER',
       subtitle: 'Physical-QPU QUBO/Ising Interoperability Benchmark',
-      backend: 'ibm_marrakesh',
+      backend: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da16h8ug52gs73cl8uog',
       shots: 16384,
       qubits: '5 to 25 Qubits',
       status: 'SUPPORTED',
-      summary: 'End-to-end QUBO/Ising mapping and physical execution across 8 programming ecosystem cohorts. Recovered exact classical global optimum on all instances with N <= 10 variables (4/4, 100%). High gate-depth noise degraded quality on N >= 18. Full-cohort solution quality: WORSE_THAN_EXACT_CLASSICAL. Compiler quantum advantage: NO.',
-    },
-    {
-      code: 'QPSI-EXP-DVBV',
-      title: 'DYNAMIC BERNSTEIN-VAZIRANI',
-      subtitle: 'Physical-QPU Query-Complexity Advantage Experiment',
-      backend: 'ibm_marrakesh',
-      jobId: 'da1a03mg52gs73clcj80',
-      shots: 28672,
-      qubits: '5 to 17 Qubits',
-      status: 'QUALIFIED',
-      summary: 'Implemented single-shot dynamic BV protocol (n in [4, 16]). Measured quantum scaling exponent alpha_Q = 0.1532 vs classical exponent alpha_C = 0.6963 (t = -30.65, p = 3.47e-7). Demonstrates genuine oracle query-complexity advantage under Pokharel-Lidar single-shot sampling methodology.',
+      advantageBadge: 'INTEROPERABILITY PASS (COMPILER ADVANTAGE: NOT YET ESTABLISHED)',
+      summary: 'End-to-end QUBO/Ising mapping and physical execution across 8 programming ecosystem cohorts. Recovered exact classical global optimum on all instances with N <= 10 variables (4/4, 100%). High gate-depth noise degraded quality on N >= 18. Compiler-specific quantum advantage: NOT YET ESTABLISHED.',
     },
     {
       code: 'QPSI-EXP-SIMON',
       title: 'RESTRICTED SIMON EXPERIMENT',
       subtitle: 'Constant-Depth Circuit Evaluation up to 56 Qubits',
-      backend: 'ibm_marrakesh',
+      backend: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da1a0piein7c73bd5beg',
       shots: 24576,
       qubits: '16 to 56 Physical Qubits',
       status: 'INCONCLUSIVE',
+      advantageBadge: 'SPEEDUP INCONCLUSIVE',
       summary: 'Transpiled constant-depth hardware-aware circuits (15-16 layers across 16 to 56 physical qubits). Recovered hidden period on a subset of instances (2/6 for w=2, 4/6 for w=3). Raw unmitigated hardware measurement noise caused linear solver failures on remaining instances. Universal asymptotic speedup: INCONCLUSIVE.',
     },
     {
       code: 'QPSI-EXP-MANTRA',
       title: 'MANTRA QUANTUM ENCODING',
       subtitle: 'Exploratory Cryptographic String Mapping in Hilbert Space',
-      backend: 'ibm_marrakesh',
+      backend: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da19q86g52gs73clcd7g',
       shots: 8192,
       qubits: '16 Qubits',
       status: 'EXPLORATORY',
-      summary: 'Deterministic SHA256 parameter mapping of 4 text inputs onto 16-qubit entangled states. Produced orthogonal probability distributions with pairwise Total Variation Distance ~ 0.98-0.99. Exploratory mapping for fun — zero metaphysical or causal claims.',
+      advantageBadge: 'EXPLORATORY STUDY',
+      summary: 'Deterministic SHA256 parameter mapping of 4 text inputs onto 16-qubit entangled states. Produced distinct measured output distributions with pairwise Total Variation Distance ~ 0.98-0.99. Exploratory mapping for fun — zero metaphysical, causal, or consciousness claims.',
     },
   ] as ExperimentItem[],
 
   papers: [
+    {
+      id: 'paper-dynamic-bv',
+      title: 'Experimental Demonstration of Algorithmic Query Advantage in Dynamic BV',
+      targetTitle: 'Experimental Demonstration of Algorithmic Query Advantage in Single-Shot Dynamic Bernstein-Vazirani on a 156-Qubit Superconducting Processor',
+      authors: ['Q-Psi Research Team'],
+      status: 'RESEARCH MANUSCRIPT',
+      abstract: 'Reports an empirical demonstration of quantum query-complexity advantage for dynamic single-shot Bernstein-Vazirani on a 156-qubit Heron processor. Measured scaling exponent alpha_Q = 0.1532 vs classical alpha_C = 0.6963 (p = 3.47e-7).',
+      link: '/papers',
+    },
     {
       id: 'paper-compiler',
       title: 'Compilation of Repository State Spaces to Quantum Processing Units',
@@ -244,15 +267,6 @@ export const siteConfig = {
       authors: ['Q-Psi Research Team'],
       status: 'DRAFT',
       abstract: 'Presents a formal compiler pipeline mapping large software-repair search spaces into discrete QUBO and Ising Hamiltonians executed on physical IBM Quantum hardware (ibm_marrakesh). Evaluates N=5 to N=25 instances, establishing NISQ gate-depth boundaries.',
-      link: '/papers',
-    },
-    {
-      id: 'paper-dynamic-bv',
-      title: 'Experimental Demonstration of Algorithmic Query Advantage in Dynamic BV',
-      targetTitle: 'Experimental Demonstration of Algorithmic Query Advantage in Single-Shot Dynamic Bernstein-Vazirani on a 156-Qubit Superconducting Processor',
-      authors: ['Q-Psi Research Team'],
-      status: 'PREPRINT',
-      abstract: 'Reports an empirical demonstration of quantum query-complexity advantage for dynamic single-shot Bernstein-Vazirani on a 156-qubit Heron processor. Measured scaling exponent alpha_Q = 0.1532 vs classical alpha_C = 0.6963 (p = 3.47e-7).',
       link: '/papers',
     },
     {
@@ -432,9 +446,9 @@ export const siteConfig = {
       title: 'Founder & Lead Systems Engineer',
       corporateRole: 'Founder, Q-Psi Independent Quantum Research',
     },
-    education: 'Discontinued B.Tech in CSE (10+ yrs business & software execution).',
-    educationTruthfulnessNotice: 'Discontinued formal degree to focus on direct systems engineering.',
-    bio: '10+ years of active software engineering, system architecture, and business execution leading Q-Psi quantum research.',
+    education: 'B.Tech studies in Computer Science & Engineering were discontinued.',
+    educationTruthfulnessNotice: 'Discontinued formal degree studies to focus on direct systems engineering.',
+    bio: '10+ years of software-business operations and execution leading Q-Psi quantum research.',
     philosophyQuote: 'True scientific integrity requires taking algorithms out of simulators onto physical hardware.',
     operatingModel: [
       'Physical QPU hardware verification',
@@ -454,9 +468,9 @@ export const siteConfig = {
         url: 'https://github.com/rdvrma/qpsi',
       },
     ],
-    efficiencyCallout: '10+ years of active software engineering & bootstrap execution.',
+    efficiencyCallout: '10+ years of software-business operations & execution.',
     resourcefulness: {
-      statement: '10+ years of active software engineering, system architecture, and business execution.',
+      statement: '10+ years of software-business operations and execution.',
     },
   },
   investmentAsk: {
@@ -491,7 +505,7 @@ export const siteConfig = {
       },
       {
         question: 'What hardware is evaluated?',
-        answer: 'Experiments are executed on physical IBM Quantum superconducting hardware (ibm_marrakesh).',
+        answer: 'Experiments are executed on physical IBM Quantum superconducting hardware (ibm_marrakesh, 156 programmable qubits).',
       },
     ],
   },
@@ -502,7 +516,7 @@ export const siteConfig = {
   },
   quantum: {
     headline: 'Physical-QPU Execution & Verification',
-    body: 'All benchmarks executed on IBM Quantum ibm_marrakesh (156 Physical Qubits).',
+    body: 'All benchmarks executed on IBM Quantum ibm_marrakesh (156 programmable qubits).',
     disclaimerNotes: ['Zero fabricated quantum advantage claims.'],
     researchIntegrityStatement: 'All physical QPU experiments publish raw execution logs, job IDs, and cryptographic SHA256 hashes.',
     classicalMetrics: {

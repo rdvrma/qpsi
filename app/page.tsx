@@ -12,6 +12,10 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  const goalUsd = siteConfig.funding.publicGoalUsd;
+  const founderFundedUsd = siteConfig.funding.founderFundedUsd;
+  const percentage = (founderFundedUsd / goalUsd) * 100;
+
   return (
     <div className="min-h-screen bg-surface text-text-primary selection:bg-accent selection:text-white flex flex-col font-sans">
       <Navbar />
@@ -58,15 +62,18 @@ export default function HomePage() {
               href="/compiler"
               className="inline-flex items-center space-x-2 px-6 py-3 bg-surface-raised border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:border-border-hover transition-all"
             >
-              <span>TEST THE COMPILER</span>
+              <span>EXPLORE COMPILER RESEARCH</span>
             </Link>
 
-            <Link
-              href="/support"
+            <a
+              href={siteConfig.funding.payPalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 px-6 py-3 bg-surface-subtle border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:bg-surface-raised transition-all"
             >
               <span>SUPPORT Q-PSI</span>
-            </Link>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
 
           {/* Interactive Spatial 3D Hero Visual */}
@@ -90,7 +97,7 @@ export default function HomePage() {
                 </h2>
               </div>
               <div className="text-xs font-mono text-text-muted">
-                HARDWARE: <span className="text-text-primary font-semibold">ibm_marrakesh (156Q Heron)</span>
+                HARDWARE: <span className="text-text-primary font-semibold">{siteConfig.hardwareSummary.backend} ({siteConfig.hardwareSummary.qubitDescription})</span>
               </div>
             </div>
 
@@ -107,7 +114,7 @@ export default function HomePage() {
                   PHYSICAL IBM QPU
                 </div>
                 <p className="text-[11px] font-mono text-text-secondary">
-                  156-qubit Heron architecture; 77,824 total physical shots executed.
+                  {siteConfig.hardwareSummary.shotsSummary}
                 </p>
               </div>
 
@@ -120,10 +127,10 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="text-xs font-mono font-bold text-text-primary">
-                  QUERY ADVANTAGE
+                  QUANTUM ADVANTAGE — SUPPORTED
                 </div>
                 <p className="text-[11px] font-mono text-text-secondary">
-                  Single-shot oracle speedup (alpha_Q = 0.1532 vs alpha_C = 0.6963, p &lt; 10⁻⁶).
+                  Single-shot oracle query complexity advantage (alpha_Q = 0.1532 vs alpha_C = 0.6963, p &lt; 10⁻⁶).
                 </p>
               </div>
 
@@ -136,10 +143,10 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="text-xs font-mono font-bold text-text-primary">
-                  INTEROPERABILITY
+                  INTEROPERABILITY PASS
                 </div>
                 <p className="text-[11px] font-mono text-text-secondary">
-                  End-to-end QUBO/Ising execution across 8 ecosystems. Advantage NOT claimed.
+                  End-to-end QUBO/Ising execution. Compiler-specific advantage NOT YET ESTABLISHED.
                 </p>
               </div>
 
@@ -152,10 +159,10 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="text-xs font-mono font-bold text-text-primary">
-                  56-QUBIT EXECUTION
+                  SPEEDUP INCONCLUSIVE
                 </div>
                 <p className="text-[11px] font-mono text-text-secondary">
-                  Constant-depth circuits valid; universal unmitigated speedup inconclusive.
+                  Constant-depth 56-qubit circuits valid; universal unmitigated speedup inconclusive.
                 </p>
               </div>
             </div>
@@ -196,7 +203,7 @@ export default function HomePage() {
                   className="bg-surface-raised border border-border p-6 rounded-lg space-y-4 hover:border-border-hover transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between border-b border-border pb-3">
+                    <div className="flex flex-wrap items-center justify-between border-b border-border pb-3 gap-2">
                       <span className="text-xs font-mono font-bold text-accent">
                         {exp.code}
                       </span>
@@ -211,7 +218,7 @@ export default function HomePage() {
                             : 'bg-status-fail-bg text-status-fail'
                         }`}
                       >
-                        STATUS: {exp.status}
+                        {exp.advantageBadge}
                       </span>
                     </div>
 
@@ -283,7 +290,7 @@ export default function HomePage() {
               <div className="p-3.5 bg-surface border border-border rounded">
                 <div className="text-[10px] font-mono text-accent font-bold">STAGE 5</div>
                 <div className="text-xs font-mono font-bold text-text-primary mt-1">Evidence Audit</div>
-                <div className="text-[10px] font-mono text-text-secondary mt-1">SHA256 & Job ID</div>
+                <div className="text-[10px] font-mono text-text-secondary mt-1">SHA256 &amp; Job ID</div>
               </div>
             </div>
 
@@ -294,7 +301,7 @@ export default function HomePage() {
                 <span className="text-status-pass">INTEROPERABILITY PASS</span>
               </div>
               <p className="text-text-secondary leading-relaxed font-sans text-xs">
-                Physical QPU recovered exact classical ground state on 100% of small instances (N &le; 10). On larger instances (N &ge; 18), gate-depth noise degraded quality. Standard median energy gap: 0.1250. <strong>Quantum advantage is NOT established for the compiler.</strong>
+                Physical QPU recovered exact classical ground state on 100% of small instances (N &le; 10). On larger instances (N &ge; 18), gate-depth noise degraded quality. Standard median energy gap: 0.1250. <strong>Compiler-specific quantum advantage is NOT YET ESTABLISHED over classical solvers.</strong>
               </p>
             </div>
 
@@ -307,12 +314,6 @@ export default function HomePage() {
                 <span>EXPLORE COMPILER RESEARCH</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
-              <Link
-                href="/compiler"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 bg-surface border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:border-border-hover transition-all"
-              >
-                <span>TEST Q-PSI COMPILER</span>
-              </Link>
             </div>
           </div>
         </section>
@@ -324,10 +325,10 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between border-b border-border pb-4 gap-4">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
-                PUBLICATIONS & PREPRINTS
+                PUBLICATIONS &amp; PREPRINTS
               </span>
               <h2 className="text-3xl font-serif font-bold text-text-primary mt-1">
-                Papers & Scientific Research Notes
+                Papers &amp; Scientific Research Notes
               </h2>
             </div>
             <Link
@@ -347,7 +348,7 @@ export default function HomePage() {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between border-b border-border pb-2">
-                    <span className="text-[10px] font-mono text-text-muted uppercase">PAPER OUTLINE</span>
+                    <span className="text-[10px] font-mono text-text-muted uppercase">MANUSCRIPT</span>
                     <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-surface border border-border rounded text-text-primary">
                       {paper.status}
                     </span>
@@ -430,17 +431,17 @@ export default function HomePage() {
                       {siteConfig.funding.founderFundedLabel}
                     </span>
                     <span className="text-text-primary font-bold">
-                      {siteConfig.funding.founderFundedValueText}
+                      {siteConfig.funding.founderFundedValueText} / ${goalUsd.toLocaleString()} ({percentage.toFixed(1)}%)
                     </span>
                   </div>
-                  <div className="w-full bg-surface-subtle h-2 rounded-full overflow-hidden border border-border">
+                  <div className="w-full bg-surface-subtle h-2.5 rounded-full overflow-hidden border border-border">
                     <div
                       className="bg-accent h-full rounded-full"
-                      style={{ width: `${(siteConfig.funding.founderFundedUsd / siteConfig.funding.publicGoalUsd) * 100}%` }}
+                      style={{ width: `${percentage}%` }}
                     />
                   </div>
                   <div className="text-[10px] font-mono text-text-muted">
-                    Founder personal investment in physical QPU hardware compute &amp; verification to date.
+                    Founder-funded research to date: $9,850.
                   </div>
                 </div>
               </div>
@@ -452,12 +453,15 @@ export default function HomePage() {
                 <p className="text-xs text-text-secondary font-sans">
                   Support Q-Psi research with any amount. No preset support requirements.
                 </p>
-                <Link
-                  href="/support"
-                  className="block w-full py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded shadow-xs hover:bg-accent-hover transition-all"
+                <a
+                  href={siteConfig.funding.payPalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center space-x-2 w-full py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded shadow-xs hover:bg-accent-hover transition-all"
                 >
-                  SUPPORT THE NEXT EXPERIMENT
-                </Link>
+                  <span>SUPPORT THE NEXT EXPERIMENT</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
                 <div className="text-[10px] font-mono text-text-muted">
                   Supports open-source quantum software research &amp; physical QPU benchmark publication.
                 </div>

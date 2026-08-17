@@ -25,10 +25,10 @@
     },
     {
       "claim_id": "CLAIM-03-DYNAMIC-BV-ADVANTAGE",
-      "claim_statement": "Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the adopted Pokharel-Lidar-style single-shot methodology.",
+      "claim_statement": "Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the audited Pokharel-Lidar-style single-shot methodology.",
       "experiment": "Dynamic Bernstein-Vazirani Experiment",
       "raw_evidence_file": "research/evidence/qpsi_dynamic_bv_advantage_evidence.json",
-      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "raw_evidence_sha256": "72e8773865cdcbba302f24ae2bfc136c3a0cf4878a2493db0828a104508fa1ba",
       "ibm_quantum_job_id": "da1a03mg52gs73clcj80",
       "audit_file": "research/evidence/qpsi_advantage_claim_integrity_audit.json",
       "claim_status": "QUALIFIED"
@@ -38,7 +38,7 @@
       "claim_statement": "Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware and recovered the hidden period on a subset of instances up to 56 physical qubits. Universal asymptotic speedup on the raw hardware results remained inconclusive.",
       "experiment": "Restricted-Hamming-Weight Simon Experiment",
       "raw_evidence_file": "research/evidence/qpsi_restricted_simon_advantage_evidence.json",
-      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "raw_evidence_sha256": "aa22b8b023d03f9f64ccfc35b268f9dc3536fac149843938e67f0e381e4ef79a",
       "ibm_quantum_job_id": "da1a0piein7c73bd5beg",
       "audit_file": "research/evidence/qpsi_advantage_claim_integrity_audit.json",
       "claim_status": "INCONCLUSIVE"
@@ -48,17 +48,17 @@
       "claim_statement": "Q-Psi demonstrated proven universal algorithmic quantum advantage for Simon's problem on raw unmitigated hardware.",
       "experiment": "Restricted-Hamming-Weight Simon Experiment",
       "raw_evidence_file": "research/evidence/qpsi_restricted_simon_advantage_evidence.json",
-      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "raw_evidence_sha256": "aa22b8b023d03f9f64ccfc35b268f9dc3536fac149843938e67f0e381e4ef79a",
       "ibm_quantum_job_id": "da1a0piein7c73bd5beg",
       "audit_file": "research/evidence/qpsi_advantage_claim_integrity_audit.json",
       "claim_status": "NOT_SUPPORTED"
     },
     {
       "claim_id": "CLAIM-06-MANTRA-EXPLORATORY",
-      "claim_statement": "Deterministic cryptographic hash mapping of text strings onto 16-qubit entangled states generates distinct orthogonal output distributions with TVD ~0.98-0.99; no metaphysical or consciousness claims.",
+      "claim_statement": "Deterministic cryptographic hash mapping of text strings onto 16-qubit entangled states generates distinct measured output distributions with TVD ~0.98-0.99; no metaphysical or consciousness claims.",
       "experiment": "Exploratory Mantra Quantum State Encoding",
       "raw_evidence_file": "research/evidence/qpsi_independent_qpu_experiments.json",
-      "raw_evidence_sha256": "AVAILABLE_IN_JSON",
+      "raw_evidence_sha256": "6d24837313ca01b52f1d602ef0249f0bcc1b6714bb5ba974ec967153674d838f",
       "ibm_quantum_job_id": "da19q86g52gs73clcd7g",
       "audit_file": "research/evidence/qpsi_independent_qpu_experiments_report.md",
       "claim_status": "SUPPORTED"

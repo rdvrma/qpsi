@@ -93,9 +93,9 @@ export default function AboutPage() {
           <div className="p-4 bg-surface border border-border rounded space-y-3 font-mono text-xs text-text-secondary">
             <div className="font-bold text-text-primary">VERIFIED BACKGROUND &amp; EXECUTION HISTORY</div>
             <ul className="space-y-2">
-              <li>• Discontinued B.Tech in Computer Science &amp; Engineering (CSE) to pursue independent execution.</li>
-              <li>• 10+ years of active software engineering, system architecture, and business execution.</li>
-              <li>• Personally self-funded <strong>$9,850 USD</strong> in physical IBM Quantum QPU hardware compute and verification to establish initial empirical baselines.</li>
+              <li>• B.Tech studies in Computer Science &amp; Engineering were discontinued.</li>
+              <li>• 10+ years of software-business operations and execution.</li>
+              <li>• Founder-funded research to date: <strong>$9,850 USD</strong>.</li>
             </ul>
           </div>
         </div>

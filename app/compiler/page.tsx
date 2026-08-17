@@ -60,12 +60,14 @@ export default function CompilerPage() {
           </div>
 
           <div className="p-4 bg-surface border border-border rounded text-xs font-mono space-y-2">
-            <div className="flex items-center justify-between text-text-primary font-bold">
-              <span>PHYSICAL QPU BENCHMARK RESULT (ibm_marrakesh)</span>
-              <span className="text-status-pass">INTEROPERABILITY PASS</span>
+            <div className="flex flex-wrap items-center justify-between text-text-primary font-bold gap-2">
+              <span>PHYSICAL QPU BENCHMARK RESULT (ibm_marrakesh — 156 programmable qubits)</span>
+              <span className="text-status-pass font-bold px-2 py-0.5 bg-status-pass-bg rounded">
+                INTEROPERABILITY PASS (COMPILER ADVANTAGE: NOT YET ESTABLISHED)
+              </span>
             </div>
             <p className="text-text-secondary leading-relaxed font-sans text-xs">
-              Recovered exact global classical optimum on 100% of small instances (N &le; 10). Characterized NISQ gate-depth scaling boundary on larger instances (N &ge; 18). Full cohort standard median energy gap: 0.1250. <strong>No quantum advantage is claimed for the compiler over classical solvers.</strong>
+              Recovered exact global classical optimum on 100% of small instances (N &le; 10). Characterized NISQ gate-depth scaling boundary on larger instances (N &ge; 18). Full cohort standard median energy gap: 0.1250. <strong>Compiler-specific quantum advantage is not yet proven over classical solvers.</strong>
             </p>
           </div>
         </div>
@@ -75,53 +77,47 @@ export default function CompilerPage() {
           <div className="max-w-2xl space-y-3">
             <div className="flex items-center space-x-2 text-accent text-xs font-mono font-bold uppercase tracking-wider">
               <Lock className="w-4 h-4" />
-              <span>RESEARCH ACCESS &amp; EVALUATION MODEL</span>
+              <span>COMPILER ACCESS BOUNDARY &amp; RESEARCH STATUS</span>
             </div>
             <h2 className="text-3xl font-serif font-bold text-text-primary">
-              Compiler Research Evaluation Access
+              Compiler External Access Status
             </h2>
             <p className="text-sm text-text-secondary font-sans leading-relaxed">
-              Proprietary compiler source code is preserved securely outside the public website repository. Academic labs, quantum software groups, and corporate researchers may request evaluation access following research contribution guidelines.
+              Public evaluation access to the Q-Psi State-Space Compiler is currently closed. Q-Psi will first conduct the compiler-specific quantum-advantage validation stage. Proprietary compiler source code is preserved securely outside public web repositories.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
-            {/* Box A: Evaluation Access */}
+            {/* Box A: Evaluation Access Status */}
             <div className="p-6 bg-surface border border-border rounded-lg space-y-4">
-              <div className="text-xs font-mono font-bold text-text-primary uppercase tracking-wider">
-                1. RESEARCH EVALUATION ACCESS
+              <div className="text-xs font-mono font-bold text-text-primary uppercase tracking-wider flex items-center justify-between">
+                <span>1. RESEARCH EVALUATION ACCESS</span>
+                <span className="text-status-inconclusive font-bold px-2 py-0.5 bg-status-inconclusive-bg rounded">
+                  NOT YET OPEN
+                </span>
               </div>
               <p className="text-xs text-text-secondary font-sans leading-relaxed">
-                For researchers wanting to test compiled benchmarks or evaluate Q-Psi compiler output on custom search spaces.
+                Evaluation access is paused pending completion of the compiler-specific quantum-advantage validation campaign.
               </p>
-              <ul className="text-xs font-mono text-text-muted space-y-2">
-                <li>• Includes benchmark evaluation binaries &amp; test outputs</li>
-                <li>• Does NOT convey IP rights or source code ownership</li>
-                <li>• Includes 24-hour setup response guarantee</li>
-              </ul>
               <div className="pt-2">
-                <a
-                  href={`mailto:${siteConfig.contact.email}?subject=Q-Psi%20Compiler%20Research%20Evaluation%20Access`}
-                  className="inline-flex items-center space-x-2 px-5 py-2.5 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded hover:bg-accent-hover transition-all"
-                >
-                  <span>REQUEST EVALUATION ACCESS</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
+                <span className="inline-flex items-center space-x-2 px-5 py-2.5 bg-surface-subtle border border-border text-text-secondary font-mono text-xs font-bold uppercase tracking-wider rounded">
+                  <span>COMPILER ACCESS — COMING AFTER NEXT VALIDATION STAGE</span>
+                </span>
               </div>
             </div>
 
-            {/* Box B: Full Commercial License */}
+            {/* Box B: Research Inquiries & Licensing */}
             <div className="p-6 bg-surface border border-border rounded-lg space-y-4">
               <div className="text-xs font-mono font-bold text-text-primary uppercase tracking-wider">
-                2. FULL PROJECT / COMMERCIAL LICENSE
+                2. FUTURE RESEARCH &amp; LICENSING INQUIRIES
               </div>
               <p className="text-xs text-text-secondary font-sans leading-relaxed">
-                For industrial deployment, enterprise software repair integration, or dedicated quantum compiler licensing.
+                Academic laboratories, quantum computing groups, and industrial partners may direct future research collaboration and licensing inquiries to the research team.
               </p>
               <ul className="text-xs font-mono text-text-muted space-y-2">
-                <li>• Dedicated commercial licensing &amp; architecture terms</li>
-                <li>• Custom QPU backend integration (IBM, Rigetti, IonQ)</li>
-                <li>• Handled via direct correspondence with founder</li>
+                <li>• Future QPU backend integration terms</li>
+                <li>• Academic quantum compilation research partnerships</li>
+                <li>• Direct correspondence with founder</li>
               </ul>
               <div className="pt-2 text-xs font-mono text-text-primary">
                 Contact: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent font-bold hover:underline">{siteConfig.contact.email}</a>

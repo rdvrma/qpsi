@@ -97,6 +97,17 @@ export function Footer({ onOpenModal }: FooterProps = {}) {
                 </Link>
               </li>
               <li>
+                <a
+                  href={siteConfig.funding.payPalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors flex items-center space-x-1"
+                >
+                  <span>Support via PayPal (Direct)</span>
+                  <span className="text-[10px]">↗</span>
+                </a>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-accent transition-colors">
                   Research Collaboration &amp; Contact
                 </Link>
