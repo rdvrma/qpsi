@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { SpatialHeroVisual } from '@/components/ui/SpatialHeroVisual';
+import { QuantumParticleField } from '@/components/ui/QuantumParticleField';
+import { InteractiveEnergyGapChart } from '@/components/ui/InteractiveEnergyGapChart';
 import { siteConfig } from '@/content/siteConfig';
-import { ArrowUpRight, CheckCircle2, AlertCircle, HelpCircle, FileText, FlaskConical, Cpu, Layers } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, AlertCircle, Cpu, Database, Layers, ShieldCheck, Heart, FileText } from 'lucide-react';
 
 export const metadata = {
   title: siteConfig.meta.title,
@@ -17,17 +19,20 @@ export default function HomePage() {
   const percentage = (founderFundedUsd / goalUsd) * 100;
 
   return (
-    <div className="min-h-screen bg-surface text-text-primary selection:bg-accent selection:text-white flex flex-col font-sans">
+    <div className="min-h-screen bg-surface text-text-primary selection:bg-accent selection:text-bgBlack flex flex-col font-sans relative overflow-hidden">
+      {/* Background Interactive Quantum Canvas Particles */}
+      <QuantumParticleField />
+
       <Navbar />
 
-      <main className="flex-grow pt-24 space-y-24 pb-20">
+      <main className="flex-grow pt-24 space-y-24 pb-20 relative z-10">
         {/* ================================================== */}
-        {/* SECTION 1 — HERO                                  */}
+        {/* SECTION 1 — HERO & 3D QUANTUM BLOCH VISUALIZER     */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 text-center space-y-8">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-surface-raised border border-border rounded-full shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          {/* Eyebrow Badge */}
+          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 bg-surface-card border border-border/80 rounded-full shadow-lg glass-panel">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#00F0FF]" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               {siteConfig.company.eyebrow}
             </span>
@@ -35,7 +40,7 @@ export default function HomePage() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-text-primary max-w-4xl mx-auto leading-[1.08]">
-            We test what quantum hardware can actually do.
+            We test what quantum hardware <span className="text-gradient-cyan">can actually do.</span>
           </h1>
 
           {/* Supporting Copy */}
@@ -52,7 +57,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               href="/research"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded shadow-xs hover:bg-accent-hover transition-all"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 bg-accent text-bgBlack font-mono text-xs font-bold uppercase tracking-wider rounded shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:bg-accent-hover transition-all"
             >
               <span>EXPLORE RESEARCH</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -60,7 +65,7 @@ export default function HomePage() {
 
             <Link
               href="/compiler"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-surface-raised border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:border-border-hover transition-all"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 bg-surface-card border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:border-accent/40 transition-all glass-panel"
             >
               <span>EXPLORE COMPILER RESEARCH</span>
             </Link>
@@ -69,41 +74,41 @@ export default function HomePage() {
               href={siteConfig.funding.payPalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-surface-subtle border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:bg-surface-raised transition-all"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 bg-surface-subtle border border-border text-text-primary font-mono text-xs font-semibold uppercase tracking-wider rounded hover:bg-surface-card transition-all glass-panel"
             >
               <span>SUPPORT Q-PSI</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Interactive Spatial 3D Hero Visual */}
+          {/* Interactive 3D WebGL Bloch Sphere Visualizer Container */}
           <div className="pt-4">
             <SpatialHeroVisual />
           </div>
         </section>
 
         {/* ================================================== */}
-        {/* SECTION 2 — LIVE RESEARCH RECORD                 */}
+        {/* SECTION 2 — LIVE RESEARCH & EVIDENCE DASHBOARD     */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-surface-raised border border-border rounded-lg p-6 sm:p-8 space-y-6">
-            <div className="flex flex-wrap items-center justify-between border-b border-border pb-4 gap-4">
+          <div className="bg-surface-card border border-border/80 rounded-xl p-6 sm:p-8 space-y-6 glass-panel">
+            <div className="flex flex-wrap items-center justify-between border-b border-border/60 pb-4 gap-4">
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
                   LIVE EVIDENCE LOG
                 </span>
-                <h2 className="text-xl font-serif font-bold text-text-primary mt-1">
+                <h2 className="text-2xl font-serif font-bold text-text-primary mt-1">
                   Physical QPU Verification Record
                 </h2>
               </div>
               <div className="text-xs font-mono text-text-muted">
-                HARDWARE: <span className="text-text-primary font-semibold">{siteConfig.hardwareSummary.backend} ({siteConfig.hardwareSummary.qubitDescription})</span>
+                HARDWARE: <span className="text-accent font-semibold">{siteConfig.hardwareSummary.backend} ({siteConfig.hardwareSummary.qubitDescription})</span>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Card 1 */}
-              <div className="p-4 bg-surface border border-border rounded space-y-2">
+              <div className="p-4 bg-surface border border-border rounded-lg space-y-2 glass-panel-hover">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono text-text-muted">HARDWARE</span>
                   <span className="inline-flex items-center text-[10px] font-mono font-bold text-status-pass">
@@ -113,13 +118,13 @@ export default function HomePage() {
                 <div className="text-xs font-mono font-bold text-text-primary">
                   PHYSICAL IBM QPU
                 </div>
-                <p className="text-[11px] font-mono text-text-secondary">
+                <p className="text-[11px] font-mono text-text-secondary leading-relaxed">
                   {siteConfig.hardwareSummary.shotsSummary}
                 </p>
               </div>
 
               {/* Card 2 */}
-              <div className="p-4 bg-surface border border-border rounded space-y-2">
+              <div className="p-4 bg-surface border border-border rounded-lg space-y-2 glass-panel-hover">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono text-text-muted">DYNAMIC BV</span>
                   <span className="inline-flex items-center text-[10px] font-mono font-bold text-status-pass">
@@ -129,29 +134,29 @@ export default function HomePage() {
                 <div className="text-xs font-mono font-bold text-text-primary">
                   QUANTUM ADVANTAGE — SUPPORTED
                 </div>
-                <p className="text-[11px] font-mono text-text-secondary">
-                  Single-shot oracle query complexity advantage (alpha_Q = 0.1532 vs alpha_C = 0.6963, p &lt; 10⁻⁶).
+                <p className="text-[11px] font-mono text-text-secondary leading-relaxed">
+                  Single-shot oracle query complexity advantage (&alpha;<sub>Q</sub> = 0.1532 vs &alpha;<sub>C</sub> = 0.6963, p &lt; 10<sup>-6</sup>).
                 </p>
               </div>
 
               {/* Card 3 */}
-              <div className="p-4 bg-surface border border-border rounded space-y-2">
+              <div className="p-4 bg-surface border border-border rounded-lg space-y-2 glass-panel-hover">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono text-text-muted">COMPILER 6F</span>
                   <span className="inline-flex items-center text-[10px] font-mono font-bold text-status-pass">
-                    <CheckCircle2 className="w-3 h-3 mr-1" /> PASS (N ≤ 10)
+                    <CheckCircle2 className="w-3 h-3 mr-1" /> PASS (N &le; 10)
                   </span>
                 </div>
                 <div className="text-xs font-mono font-bold text-text-primary">
                   INTEROPERABILITY PASS
                 </div>
-                <p className="text-[11px] font-mono text-text-secondary">
-                  End-to-end QUBO/Ising execution. Compiler-specific advantage NOT YET ESTABLISHED.
+                <p className="text-[11px] font-mono text-text-secondary leading-relaxed">
+                  End-to-end QUBO/Ising execution. Compiler advantage NOT YET ESTABLISHED.
                 </p>
               </div>
 
               {/* Card 4 */}
-              <div className="p-4 bg-surface border border-border rounded space-y-2">
+              <div className="p-4 bg-surface border border-border rounded-lg space-y-2 glass-panel-hover">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono text-text-muted">RESTRICTED SIMON</span>
                   <span className="inline-flex items-center text-[10px] font-mono font-bold text-status-inconclusive">
@@ -161,7 +166,7 @@ export default function HomePage() {
                 <div className="text-xs font-mono font-bold text-text-primary">
                   SPEEDUP INCONCLUSIVE
                 </div>
-                <p className="text-[11px] font-mono text-text-secondary">
+                <p className="text-[11px] font-mono text-text-secondary leading-relaxed">
                   Constant-depth 56-qubit circuits valid; universal unmitigated speedup inconclusive.
                 </p>
               </div>
@@ -170,10 +175,10 @@ export default function HomePage() {
         </section>
 
         {/* ================================================== */}
-        {/* SECTION 3 — FEATURED EXPERIMENTS                   */}
+        {/* SECTION 3 — FEATURED EXPERIMENTS                  */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-wrap items-end justify-between border-b border-border pb-4 gap-4">
+          <div className="flex flex-wrap items-end justify-between border-b border-border/80 pb-4 gap-4">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
                 FEATURED RESEARCH CAMPAIGNS
@@ -200,21 +205,21 @@ export default function HomePage() {
               return (
                 <div
                   key={exp.code}
-                  className="bg-surface-raised border border-border p-6 rounded-lg space-y-4 hover:border-border-hover transition-all flex flex-col justify-between"
+                  className="bg-surface-card border border-border/80 p-6 sm:p-8 rounded-xl space-y-4 hover:border-accent/40 transition-all flex flex-col justify-between glass-panel glass-panel-hover"
                 >
                   <div className="space-y-3">
-                    <div className="flex flex-wrap items-center justify-between border-b border-border pb-3 gap-2">
+                    <div className="flex flex-wrap items-center justify-between border-b border-border/60 pb-3 gap-2">
                       <span className="text-xs font-mono font-bold text-accent">
                         {exp.code}
                       </span>
                       <span
-                        className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded uppercase ${
+                        className={`text-[10px] font-mono font-bold px-2.5 py-1 rounded uppercase ${
                           isPass
-                            ? 'bg-status-pass-bg text-status-pass'
+                            ? 'bg-status-pass-bg text-status-pass border border-status-pass/30'
                             : isInconclusive
-                            ? 'bg-status-inconclusive-bg text-status-inconclusive'
+                            ? 'bg-status-inconclusive-bg text-status-inconclusive border border-status-inconclusive/30'
                             : isExploratory
-                            ? 'bg-status-exploratory-bg text-status-exploratory'
+                            ? 'bg-status-exploratory-bg text-status-exploratory border border-status-exploratory/30'
                             : 'bg-status-fail-bg text-status-fail'
                         }`}
                       >
@@ -222,7 +227,7 @@ export default function HomePage() {
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-serif font-bold text-text-primary">
+                    <h3 className="text-2xl font-serif font-bold text-text-primary">
                       {exp.title}
                     </h3>
                     <div className="text-xs font-mono text-text-secondary font-semibold">
@@ -234,12 +239,12 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono text-text-muted">
+                  <div className="pt-4 border-t border-border/60 flex items-center justify-between text-[11px] font-mono text-text-muted">
                     <div>
                       BACKEND: <span className="text-text-primary font-semibold">{exp.backend}</span>
                     </div>
                     <div>
-                      SHOTS: <span className="text-text-primary">{exp.shots.toLocaleString()}</span>
+                      SHOTS: <span className="text-accent font-bold">{exp.shots.toLocaleString()}</span>
                     </div>
                   </div>
                 </div>
@@ -249,10 +254,17 @@ export default function HomePage() {
         </section>
 
         {/* ================================================== */}
-        {/* SECTION 4 — Q-PSI COMPILER                        */}
+        {/* SECTION 4 — INTERACTIVE HARDWARE BENCHMARK VISUALIZER */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-surface-raised border border-border rounded-lg p-8 sm:p-12 space-y-8">
+          <InteractiveEnergyGapChart />
+        </section>
+
+        {/* ================================================== */}
+        {/* SECTION 5 — Q-PSI COMPILER RESEARCH PIPELINE      */}
+        {/* ================================================== */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-surface-card border border-border/80 rounded-xl p-8 sm:p-12 space-y-8 glass-panel">
             <div className="max-w-3xl space-y-3">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
                 STATE-SPACE COMPILER RESEARCH
@@ -267,27 +279,27 @@ export default function HomePage() {
 
             {/* Pipeline Step Display */}
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 pt-2">
-              <div className="p-3.5 bg-surface border border-border rounded">
+              <div className="p-4 bg-surface border border-border rounded-lg glass-panel-hover">
                 <div className="text-[10px] font-mono text-accent font-bold">STAGE 1</div>
                 <div className="text-xs font-mono font-bold text-text-primary mt-1">Raw Search Space</div>
                 <div className="text-[10px] font-mono text-text-secondary mt-1">Multi-repository files</div>
               </div>
-              <div className="p-3.5 bg-surface border border-border rounded">
+              <div className="p-4 bg-surface border border-border rounded-lg glass-panel-hover">
                 <div className="text-[10px] font-mono text-accent font-bold">STAGE 2</div>
                 <div className="text-xs font-mono font-bold text-text-primary mt-1">Candidate State</div>
                 <div className="text-[10px] font-mono text-text-secondary mt-1">Interaction graph</div>
               </div>
-              <div className="p-3.5 bg-surface border border-border rounded">
+              <div className="p-4 bg-surface border border-border rounded-lg glass-panel-hover">
                 <div className="text-[10px] font-mono text-accent font-bold">STAGE 3</div>
                 <div className="text-xs font-mono font-bold text-text-primary mt-1">Ising Mapping</div>
                 <div className="text-[10px] font-mono text-text-secondary mt-1">x_i = (1 - Z_i)/2</div>
               </div>
-              <div className="p-3.5 bg-surface border border-border rounded">
+              <div className="p-4 bg-surface border border-border rounded-lg glass-panel-hover">
                 <div className="text-[10px] font-mono text-accent font-bold">STAGE 4</div>
                 <div className="text-xs font-mono font-bold text-text-primary mt-1">Physical QPU</div>
                 <div className="text-[10px] font-mono text-text-secondary mt-1">QAOA p=1 on 156Q</div>
               </div>
-              <div className="p-3.5 bg-surface border border-border rounded">
+              <div className="p-4 bg-surface border border-border rounded-lg glass-panel-hover">
                 <div className="text-[10px] font-mono text-accent font-bold">STAGE 5</div>
                 <div className="text-xs font-mono font-bold text-text-primary mt-1">Evidence Audit</div>
                 <div className="text-[10px] font-mono text-text-secondary mt-1">SHA256 &amp; Job ID</div>
@@ -295,7 +307,7 @@ export default function HomePage() {
             </div>
 
             {/* Approved Metrics & Boundary Note */}
-            <div className="p-4 bg-surface border border-border rounded text-xs font-mono space-y-2">
+            <div className="p-4 bg-surface border border-border rounded-lg text-xs font-mono space-y-2">
               <div className="flex items-center justify-between text-text-primary font-bold">
                 <span>AUDITED NISQ BOUNDARY RESULT (STAGE-6F)</span>
                 <span className="text-status-pass">INTEROPERABILITY PASS</span>
@@ -309,7 +321,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
                 href="/compiler"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded hover:bg-accent-hover transition-all"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-bgBlack font-mono text-xs font-bold uppercase tracking-wider rounded shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:bg-accent-hover transition-all"
               >
                 <span>EXPLORE COMPILER RESEARCH</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -319,10 +331,10 @@ export default function HomePage() {
         </section>
 
         {/* ================================================== */}
-        {/* SECTION 5 — PAPERS + RESEARCH NOTES               */}
+        {/* SECTION 6 — PAPERS + RESEARCH NOTES               */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-wrap items-end justify-between border-b border-border pb-4 gap-4">
+          <div className="flex flex-wrap items-end justify-between border-b border-border/80 pb-4 gap-4">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
                 PUBLICATIONS &amp; PREPRINTS
@@ -344,12 +356,12 @@ export default function HomePage() {
             {siteConfig.papers.map((paper) => (
               <div
                 key={paper.id}
-                className="bg-surface-raised border border-border p-6 rounded-lg space-y-4 flex flex-col justify-between hover:border-border-hover transition-all"
+                className="bg-surface-card border border-border/80 p-6 rounded-xl space-y-4 flex flex-col justify-between hover:border-accent/40 transition-all glass-panel glass-panel-hover"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between border-b border-border pb-2">
+                  <div className="flex items-center justify-between border-b border-border/60 pb-2">
                     <span className="text-[10px] font-mono text-text-muted uppercase">MANUSCRIPT</span>
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-surface border border-border rounded text-text-primary">
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-surface border border-border/80 rounded text-text-primary">
                       {paper.status}
                     </span>
                   </div>
@@ -363,7 +375,7 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-border flex items-center justify-between text-[11px] font-mono text-text-muted">
+                <div className="pt-3 border-t border-border/60 flex items-center justify-between text-[11px] font-mono text-text-muted">
                   <span>{paper.authors.join(', ')}</span>
                   <Link href="/papers" className="text-accent font-bold hover:underline">
                     READ OUTLINE →
@@ -374,7 +386,7 @@ export default function HomePage() {
           </div>
 
           {/* Main Blog Callout Banner */}
-          <div className="bg-surface-raised border border-border p-6 sm:p-8 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="bg-surface-card border border-border/80 p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 glass-panel">
             <div className="space-y-2 max-w-2xl">
               <span className="text-xs font-mono font-bold text-accent uppercase tracking-widest">
                 FEATURED SCIENTIFIC BLOG DEEP DIVE
@@ -388,7 +400,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/blog"
-              className="inline-flex items-center space-x-2 px-5 py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded shadow-xs hover:bg-accent-hover transition-all shrink-0"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 bg-accent text-bgBlack font-mono text-xs font-bold uppercase tracking-wider rounded shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:bg-accent-hover transition-all shrink-0"
             >
               <span>READ FULL REPORT</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -397,11 +409,11 @@ export default function HomePage() {
         </section>
 
         {/* ================================================== */}
-        {/* SECTION 6 — Q-PSI RESEARCH FUND                   */}
+        {/* SECTION 7 — Q-PSI RESEARCH FUND                   */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-surface-raised border border-border rounded-lg p-8 sm:p-12 space-y-8">
-            <div className="flex flex-wrap items-center justify-between border-b border-border pb-6 gap-4">
+          <div className="bg-surface-card border border-border/80 rounded-xl p-8 sm:p-12 space-y-8 glass-panel glow-box-indigo">
+            <div className="flex flex-wrap items-center justify-between border-b border-border/60 pb-6 gap-4">
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
                   SUPPORT OPEN QUANTUM SCIENCE
@@ -425,7 +437,7 @@ export default function HomePage() {
                 </p>
 
                 {/* Truthful Founder Funded Disclosure */}
-                <div className="p-4 bg-surface border border-border rounded space-y-2">
+                <div className="p-4 bg-surface border border-border rounded-lg space-y-2">
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-text-muted uppercase font-semibold">
                       {siteConfig.funding.founderFundedLabel}
@@ -434,9 +446,9 @@ export default function HomePage() {
                       {siteConfig.funding.founderFundedValueText} / ${goalUsd.toLocaleString()} ({percentage.toFixed(1)}%)
                     </span>
                   </div>
-                  <div className="w-full bg-surface-subtle h-2.5 rounded-full overflow-hidden border border-border">
+                  <div className="w-full bg-surface-subtle h-3 rounded-full overflow-hidden border border-border">
                     <div
-                      className="bg-accent h-full rounded-full"
+                      className="bg-accent h-full rounded-full transition-all duration-500 shadow-[0_0_10px_#00F0FF]"
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
@@ -446,7 +458,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="md:col-span-5 bg-surface border border-border p-6 rounded-lg space-y-4 text-center">
+              <div className="md:col-span-5 bg-surface border border-border/80 p-6 rounded-lg space-y-4 text-center glass-panel">
                 <div className="text-xs font-mono font-bold text-text-primary uppercase tracking-wider">
                   VOLUNTARY RESEARCH SUPPORT
                 </div>
@@ -457,7 +469,7 @@ export default function HomePage() {
                   href={siteConfig.funding.payPalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center space-x-2 w-full py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded shadow-xs hover:bg-accent-hover transition-all"
+                  className="inline-flex items-center justify-center space-x-2 w-full py-3.5 bg-accent text-bgBlack font-mono text-xs font-bold uppercase tracking-wider rounded shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:bg-accent-hover transition-all"
                 >
                   <span>SUPPORT THE NEXT EXPERIMENT</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -471,10 +483,10 @@ export default function HomePage() {
         </section>
 
         {/* ================================================== */}
-        {/* SECTION 7 — ABOUT / PARENT RESEARCH ECOSYSTEM    */}
+        {/* SECTION 8 — ABOUT / PARENT RESEARCH ECOSYSTEM     */}
         {/* ================================================== */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="border-b border-border pb-4">
+          <div className="border-b border-border/80 pb-4">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">
               PARENT RESEARCH ECOSYSTEM
             </span>
@@ -489,7 +501,7 @@ export default function HomePage() {
                 Q-Psi operates as an independent quantum research initiative under <strong>The Oneness Project</strong>. We adhere strictly to open-science integrity: publishing raw evidence, IBM job IDs, physical QPU metrics, and explicit claim boundaries.
               </p>
 
-              <div className="p-4 bg-surface-raised border border-border rounded space-y-3 font-mono text-xs">
+              <div className="p-5 bg-surface-card border border-border/80 rounded-xl space-y-3 font-mono text-xs glass-panel">
                 <div className="text-text-primary font-bold uppercase tracking-wider">
                   ORGANIZATIONAL HIERARCHY
                 </div>
@@ -499,9 +511,9 @@ export default function HomePage() {
                     <span className="font-bold text-text-primary">THE ONENESS PROJECT</span>
                     <span className="text-[10px] text-text-muted">(Mother Initiative)</span>
                   </div>
-                  <div className="pl-4 border-l-2 border-border space-y-2">
+                  <div className="pl-4 border-l-2 border-accent space-y-2">
                     <div className="flex items-center space-x-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                       <span className="font-bold text-accent">Q-PSI</span>
                       <span className="text-[10px] text-text-muted">(Independent Quantum Research)</span>
                     </div>
@@ -515,7 +527,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="md:col-span-6 bg-surface-raised border border-border p-6 sm:p-8 rounded-lg space-y-4">
+            <div className="md:col-span-6 bg-surface-card border border-border/80 p-6 sm:p-8 rounded-xl space-y-4 glass-panel">
               <div className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
                 SCIENTIFIC INTEGRITY COMMITMENT
               </div>

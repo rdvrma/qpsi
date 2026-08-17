@@ -5,13 +5,15 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './content/**/*.{js,ts,jsx,tsx,mdx}',
+    './styles/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        // Semantic Tokens
+        // Quantum Obsidian Tokens
         surface: 'var(--surface)',
         'surface-raised': 'var(--surface-raised)',
+        'surface-card': 'var(--surface-card)',
         'surface-subtle': 'var(--surface-subtle)',
         'text-primary': 'var(--text-primary)',
         'text-secondary': 'var(--text-secondary)',
@@ -21,6 +23,7 @@ module.exports = {
         accent: 'var(--accent)',
         'accent-hover': 'var(--accent-hover)',
         'accent-subtle': 'var(--accent-subtle)',
+        'accent-indigo': 'var(--accent-indigo)',
         'status-pass': 'var(--status-pass)',
         'status-pass-bg': 'var(--status-pass-bg)',
         'status-inconclusive': 'var(--status-inconclusive)',
@@ -31,14 +34,14 @@ module.exports = {
         'status-exploratory-bg': 'var(--status-exploratory-bg)',
 
         // Backward Compatibility Tokens
-        bgBlack: '#F7F7F4',
-        primaryWhite: '#0A0A0B',
-        softWhite: '#27272A',
-        darkGray: '#FFFFFF',
-        midGray: '#52525B',
-        borderGray: 'rgba(10, 10, 11, 0.12)',
-        cardBg: '#FFFFFF',
-        cardBorder: 'rgba(10, 10, 11, 0.12)',
+        bgBlack: '#05070E',
+        primaryWhite: '#F8FAFC',
+        softWhite: '#E2E8F0',
+        darkGray: '#0A0D18',
+        midGray: '#94A3B8',
+        borderGray: 'rgba(255, 255, 255, 0.08)',
+        cardBg: '#0F1527',
+        cardBorder: 'rgba(255, 255, 255, 0.08)',
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Cormorant Garamond', 'Georgia', 'serif'],
@@ -48,8 +51,9 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
-        'scanline': 'scanline 8s linear infinite',
+        'laser-glow': 'laserGlow 4s ease-in-out infinite',
         'float-slow': 'floatSlow 6s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -60,9 +64,9 @@ module.exports = {
           '0%, 100%': { opacity: '0.4' },
           '50%': { opacity: '0.8' },
         },
-        scanline: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(1000%)' },
+        laserGlow: {
+          '0%, 100%': { filter: 'drop-shadow(0 0 10px rgba(0, 240, 255, 0.3))' },
+          '50%': { filter: 'drop-shadow(0 0 25px rgba(0, 240, 255, 0.7))' },
         },
         floatSlow: {
           '0%, 100%': { transform: 'translateY(0px)' },
