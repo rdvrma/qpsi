@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sealSession, unsealSession, getSessionCookieName, getSessionCookieOptions } from '@/lib/capsule/session';
 import { capsuleClient, CapsuleApiErrorClass } from '@/lib/capsule/client';
+import { enforceSameOrigin } from '@/lib/capsule/origin';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+  // CSRF Protection: enforce same-origin for mutating request
+  const originError = enforceSameOrigin(req);
+  if (originError) return originError;
+
   try {
     let body: any;
     try {
@@ -52,7 +57,19 @@ export async function POST(req: NextRequest) {
       createdAt: now,
     };
 
-    const token = sealSession(sessionPayload);
+    let token: string;
+    try {
+      token = sealSession(sessionPayload);
+    } catch (err: any) {
+      return NextResponse.json(
+        {
+          error_code: 'SESSION_CONFIGURATION_ERROR',
+          message: 'Server session encryption configuration error.',
+        },
+        { status: 500 }
+      );
+    }
+
     const cookieOptions = getSessionCookieOptions();
 
     const response = NextResponse.json(
@@ -109,7 +126,7 @@ export async function GET(req: NextRequest) {
       return response;
     }
 
-    // Verify against backend to catch any revocations during active session
+    // Verify against backend to detect revocation, expiry, or invalid status
     try {
       const licenseInfo = await capsuleClient.getLicenseInfo(session.licenseKey);
       if (licenseInfo.status && licenseInfo.status !== 'active') {
@@ -117,7 +134,7 @@ export async function GET(req: NextRequest) {
           {
             authenticated: false,
             error_code: 'LICENSE_INACTIVE',
-            message: 'Research license is no longer active.',
+            message: `Research license status is '${licenseInfo.status}'. Active status required.`,
           },
           { status: 403 }
         );
@@ -139,21 +156,29 @@ export async function GET(req: NextRequest) {
         },
         { status: 200 }
       );
-    } catch {
-      // Backend temporarily unreachable; return active session state if unexpired
+    } catch (backendErr: any) {
+      // If backend explicitly returned 401/403/404 indicating license is invalid/revoked
+      if (backendErr instanceof CapsuleApiErrorClass && (backendErr.status === 401 || backendErr.status === 403 || backendErr.status === 404)) {
+        const response = NextResponse.json(
+          {
+            authenticated: false,
+            error_code: backendErr.errorCode || 'LICENSE_REVOKED',
+            message: backendErr.message || 'Research license has been revoked or expired.',
+          },
+          { status: 403 }
+        );
+        response.cookies.delete(cookieName);
+        return response;
+      }
+
+      // Backend unreachable / transient network error: Fail closed with 503, but DO NOT delete valid cookie
       return NextResponse.json(
         {
-          authenticated: true,
-          license: {
-            license_id: session.licenseId,
-            license_type: session.licenseType,
-            status: 'active',
-            organization: session.organization,
-            expires_at: session.expiresAt,
-            max_runtime_seconds: 600,
-          },
+          authenticated: false,
+          error_code: 'LICENSE_VALIDATION_UNAVAILABLE',
+          message: 'Unable to verify research license with Capsule backend. Please retry shortly.',
         },
-        { status: 200 }
+        { status: 503 }
       );
     }
   } catch {
@@ -161,7 +186,11 @@ export async function GET(req: NextRequest) {
   }
 }
 
-export async function DELETE() {
+export async function DELETE(req: NextRequest) {
+  // CSRF Protection: enforce same-origin for mutating request
+  const originError = enforceSameOrigin(req);
+  if (originError) return originError;
+
   const cookieName = getSessionCookieName();
   const response = NextResponse.json({ success: true, authenticated: false }, { status: 200 });
   response.cookies.delete(cookieName);

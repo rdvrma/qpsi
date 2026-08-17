@@ -2,10 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { unsealSession, getSessionCookieName } from '@/lib/capsule/session';
 import { capsuleClient, CapsuleApiErrorClass } from '@/lib/capsule/client';
 import { ResearchCapsuleWorkloadV1 } from '@/lib/capsule/types';
+import { enforceSameOrigin } from '@/lib/capsule/origin';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+  // CSRF Protection: enforce same-origin for mutating workload submission
+  const originError = enforceSameOrigin(req);
+  if (originError) return originError;
+
   try {
     const cookieName = getSessionCookieName();
     const cookie = req.cookies.get(cookieName);

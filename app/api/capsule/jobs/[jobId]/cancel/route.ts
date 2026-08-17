@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { unsealSession, getSessionCookieName } from '@/lib/capsule/session';
 import { capsuleClient, CapsuleApiErrorClass } from '@/lib/capsule/client';
+import { enforceSameOrigin } from '@/lib/capsule/origin';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,6 +9,10 @@ export async function POST(
   req: NextRequest,
   context: { params: Promise<{ jobId: string }> }
 ) {
+  // CSRF Protection: enforce same-origin for mutating cancel request
+  const originError = enforceSameOrigin(req);
+  if (originError) return originError;
+
   try {
     const { jobId } = await context.params;
     if (!jobId) {

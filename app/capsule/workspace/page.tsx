@@ -57,6 +57,7 @@ export default function CapsuleWorkspacePage() {
 
   const checkSession = useCallback(async () => {
     setCheckingSession(true);
+    setWorkspaceError(null);
     try {
       const res = await fetch('/api/capsule/session', { cache: 'no-store' });
       const data = await res.json();
@@ -66,6 +67,9 @@ export default function CapsuleWorkspacePage() {
       } else {
         setAuthenticated(false);
         setLicense(null);
+        if (res.status === 503 || data.error_code === 'LICENSE_VALIDATION_UNAVAILABLE') {
+          setWorkspaceError(data.message || 'Unable to verify research license with Capsule backend.');
+        }
       }
     } catch {
       setAuthenticated(false);

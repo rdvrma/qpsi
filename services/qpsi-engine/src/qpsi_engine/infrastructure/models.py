@@ -3,7 +3,7 @@ from sqlalchemy.sql import func
 from qpsi_engine.infrastructure.database import Base
 
 
-class WorldModel(Base):  # type: ignore[misc]
+class WorldModel(Base):
     __tablename__ = "worlds"
 
     world_id = Column(String, primary_key=True, index=True)
@@ -14,7 +14,7 @@ class WorldModel(Base):  # type: ignore[misc]
     initial_seed_json = Column(JSON, nullable=False)
 
 
-class EventLedgerModel(Base):  # type: ignore[misc]
+class EventLedgerModel(Base):
     __tablename__ = "event_ledger"
 
     event_id = Column(String, primary_key=True, index=True)
@@ -35,7 +35,7 @@ class EventLedgerModel(Base):  # type: ignore[misc]
     event_hash = Column(String, nullable=False, unique=True)
 
 
-class SnapshotModel(Base):  # type: ignore[misc]
+class SnapshotModel(Base):
     __tablename__ = "snapshots"
 
     snapshot_id = Column(String, primary_key=True, index=True)
@@ -46,7 +46,7 @@ class SnapshotModel(Base):  # type: ignore[misc]
     created_at = Column(DateTime, server_default=func.now())
 
 
-class DemoSessionModel(Base):  # type: ignore[misc]
+class DemoSessionModel(Base):
     __tablename__ = "demo_sessions"
 
     session_id = Column(String, primary_key=True, index=True)
