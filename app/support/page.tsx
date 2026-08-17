@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
-import { Heart, ArrowUpRight, ShieldCheck, Cpu, HardDrive, Database, FileText, RefreshCw } from 'lucide-react';
+import { Heart, ArrowUpRight, ShieldCheck, Cpu, HardDrive, Database, FileText, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
   title: 'Support Q-Psi Research — General Research Fund',
@@ -25,7 +25,7 @@ export default function SupportPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <Heart className="w-3.5 h-3.5 text-accent fill-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              OPEN QUANTUM SCIENCE FUND
+              OPEN QUANTUM SCIENCE FUND &bull; INDEPENDENT RESEARCH
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -34,6 +34,15 @@ export default function SupportPage() {
           <p className="text-base text-text-secondary max-w-3xl font-sans leading-relaxed">
             {siteConfig.funding.description}
           </p>
+        </div>
+
+        {/* Milestone Marker */}
+        <div className="p-4 bg-surface-raised border border-border rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
+          <div className="flex items-center space-x-2 text-[#15803D] font-bold">
+            <CheckCircle2 className="w-4 h-4" />
+            <span>CURRENT MILESTONE ACHIEVED: COMPILER-ENABLED QUERY ADVANTAGE &bull; SUPPORTED</span>
+          </div>
+          <span className="text-text-muted">IBM Quantum (ibm_marrakesh — 156Q) &bull; Job da1c7rkdedkc73eqs5mg</span>
         </div>
 
         {/* Goal & Funding Meter Card */}
@@ -112,10 +121,10 @@ export default function SupportPage() {
         <div className="space-y-6">
           <div className="border-b border-border pb-4">
             <h2 className="text-2xl font-serif font-bold text-text-primary">
-              Where Research Support Is Allocated
+              Where Future Research Support Is Allocated
             </h2>
             <p className="text-xs font-sans text-text-secondary mt-1">
-              Direct physical execution &amp; open science infrastructure allocations
+              Future contributions directly support larger compiler search spaces, evaluation on alternative QPU backends, noise-resilient circuit design, dataset archiving, and open science publication.
             </p>
           </div>
 
@@ -124,7 +133,7 @@ export default function SupportPage() {
               <Cpu className="w-5 h-5 text-accent" />
               <div className="text-xs font-mono font-bold text-text-primary uppercase">PHYSICAL QPU</div>
               <p className="text-xs font-sans text-text-secondary leading-relaxed">
-                Superconducting quantum hardware shots and execution reservations on IBM Quantum backends.
+                Superconducting and neutral-atom hardware execution hours across IBM Quantum and partner backends.
               </p>
             </div>
 
@@ -132,7 +141,7 @@ export default function SupportPage() {
               <HardDrive className="w-5 h-5 text-accent" />
               <div className="text-xs font-mono font-bold text-text-primary uppercase">COMPUTE</div>
               <p className="text-xs font-sans text-text-secondary leading-relaxed">
-                Classical simulation, state space transpilation, and numerical verification servers.
+                State-space compiler scaling, classical baseline simulations, and automated benchmark verification servers.
               </p>
             </div>
 
@@ -140,7 +149,7 @@ export default function SupportPage() {
               <Database className="w-5 h-5 text-accent" />
               <div className="text-xs font-mono font-bold text-text-primary uppercase">DATASETS</div>
               <p className="text-xs font-sans text-text-secondary leading-relaxed">
-                Raw evidence dataset generation, cryptographic hashing, and public archiving.
+                Open raw evidence dataset generation, cryptographic sealing, and public repository maintenance.
               </p>
             </div>
 
@@ -148,7 +157,7 @@ export default function SupportPage() {
               <RefreshCw className="w-5 h-5 text-accent" />
               <div className="text-xs font-mono font-bold text-text-primary uppercase">REPRODUCIBILITY</div>
               <p className="text-xs font-sans text-text-secondary leading-relaxed">
-                Open-access execution scripts and automated validation suites for independent verification.
+                Adversarial protocol validation, noise-resilient experiment tooling, and independent audit replication.
               </p>
             </div>
 
@@ -156,7 +165,7 @@ export default function SupportPage() {
               <FileText className="w-5 h-5 text-accent" />
               <div className="text-xs font-mono font-bold text-text-primary uppercase">PUBLICATION</div>
               <p className="text-xs font-sans text-text-secondary leading-relaxed">
-                Scientific paper drafting, peer-reviewed open access publishing fees, and research post-mortems.
+                Open-access scientific paper publication fees, research post-mortems, and technical monographs.
               </p>
             </div>
           </div>

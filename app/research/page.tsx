@@ -4,7 +4,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
 import { EvidenceLine } from '@/components/ui/EvidenceLine';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, FileText, Database } from 'lucide-react';
 
 export const metadata = {
   title: 'Research Programs — Q-Psi Independent Quantum Research',
@@ -22,7 +22,7 @@ export default function ResearchPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              RESEARCH OVERVIEW
+              RESEARCH OVERVIEW &bull; ACTIVE STREAMS
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -35,34 +35,37 @@ export default function ResearchPage() {
 
         {/* Research Streams Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Stream 1 */}
+          {/* Stream 1: Flagship Compiler Grover Query Advantage */}
           <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between border-b border-border pb-3">
                 <span className="text-xs font-mono font-bold text-accent">STREAM 01</span>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-[#16A34A]/10 text-[#15803D] rounded border border-[#16A34A]/25">
-                  QPU INTEROPERABILITY PASS
+                  QUERY ADVANTAGE SUPPORTED
                 </span>
               </div>
               <h2 className="text-2xl font-serif font-bold text-text-primary">
-                State-Space Compiler (Stage-6F)
+                Compiler-Enabled Quantum Query Advantage (v1.1)
               </h2>
               <p className="text-xs text-text-secondary leading-relaxed font-sans">
-                Compiles large software-repair search spaces into discrete QUBO/Ising Hamiltonians executed on physical IBM Quantum processors. Exact classical parity achieved on instances with N &le; 10. NISQ gate-depth boundaries evaluated for N &ge; 18.
+                Authentic software-repair candidate spaces mapped to Grover amplitude amplification on <code>ibm_marrakesh</code> (Job da1c7rkdedkc73eqs5mg). Quantum effective queries beat classical expected cost across 9/9 cases and 3/3 problem sizes (N=4, 8, 16; 95% CI upper bound 7.360 &lt; 8.5).
               </p>
               <div className="pt-2">
-                <EvidenceLine status="SUPPORTED" claimLabel="INTEROPERABILITY PASS" />
+                <EvidenceLine status="SUPPORTED" claimLabel="COMPILER QUERY ADVANTAGE SUPPORTED" />
               </div>
             </div>
-            <div className="pt-4 border-t border-border">
-              <Link href="/compiler" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
-                <span>Explore Compiler Details</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+            <div className="pt-4 border-t border-border flex items-center space-x-4">
+              <Link href="/research/compiler-grover-query-advantage" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <FileText className="w-3.5 h-3.5" />
+                <span>Read Research Note</span>
+              </Link>
+              <Link href="/compiler" className="text-xs font-sans font-semibold text-text-secondary hover:text-text-primary flex items-center space-x-1">
+                <span>Compiler Details &rarr;</span>
               </Link>
             </div>
           </div>
 
-          {/* Stream 2 */}
+          {/* Stream 2: Dynamic BV Query Advantage */}
           <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between border-b border-border pb-3">
@@ -75,7 +78,7 @@ export default function ResearchPage() {
                 Dynamic Bernstein-Vazirani Experiment
               </h2>
               <p className="text-xs text-text-secondary leading-relaxed font-sans">
-                Single-shot dynamic oracle experiment evaluating time-to-solution scaling. Measured quantum scaling exponent alpha_Q = 0.1532 vs classical alpha_C = 0.6963 (p = 3.47e-7), demonstrating quantum query-complexity advantage under the audited single-shot methodology.
+                Single-shot dynamic oracle experiment evaluating time-to-solution scaling on <code>ibm_marrakesh</code>. Measured quantum scaling exponent \(\alpha_Q = 0.1532\) vs classical \(\alpha_C = 0.6963\) (\(t = -30.65, p = 3.47 \times 10^{-7}\)), demonstrating quantum query-complexity advantage.
               </p>
               <div className="pt-2">
                 <EvidenceLine status="SUPPORTED" claimLabel="QUANTUM ADVANTAGE SUPPORTED" />
@@ -89,7 +92,7 @@ export default function ResearchPage() {
             </div>
           </div>
 
-          {/* Stream 3 */}
+          {/* Stream 3: Restricted Simon Experiment */}
           <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between border-b border-border pb-3">
@@ -102,7 +105,7 @@ export default function ResearchPage() {
                 Restricted-Hamming-Weight Simon Experiment
               </h2>
               <p className="text-xs text-text-secondary leading-relaxed font-sans">
-                Constant-depth (15-16 layers) circuit execution across 16 to 56 physical qubits on ibm_marrakesh. Exact period recovered on a subset of instances. Universal asymptotic speedup on raw unmitigated hardware remains inconclusive.
+                Constant-depth (15-16 layers) circuit execution across 16 to 56 physical qubits on <code>ibm_marrakesh</code>. Exact period recovered on a subset of instances. Universal asymptotic speedup on raw unmitigated hardware remains inconclusive.
               </p>
               <div className="pt-2">
                 <EvidenceLine status="INCONCLUSIVE" claimLabel="SPEEDUP INCONCLUSIVE" />
@@ -116,28 +119,28 @@ export default function ResearchPage() {
             </div>
           </div>
 
-          {/* Stream 4 — Prior Baseline */}
+          {/* Stream 4: State-Space Compiler Stage-6F Interoperability */}
           <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between border-b border-border pb-3">
-                <span className="text-xs font-mono font-bold text-text-muted">PRIOR BASELINE WORK</span>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-surface-subtle border border-border rounded text-text-primary">
-                  PROTOTYPE BASELINE
+                <span className="text-xs font-mono font-bold text-accent">STREAM 04</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-[#16A34A]/10 text-[#15803D] rounded border border-[#16A34A]/25">
+                  INTEROPERABILITY PASS
                 </span>
               </div>
               <h2 className="text-2xl font-serif font-bold text-text-primary">
-                Persistent World Engine Baseline
+                State-Space Compiler (Stage-6F)
               </h2>
               <p className="text-xs text-text-secondary leading-relaxed font-sans">
-                Q-Psi prior baseline classical state persistence engine. Demonstrates two-character canonical state persistence, replayable event history, and bit-exact state recovery across restarts.
+                Compiles multi-repository software-repair search spaces into discrete QUBO/Ising Hamiltonians executed on physical IBM Quantum processors. Exact classical parity achieved on instances with N &le; 10. NISQ gate-depth boundaries evaluated for N &ge; 18.
               </p>
               <div className="pt-2">
-                <EvidenceLine status="SUPPORTED" claimLabel="DETERMINISTIC BASELINE PASS" />
+                <EvidenceLine status="SUPPORTED" claimLabel="INTEROPERABILITY PASS" />
               </div>
             </div>
             <div className="pt-4 border-t border-border">
-              <Link href="/prototype" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
-                <span>Run Classical Prototype</span>
+              <Link href="/compiler" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <span>Explore Compiler Architecture</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>

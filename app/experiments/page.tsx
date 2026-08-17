@@ -4,7 +4,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
 import { EvidenceLine } from '@/components/ui/EvidenceLine';
-import { ArrowUpRight, Database } from 'lucide-react';
+import { ArrowUpRight, Database, FileText } from 'lucide-react';
 
 export const metadata = {
   title: 'Physical QPU Experiments & Benchmarks — Q-Psi',
@@ -21,7 +21,7 @@ export default function ExperimentsPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              PHYSICAL QPU LOGS
+              PHYSICAL QPU LOGS &bull; VERIFIED BENCHMARKS
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -54,15 +54,15 @@ export default function ExperimentsPage() {
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs font-mono">
                 <div className="p-3 bg-surface-subtle border border-border rounded">
                   <div className="text-text-muted text-[10px]">PHYSICAL BACKEND</div>
-                  <div className="text-text-primary font-bold mt-1">{exp.backend}</div>
+                  <div className="text-text-primary font-bold mt-1 truncate">{exp.backend.split(' ')[0]}</div>
                 </div>
                 <div className="p-3 bg-surface-subtle border border-border rounded">
                   <div className="text-text-muted text-[10px]">IBM JOB ID</div>
                   <div className="text-text-primary font-bold mt-1 truncate">{exp.jobId}</div>
                 </div>
                 <div className="p-3 bg-surface-subtle border border-border rounded">
-                  <div className="text-text-muted text-[10px]">REGISTER SIZE</div>
-                  <div className="text-text-primary font-bold mt-1">{exp.qubits}</div>
+                  <div className="text-text-muted text-[10px]">SEARCH/REGISTER SIZE</div>
+                  <div className="text-text-primary font-bold mt-1 truncate">{exp.qubits}</div>
                 </div>
                 <div className="p-3 bg-surface-subtle border border-border rounded">
                   <div className="text-text-muted text-[10px]">PHYSICAL SHOTS</div>
@@ -82,10 +82,31 @@ export default function ExperimentsPage() {
                 />
               </div>
 
-              <div className="pt-3 flex items-center justify-between border-t border-border">
+              <div className="pt-3 flex flex-wrap items-center justify-between border-t border-border gap-4">
+                <div className="flex items-center space-x-4">
+                  {exp.code === 'QPSI-EXP-CGQA-01' && (
+                    <Link
+                      href="/research/compiler-grover-query-advantage"
+                      className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1"
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Read Research Note</span>
+                    </Link>
+                  )}
+                  {exp.code === 'QPSI-EXP-DVBV' && (
+                    <Link
+                      href="/papers"
+                      className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1"
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Read Manuscript</span>
+                    </Link>
+                  )}
+                </div>
+
                 <Link href="/evidence" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
                   <Database className="w-3.5 h-3.5" />
-                  <span>Verify in Evidence Index</span>
+                  <span>Inspect Evidence &amp; Hashes</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

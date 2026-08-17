@@ -20,7 +20,7 @@ export default function PapersPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              MANUSCRIPTS &amp; RESEARCH NOTES
+              MANUSCRIPTS &bull; RESEARCH NOTES &bull; WORKING OUTLINES
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -58,9 +58,40 @@ export default function PapersPage() {
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center justify-between border-t border-border text-xs font-mono text-text-muted">
+              {paper.id === 'paper-compiler-grover' && (
+                <div className="p-4 bg-surface-subtle border border-border rounded space-y-2 font-mono text-xs">
+                  <div className="font-bold text-text-primary">PUBLICATION OUTLINE SECTIONS:</div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-text-secondary text-[11px]">
+                    <div>1. Introduction</div>
+                    <div>8. Physical QPU Experiment</div>
+                    <div>2. State-Space Compilation</div>
+                    <div>9. Statistical Analysis</div>
+                    <div>3. Candidate Search Formulation</div>
+                    <div>10. Independent Audit</div>
+                    <div>4. Black-Box Fairness Model</div>
+                    <div>11. Limitations</div>
+                    <div>5. Pre-Execution Protocol Correction</div>
+                    <div>12. Discussion</div>
+                    <div>6. Classical Query Baseline</div>
+                    <div>13. Reproducibility</div>
+                    <div>7. Grover Search</div>
+                    <div>14. Conclusion</div>
+                  </div>
+                </div>
+              )}
+
+              <div className="pt-2 flex flex-wrap items-center justify-between border-t border-border text-xs font-mono text-text-muted gap-2">
                 <div>AUTHORS: <span className="text-text-primary font-semibold">{paper.authors.join(', ')}</span></div>
-                <div className="text-accent font-semibold">PRE-SUBMISSION WORKING DRAFT</div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-accent font-semibold">
+                    {paper.status === 'DRAFT' ? 'WORKING DRAFT OUTLINE' : 'RESEARCH MANUSCRIPT'}
+                  </span>
+                  {paper.link && (
+                    <Link href={paper.link} className="text-accent font-bold hover:underline flex items-center space-x-1">
+                      <span>View Note &rarr;</span>
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}

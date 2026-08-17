@@ -72,9 +72,13 @@ export const siteConfig = {
   meta: {
     title: 'Q-Psi — Independent Quantum Research Initiative',
     description:
-      'Q-Psi conducts physical-QPU experiments, state-space compiler research, and reproducible quantum computing studies. A research initiative of The Oneness Project.',
+      'Q-Psi conducts physical-QPU experiments, state-space compiler research, quantum query advantage demonstrations, and reproducible quantum computing studies. A research initiative of The Oneness Project.',
     keywords: [
       'Q-Psi',
+      'Q-Psi State-Space Compiler',
+      'quantum query advantage',
+      'candidate-state search',
+      'Grover search',
       'quantum computing',
       'independent quantum research',
       'The Oneness Project',
@@ -98,48 +102,33 @@ export const siteConfig = {
     fullName: 'Q-Psi Independent Quantum Research',
     mark: 'QΨ',
     tagline: 'Independent Quantum Research',
-    eyebrow: 'INDEPENDENT QUANTUM RESEARCH',
-    stageBadge: 'PHYSICAL-QPU RESEARCH & BENCHMARKS',
     parentCompany: 'The Oneness Project',
-    parentRelationship: 'Q-Psi is an independent quantum research initiative of The Oneness Project.',
-    siblingCompany: 'SattvaOS (Governed Intelligence / AI)',
-    contactEmail: 'aadisatv@sattvaos.tech',
+    siblingInitiative: 'SattvaOS',
+    stageBadge: 'RESEARCH PHASE · STAGE 1',
     copyrightYear: '2026',
   },
 
-  navigation: [
-    { label: 'RESEARCH', href: '/research' },
-    { label: 'EXPERIMENTS', href: '/experiments' },
-    { label: 'COMPILER', href: '/compiler' },
-    { label: 'PAPERS', href: '/papers' },
-    { label: 'BLOG', href: '/blog' },
-    { label: 'EVIDENCE', href: '/evidence' },
-    { label: 'ABOUT', href: '/about' },
-  ],
-
   contact: {
     email: 'aadisatv@sattvaos.tech',
-    collaborationText: 'For research collaboration, academic access, compiler evaluation, or licensing inquiries:',
   },
 
   funding: {
-    publicGoalUsd: 50000,
     founderFundedUsd: 9850,
+    publicGoalUsd: 50000,
+    currency: 'USD',
     payPalUrl: 'https://www.paypal.com/ncp/payment/8FW5GHBJGG9AA',
-    displayTitle: 'Q-PSI RESEARCH FUND',
-    displayGoalText: 'GOAL: $50,000',
-    founderFundedLabel: 'FOUNDER-FUNDED RESEARCH TO DATE',
-    founderFundedValueText: '$9,850',
     description:
-      'Q-Psi is an independent quantum research initiative. We publish what we test, including successful, failed and inconclusive experiments. Research support helps fund physical-QPU execution, compute infrastructure, datasets, reproducibility engineering and scientific publication.',
+      'General research fund supporting open physical QPU execution on superconducting quantum processors, compute infrastructure, datasets, reproducibility engineering, and open science publication.',
     disclaimer:
-      'Support is voluntary and does not purchase ownership, intellectual-property rights, guaranteed research outcomes, commercial licensing rights, or priority access.',
+      'General research support is voluntary. It directly funds physical QPU runtime, open dataset generation, compute infrastructure, and scientific publication. It does not constitute an investment, purchase of securities, commercial license entitlement, or guarantee of commercial quantum advantage.',
   },
 
-  hardwareSummary: {
+  quantumSummary: {
+    totalPhysicalShots: 96256,
+    campaignsCount: 5,
     backend: 'ibm_marrakesh',
     qubitDescription: '156 programmable qubits',
-    shotsSummary: '77,824 physical shots across the four featured research campaigns.',
+    shotsSummary: '96,256 physical shots across the five featured research campaigns on physical IBM Quantum hardware.',
   },
 
   claims: [
@@ -154,7 +143,7 @@ export const siteConfig = {
     },
     {
       id: 'CLAIM-02-COMPILER-ADVANTAGE',
-      statement: 'Q-Psi state compiler demonstrates quantum advantage over classical software-repair solvers.',
+      statement: 'Q-Psi state compiler demonstrates general end-to-end computational advantage or wall-clock runtime speedup over classical software-repair solvers.',
       experiment: 'Q-Psi State Space Compiler (Stage-6F)',
       status: 'NOT_SUPPORTED',
       qpu: 'ibm_marrakesh (156 programmable qubits)',
@@ -197,9 +186,39 @@ export const siteConfig = {
       jobId: 'da19q86g52gs73clcd7g',
       sha256: '6d24837313ca01b52f1d602ef0249f0bcc1b6714bb5ba974ec967153674d838f',
     },
+    {
+      id: 'CLAIM-07-COMPILER-GROVER-QUERY-ADVANTAGE',
+      statement: 'Q-Psi demonstrated compiler-enabled quantum query advantage for candidate-state search on physical quantum hardware under a black-box verifier model.',
+      experiment: 'Q-Psi State Space Compiler + Grover (v1.1)',
+      status: 'SUPPORTED',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
+      jobId: 'da1c7rkdedkc73eqs5mg',
+      sha256: '8f65edbe0cea3ffdc16f3ff89b07beaf6ab111019a556c1cde56b274c0e18ff2',
+    },
+    {
+      id: 'CLAIM-08-COMPILER-GENERAL-RUNTIME-ADVANTAGE',
+      statement: 'Q-Psi compiler demonstrated wall-clock speedup, general computational supremacy, or end-to-end software-repair advantage over all structure-aware classical algorithms.',
+      experiment: 'Q-Psi State Space Compiler + Grover (v1.1)',
+      status: 'NOT_SUPPORTED',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
+      jobId: 'da1c7rkdedkc73eqs5mg',
+      sha256: '8f65edbe0cea3ffdc16f3ff89b07beaf6ab111019a556c1cde56b274c0e18ff2',
+    },
   ] as ClaimItem[],
 
   experiments: [
+    {
+      code: 'QPSI-EXP-CGQA-01',
+      title: 'COMPILER + GROVER QUERY ADVANTAGE',
+      subtitle: 'Compiler-Enabled Candidate-State Search on Physical QPU',
+      backend: 'ibm_marrakesh (156 programmable qubits)',
+      jobId: 'da1c7rkdedkc73eqs5mg',
+      shots: 18432,
+      qubits: '4 to 16 Candidate States (2 to 4 Qubits)',
+      status: 'SUPPORTED',
+      advantageBadge: 'QUERY ADVANTAGE — SUPPORTED',
+      summary: 'Executed 9 frozen compiler-derived candidate-state instances on ibm_marrakesh across N=4, N=8, and N=16. Measured effective quantum queries beat classical expected black-box cost across all 3 problem sizes (N=4: 1.030 vs 2.5; N=8: 2.595 vs 4.5; N=16: 7.144 vs 8.5; 95% CI upper 7.360 < 8.5) and in 9/9 individual cases. Demonstrates compiler-enabled quantum query advantage under an opaque black-box verifier model.',
+    },
     {
       code: 'QPSI-EXP-DVBV',
       title: 'DYNAMIC BERNSTEIN-VAZIRANI',
@@ -214,15 +233,15 @@ export const siteConfig = {
     },
     {
       code: 'QPSI-EXP-COMPILER-6F',
-      title: 'STATE-SPACE COMPILER',
+      title: 'STATE-SPACE COMPILER (STAGE-6F)',
       subtitle: 'Physical-QPU QUBO/Ising Interoperability Benchmark',
       backend: 'ibm_marrakesh (156 programmable qubits)',
       jobId: 'da16h8ug52gs73cl8uog',
       shots: 16384,
       qubits: '5 to 25 Qubits',
       status: 'SUPPORTED',
-      advantageBadge: 'INTEROPERABILITY PASS (COMPILER ADVANTAGE: NOT YET ESTABLISHED)',
-      summary: 'End-to-end QUBO/Ising mapping and physical execution across 8 programming ecosystem cohorts. Recovered exact classical global optimum on all instances with N <= 10 variables (4/4, 100%). High gate-depth noise degraded quality on N >= 18. Compiler-specific quantum advantage: NOT YET ESTABLISHED.',
+      advantageBadge: 'INTEROPERABILITY PASS',
+      summary: 'End-to-end QUBO/Ising mapping and physical execution across 8 programming ecosystem cohorts. Recovered exact classical global optimum on all instances with N <= 10 variables (4/4, 100%). High gate-depth noise degraded quality on N >= 18. End-to-end runtime quantum advantage: NOT CLAIMED.',
     },
     {
       code: 'QPSI-EXP-SIMON',
@@ -246,11 +265,20 @@ export const siteConfig = {
       qubits: '16 Qubits',
       status: 'EXPLORATORY',
       advantageBadge: 'EXPLORATORY STUDY',
-      summary: 'Deterministic SHA256 parameter mapping of 4 text inputs onto 16-qubit entangled states. Produced distinct measured output distributions with pairwise Total Variation Distance ~ 0.98-0.99. Exploratory mapping for fun — zero metaphysical, causal, or consciousness claims.',
+      summary: 'Deterministic SHA256 parameter mapping of 4 text inputs onto 16-qubit entangled states. Produced distinct measured output distributions with pairwise Total Variation Distance ~ 0.98-0.99. Exploratory mapping — zero metaphysical, causal, or consciousness claims.',
     },
   ] as ExperimentItem[],
 
   papers: [
+    {
+      id: 'paper-compiler-grover',
+      title: 'Compiler-Enabled Quantum Query Advantage for Candidate-State Search on Physical Quantum Hardware',
+      targetTitle: 'Compiler-Enabled Quantum Query Advantage for Candidate-State Search on Physical Quantum Hardware',
+      authors: ['Q-Psi Research Team'],
+      status: 'DRAFT',
+      abstract: 'Reports an empirical demonstration of compiler-enabled quantum query advantage for software-repair candidate-state search on a 156-qubit Heron processor (ibm_marrakesh). Across 9 frozen instances from 7 language ecosystems at N=4, N=8, and N=16, physical quantum execution achieved lower effective verifier query complexity than the classical black-box baseline (9/9 cases, 3/3 problem sizes; N=16 95% CI upper bound 7.360 < 8.5).',
+      link: '/research/compiler-grover-query-advantage',
+    },
     {
       id: 'paper-dynamic-bv',
       title: 'Experimental Demonstration of Algorithmic Query Advantage in Dynamic BV',
@@ -280,11 +308,10 @@ export const siteConfig = {
     },
   ] as PaperItem[],
 
-  // Historical Section Properties for Compatibility
   hero: {
     introSentence: 'A persistent reality engine where AI characters maintain identity and canonical history.',
     vanishingFragments: ['DRIFT', 'HALLUCINATION', 'INCONSISTENCY'],
-    headline: 'We test what quantum hardware can actually do.',
+    headline: 'Testing where quantum computation actually outperforms classical methods.',
     supportingCopy: 'Q-Psi conducts physical-QPU experiments, compiler research and reproducible quantum-computing studies.',
     primaryCta: 'EXPLORE RESEARCH',
     secondaryCta: 'SUPPORT Q-PSI',
@@ -425,17 +452,17 @@ export const siteConfig = {
     milestones: [
       {
         code: 'QPSI-M1',
-        title: 'Physical QPU Execution',
+        title: 'Physical QPU Execution & Interoperability',
         summary: 'Executed QAOA p=1 circuits on ibm_marrakesh across 8 ecosystems.',
         status: 'COMPLETED' as const,
         deliverables: ['Stage-6F QPU execution', 'Dynamic BV experiment'],
       },
       {
         code: 'QPSI-M2',
-        title: 'Scalable Classical Benchmarks',
-        summary: '100 -> 1,000 transition determinism benchmarks.',
+        title: 'Compiler-Enabled Quantum Query Advantage',
+        summary: 'Demonstrated query advantage on 9 frozen compiler candidate-space instances across N=4, 8, 16 on ibm_marrakesh.',
         status: 'COMPLETED' as const,
-        deliverables: ['Accepted-state equivalence PASS', 'Bit-exact state replay'],
+        deliverables: ['Compiler Grover v1.1 execution', 'Independent audit SUPPORTED', '9/9 cases with advantage'],
       },
     ],
   },
@@ -491,8 +518,8 @@ export const siteConfig = {
     gates: [
       { gate: 'Gate 01', title: 'QPU Execution', detail: 'Executed QAOA p=1 circuits on ibm_marrakesh.' },
       { gate: 'Gate 02', title: 'Dynamic BV', detail: 'Demonstrated single-shot query advantage.' },
-      { gate: 'Gate 03', title: 'Restricted Simon', detail: 'Evaluated constant-depth circuits up to 56 qubits.' },
-      { gate: 'Gate 04', title: 'State Persistence', detail: 'Bit-exact classical baseline determinism.' },
+      { gate: 'Gate 03', title: 'Compiler Query Advantage', detail: 'Demonstrated compiler-enabled query advantage (9/9 cases).' },
+      { gate: 'Gate 04', title: 'Restricted Simon', detail: 'Evaluated constant-depth circuits up to 56 qubits.' },
       { gate: 'Gate 05', title: 'Open Evidence', detail: 'Published IBM job IDs & raw evidence hashes.' },
     ],
   },
@@ -506,6 +533,10 @@ export const siteConfig = {
       {
         question: 'What hardware is evaluated?',
         answer: 'Experiments are executed on physical IBM Quantum superconducting hardware (ibm_marrakesh, 156 programmable qubits).',
+      },
+      {
+        question: 'What does the compiler quantum query advantage result prove?',
+        answer: 'It proves that candidate state spaces authentically compiled from real software repair problems can achieve quantum query advantage on physical superconducting hardware under an opaque black-box verifier model. It does not claim wall-clock runtime speedup or end-to-end supremacy over classical computers.',
       },
     ],
   },
@@ -535,7 +566,7 @@ export const siteConfig = {
       description: 'State-space compilation and QAOA p=1 circuits executed on 156-qubit Heron backend ibm_marrakesh.',
       metrics: [
         { label: 'QPU Backend', value: 'ibm_marrakesh' },
-        { label: 'N <= 10 Global Optimum Recovery', value: '100% (4/4)' },
+        { label: 'Compiler Grover Query Advantage', value: 'SUPPORTED (9/9 cases)' },
         { label: 'Dynamic BV Scaling exponent', value: 'alpha_Q = 0.1532' },
       ],
     },
@@ -551,14 +582,17 @@ export const siteConfig = {
   claimsComparison: {
     heading: 'Scientific Claim Boundaries & Open Science Policy',
     allowed: [
+      'Compiler-Enabled Query Advantage: Demonstrated quantum query advantage for candidate-state search on ibm_marrakesh under black-box verifier model (9/9 cases, 3/3 problem sizes, N=16 95% CI preserves advantage).',
+      'Dynamic BV Query Advantage: Single-shot oracle speedup (alpha_Q = 0.1532 vs alpha_C = 0.6963, t = -30.65, p = 3.47e-7).',
       'Compiler Interoperability: End-to-end QUBO/Ising mapping and execution on ibm_marrakesh (PASS on N <= 10).',
-      'Dynamic BV Query Advantage: Single-shot oracle speedup (alpha_Q = 0.1532 vs alpha_C = 0.6963, p < 10^-6).',
       'Constant-Depth Simon Execution: 15-16 layer circuits up to 56 physical qubits.',
     ],
     notAllowed: [
-      'Compiler Quantum Advantage over classical software-repair solvers.',
-      'Proven universal algorithmic quantum advantage for Simon\'s problem on raw unmitigated hardware.',
+      'Wall-clock speedup or general end-to-end software-repair quantum advantage.',
       'General-purpose, commercial, or computational supremacy over classical computing.',
+      'General quantum advantage over all structure-aware classical search algorithms.',
+      'Proven universal algorithmic quantum advantage for Simon\'s problem on raw unmitigated hardware.',
+      'Metaphysical, spiritual, or consciousness claims from quantum state encoding.',
     ],
   },
 };

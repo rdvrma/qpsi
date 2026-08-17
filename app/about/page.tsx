@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
-import { ShieldCheck, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowUpRight, Clock } from 'lucide-react';
 
 export const metadata = {
   title: 'About Q-Psi & The Oneness Project — International Quantum Research',
@@ -21,7 +21,7 @@ export default function AboutPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              ORGANIZATIONAL STRUCTURE
+              ORGANIZATIONAL STRUCTURE &bull; RESEARCH PROGRESS
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -77,6 +77,69 @@ export default function AboutPage() {
                   Separate AI and governed intelligence research initiative under The Oneness Project. SattvaOS product claims are strictly separate from Q-Psi quantum scientific claims.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Research Progress Timeline */}
+        <div className="scientific-card p-8 sm:p-12 space-y-6 bg-surface-raised border border-border">
+          <div className="flex items-center space-x-2 text-accent text-xs font-mono font-bold uppercase tracking-wider">
+            <Clock className="w-4 h-4" />
+            <span>PROGRESS &bull; HARDWARE MILESTONES</span>
+          </div>
+          <h2 className="text-2xl font-serif font-bold text-text-primary">
+            Q-Psi Research Progress Timeline
+          </h2>
+
+          <div className="space-y-4 font-mono text-xs">
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-text-primary">1. STATE-SPACE COMPILATION</span>
+                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">PASS</span>
+              </div>
+              <p className="text-xs font-sans text-text-secondary">
+                Authentic multi-repository software bug state space extraction across 8 programming language ecosystems.
+              </p>
+            </div>
+
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-text-primary">2. PHYSICAL-QPU INTEROPERABILITY (Stage-6F)</span>
+                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">PASS (N &le; 10)</span>
+              </div>
+              <p className="text-xs font-sans text-text-secondary">
+                Exact classical optimum recovery on 100% of tested small instances on <code>ibm_marrakesh</code>. End-to-end runtime quantum advantage not claimed.
+              </p>
+            </div>
+
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-text-primary">3. DYNAMIC BERNSTEIN-VAZIRANI EXPERIMENT</span>
+                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">SUPPORTED</span>
+              </div>
+              <p className="text-xs font-sans text-text-secondary">
+                Single-shot dynamic oracle query advantage on physical hardware (\(\alpha_Q = 0.1532\) vs \(\alpha_C = 0.6963\), \(p = 3.47 \times 10^{-7}\)).
+              </p>
+            </div>
+
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-text-primary">4. COMPILER + GROVER QUERY ADVANTAGE (v1.1)</span>
+                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">SUPPORTED</span>
+              </div>
+              <p className="text-xs font-sans text-text-secondary">
+                Demonstrated compiler-enabled quantum query advantage for candidate-state search on <code>ibm_marrakesh</code> across 9/9 cases and 3/3 sizes (N=4, 8, 16).
+              </p>
+            </div>
+
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-text-primary">5. RESTRICTED SIMON EXPERIMENT</span>
+                <span className="text-[#B45309] font-bold px-2 py-0.5 bg-[#D97706]/10 rounded border border-[#D97706]/25 text-[10px]">INCONCLUSIVE</span>
+              </div>
+              <p className="text-xs font-sans text-text-secondary">
+                Constant-depth circuits up to 56 physical qubits. Universal speedup on raw unmitigated hardware remains inconclusive due to readout error.
+              </p>
             </div>
           </div>
         </div>

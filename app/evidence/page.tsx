@@ -4,7 +4,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
 import { EvidenceLine } from '@/components/ui/EvidenceLine';
-import { CheckCircle2, AlertCircle, HelpCircle, XCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, HelpCircle, XCircle, FileText, ArrowUpRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Verified Evidence Index — Q-Psi Independent Quantum Research',
@@ -21,7 +21,7 @@ export default function EvidencePage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              OPEN SCIENCE EVIDENCE INDEX
+              OPEN SCIENCE EVIDENCE INDEX &bull; CRYPTOGRAPHIC INTEGRITY
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -35,8 +35,8 @@ export default function EvidencePage() {
         {/* Claims Table */}
         <div className="scientific-card overflow-hidden space-y-6 p-6 sm:p-8 bg-surface-raised border border-border">
           <div className="flex items-center justify-between border-b border-border pb-4 font-mono text-xs">
-            <span className="font-bold text-accent">INDEX VERSION 1.0.0</span>
-            <span className="text-text-muted">FREEZE TIMESTAMP: 2026-08-17T06:00:00Z</span>
+            <span className="font-bold text-accent">INDEX VERSION 1.1.0</span>
+            <span className="text-text-muted">FREEZE TIMESTAMP: 2026-08-17T08:30:00Z</span>
           </div>
 
           <div className="space-y-6">
@@ -70,6 +70,19 @@ export default function EvidencePage() {
                     <div>PHYSICAL QPU: <span className="text-text-primary font-semibold">{claim.qpu.split(' ')[0]}</span></div>
                     <div>SHA256: <span className="text-text-primary font-mono text-[10px]">{claim.sha256.substring(0, 16)}...</span></div>
                   </div>
+
+                  {claim.id === 'CLAIM-07-COMPILER-GROVER-QUERY-ADVANTAGE' && (
+                    <div className="pt-2 border-t border-border flex items-center justify-between text-[11px]">
+                      <Link
+                        href="/research/compiler-grover-query-advantage"
+                        className="text-accent font-semibold hover:underline flex items-center space-x-1"
+                      >
+                        <FileText className="w-3.5 h-3.5" />
+                        <span>Read Formal Research Note &amp; Audit Breakdown</span>
+                      </Link>
+                      <span className="text-text-muted font-mono">BOUNDARY: BLACK_BOX_VERIFIER_QUERY_ADVANTAGE</span>
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -86,13 +99,16 @@ export default function EvidencePage() {
             </div>
             <ul className="space-y-3 font-sans text-xs text-text-secondary">
               <li className="p-3 bg-surface-subtle border border-border rounded">
-                Q-Psi compiler states were successfully mapped to QUBO/Ising and executed on a physical IBM Quantum processor, recovering the exact classical optimum on all four tested instances with 10 or fewer variables.
+                <strong>Compiler Query Advantage:</strong> Q-Psi demonstrated compiler-enabled quantum query advantage for candidate-state search on physical quantum hardware (ibm_marrakesh) under an opaque black-box verifier model (9/9 cases, 3/3 problem sizes, N=16 95% CI preserves advantage).
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
-                Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the audited Pokharel-Lidar-style single-shot methodology.
+                <strong>Dynamic BV Query Advantage:</strong> Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the audited Pokharel-Lidar-style single-shot methodology.
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
-                Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware and recovered the hidden period on a subset of instances up to 56 physical qubits. Universal asymptotic speedup on raw hardware results remained inconclusive.
+                <strong>Compiler Interoperability:</strong> Q-Psi compiler states were successfully mapped to QUBO/Ising and executed on a physical IBM Quantum processor, recovering the exact classical optimum on all tested instances with 10 or fewer variables.
+              </li>
+              <li className="p-3 bg-surface-subtle border border-border rounded">
+                <strong>Restricted Simon Circuits:</strong> Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware up to 56 physical qubits. Asymptotic speedup on raw hardware remains inconclusive.
               </li>
             </ul>
           </div>
@@ -105,13 +121,13 @@ export default function EvidencePage() {
             </div>
             <ul className="space-y-3 font-sans text-xs text-text-secondary">
               <li className="p-3 bg-surface-subtle border border-border rounded">
-                Q-Psi compiler demonstrates quantum advantage over classical software-repair solvers. (EXCLUDED)
+                Q-Psi compiler demonstrates wall-clock speedup or general end-to-end software-repair quantum advantage over all classical search heuristics. (EXCLUDED)
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
-                Q-Psi demonstrated proven universal algorithmic quantum advantage for Simon&apos;s problem on raw unmitigated hardware. (EXCLUDED)
+                General computational quantum advantage, commercial quantum advantage, or computational supremacy over classical computing. (EXCLUDED)
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
-                General-purpose, commercial, or computational supremacy over classical computing. (EXCLUDED)
+                Proven universal algorithmic quantum advantage for Simon&apos;s problem on raw unmitigated hardware. (EXCLUDED)
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
                 Metaphysical, spiritual, or consciousness claims from quantum state encoding. (EXCLUDED)
