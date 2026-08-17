@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Database } from 'lucide-react';
 
 export const metadata = {
   title: 'Scientific Blog — Q-Psi Independent Quantum Research',
@@ -17,8 +17,8 @@ export default function BlogPage() {
 
       <main className="flex-grow pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="border-b border-border pb-8 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               RESEARCH BLOG &amp; REPORTS
             </span>
@@ -32,13 +32,13 @@ export default function BlogPage() {
         </div>
 
         {/* Major Article Card */}
-        <div className="bg-surface-raised border border-border p-8 sm:p-12 rounded-lg space-y-6">
+        <div className="scientific-card p-8 sm:p-12 space-y-6 bg-surface-raised border border-border">
           <div className="space-y-3">
-            <div className="flex items-center space-x-3 text-xs font-mono text-text-muted">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-text-muted">
               <span className="text-accent font-bold">MAJOR RESEARCH REPORT</span>
-              <span>•</span>
+              <span>&bull;</span>
               <span>AUGUST 17, 2026</span>
-              <span>•</span>
+              <span>&bull;</span>
               <span>HARDWARE: IBM QUANTUM (ibm_marrakesh)</span>
             </div>
 
@@ -46,7 +46,7 @@ export default function BlogPage() {
               From Software-Repair Compilation to a Physical-QPU Quantum Advantage Experiment: What Q-Psi Tested, What Worked, and What Failed
             </h2>
 
-            <div className="text-xs font-mono text-text-secondary">
+            <div className="text-xs font-sans text-text-secondary">
               By the Q-Psi Research Team
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function BlogPage() {
             Over the past week, we executed four distinct experimental campaigns on IBM Quantum&apos;s 156-qubit Heron processor, <code>ibm_marrakesh</code>. We evaluated state-space software repair compilation, single-shot dynamic Bernstein-Vazirani query advantage, constant-depth restricted Simon circuits, and exploratory mantra quantum state encoding.
           </p>
 
-          <div className="p-4 bg-surface border border-border rounded space-y-3 font-mono text-xs">
+          <div className="p-4 bg-surface-subtle border border-border rounded space-y-3 font-mono text-xs">
             <div className="font-bold text-text-primary">ARTICLE CONTENTS SUMMARY</div>
             <ul className="space-y-1 text-text-secondary">
               <li>1. Original Q-Psi Research: State-Space Compiler on Physical Hardware (Job ID: da16h8ug52gs73cl8uog)</li>
@@ -68,10 +68,11 @@ export default function BlogPage() {
           <div className="pt-2 flex items-center justify-between">
             <Link
               href="/evidence"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded hover:bg-accent-hover transition-all"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-accent text-white font-sans text-xs font-semibold rounded hover:bg-accent-hover transition-colors shadow-xs"
             >
-              <span>VIEW EVIDENCE FOR THIS REPORT</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <Database className="w-3.5 h-3.5" />
+              <span>View Evidence for this Report</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function SupportSuccessPage() {
       <Navbar />
 
       <main className="flex-grow pt-28 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 text-center sm:text-left">
-        <div className="bg-surface-card border border-border/80 p-8 sm:p-12 rounded-xl space-y-8 glass-panel glow-box-cyan">
+        <div className="scientific-card p-8 sm:p-12 space-y-8 bg-surface-raised border border-border">
           <div className="flex items-center space-x-2 text-accent font-mono text-xs font-bold uppercase tracking-wider">
             <Heart className="w-4 h-4 fill-accent" />
             <span>THANK YOU FOR SUPPORTING Q-PSI</span>
@@ -31,13 +31,13 @@ export default function SupportSuccessPage() {
             </p>
           </div>
 
-          <div className="p-4 bg-surface border border-border rounded-lg text-xs font-mono text-text-secondary space-y-1">
+          <div className="p-4 bg-surface-subtle border border-border rounded text-xs font-mono text-text-secondary space-y-1">
             <div>Research Support: Voluntary contribution via PayPal hosted checkout</div>
             <div>Authoritative Research Contact: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline">{siteConfig.contact.email}</a></div>
           </div>
 
           {/* Primary Next Actions */}
-          <div className="space-y-4 pt-4 border-t border-border/60">
+          <div className="space-y-4 pt-4 border-t border-border">
             <div className="text-xs font-mono font-bold uppercase tracking-widest text-text-muted">
               PRIMARY NEXT ACTIONS
             </div>
@@ -45,7 +45,7 @@ export default function SupportSuccessPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
               <Link
                 href="/research"
-                className="p-5 bg-surface border border-border rounded-lg flex flex-col justify-between hover:border-accent transition-all group glass-panel-hover"
+                className="scientific-card p-5 flex flex-col justify-between hover:border-accent transition-all group bg-surface-raised border border-border"
               >
                 <div className="space-y-2">
                   <FileText className="w-5 h-5 text-accent" />
@@ -60,7 +60,7 @@ export default function SupportSuccessPage() {
 
               <Link
                 href="/evidence"
-                className="p-5 bg-surface border border-border rounded-lg flex flex-col justify-between hover:border-accent transition-all group glass-panel-hover"
+                className="scientific-card p-5 flex flex-col justify-between hover:border-accent transition-all group bg-surface-raised border border-border"
               >
                 <div className="space-y-2">
                   <Database className="w-5 h-5 text-accent" />
@@ -75,7 +75,7 @@ export default function SupportSuccessPage() {
 
               <Link
                 href="/contact"
-                className="p-5 bg-surface border border-border rounded-lg flex flex-col justify-between hover:border-accent transition-all group glass-panel-hover"
+                className="scientific-card p-5 flex flex-col justify-between hover:border-accent transition-all group bg-surface-raised border border-border"
               >
                 <div className="space-y-2">
                   <Mail className="w-5 h-5 text-accent" />

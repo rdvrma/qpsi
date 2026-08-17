@@ -15,11 +15,11 @@ export default function AboutPage() {
     <div className="min-h-screen bg-surface text-text-primary flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-grow pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <main className="flex-grow pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="border-b border-border pb-8 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               ORGANIZATIONAL STRUCTURE
             </span>
@@ -33,16 +33,16 @@ export default function AboutPage() {
         </div>
 
         {/* Hierarchy Section */}
-        <div className="bg-surface-raised border border-border p-8 sm:p-12 rounded-lg space-y-8">
+        <div className="scientific-card p-8 sm:p-12 space-y-8 bg-surface-raised border border-border">
           <h2 className="text-2xl font-serif font-bold text-text-primary">
             Authoritative Organizational Hierarchy
           </h2>
 
-          <div className="p-6 bg-surface border border-border rounded-lg space-y-6 font-mono text-xs">
+          <div className="p-6 bg-surface-subtle border border-border rounded space-y-6 font-mono text-xs">
             <div className="flex items-center space-x-3 text-text-primary">
               <span className="w-3 h-3 rounded-full bg-accent" />
               <span className="text-base font-bold">THE ONENESS PROJECT</span>
-              <span className="text-xs text-text-muted">(Mother / Parent Initiative)</span>
+              <span className="text-xs text-text-muted font-sans">(Mother / Parent Initiative)</span>
             </div>
 
             <div className="pl-6 border-l-2 border-accent space-y-6">
@@ -50,7 +50,7 @@ export default function AboutPage() {
               <div className="p-4 bg-surface-raised border border-border rounded space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-accent text-sm">1. Q-PSI</span>
-                  <span className="text-[10px] bg-accent-subtle text-accent font-bold px-2 py-0.5 rounded">
+                  <span className="text-[10px] bg-accent/10 text-accent font-bold px-2 py-0.5 rounded border border-accent/25">
                     CURRENT INITIATIVE
                   </span>
                 </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
               <div className="p-4 bg-surface-raised border border-border rounded space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-text-primary text-sm">2. SATTVAOS</span>
-                  <span className="text-[10px] bg-surface border border-border text-text-muted font-bold px-2 py-0.5 rounded">
+                  <span className="text-[10px] bg-surface-subtle border border-border text-text-muted font-bold px-2 py-0.5 rounded">
                     SIBLING INITIATIVE
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
         </div>
 
         {/* Leadership & Truthful Background */}
-        <div className="bg-surface-raised border border-border p-8 sm:p-12 rounded-lg space-y-6">
+        <div className="scientific-card p-8 sm:p-12 space-y-6 bg-surface-raised border border-border">
           <h2 className="text-2xl font-serif font-bold text-text-primary">
             Leadership &amp; Founder Background
           </h2>
@@ -90,31 +90,31 @@ export default function AboutPage() {
             Q-Psi was founded by <strong>Nishant Kumar Sinha</strong> to advance independent, evidence-first quantum software research. In accordance with strict truthfulness policies:
           </p>
 
-          <div className="p-4 bg-surface border border-border rounded space-y-3 font-mono text-xs text-text-secondary">
+          <div className="p-4 bg-surface-subtle border border-border rounded space-y-2 font-mono text-xs text-text-secondary">
             <div className="font-bold text-text-primary">VERIFIED BACKGROUND &amp; EXECUTION HISTORY</div>
-            <ul className="space-y-2">
-              <li>• B.Tech studies in Computer Science &amp; Engineering were discontinued.</li>
-              <li>• 10+ years of software-business operations and execution.</li>
-              <li>• Founder-funded research to date: <strong>$9,850 USD</strong>.</li>
+            <ul className="space-y-1.5 font-sans">
+              <li>&bull; B.Tech studies in Computer Science &amp; Engineering were discontinued.</li>
+              <li>&bull; 10+ years of software-business operations and execution.</li>
+              <li>&bull; Founder-funded research to date: <strong>$9,850 USD</strong>.</li>
             </ul>
           </div>
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-surface-raised border border-border p-8 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="scientific-card p-8 rounded flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-surface-raised border border-border">
           <div className="space-y-1">
             <h3 className="text-xl font-serif font-bold text-text-primary">
               Scientific Collaboration &amp; Inquiries
             </h3>
-            <p className="text-xs text-text-secondary font-mono">
-              Direct contact: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline font-bold">{siteConfig.contact.email}</a>
+            <p className="text-xs text-text-secondary font-sans">
+              Direct contact: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline font-semibold">{siteConfig.contact.email}</a>
             </p>
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider rounded hover:bg-accent-hover transition-all"
+            className="inline-flex items-center space-x-2 px-5 py-2.5 bg-accent text-white font-sans text-xs font-semibold rounded hover:bg-accent-hover transition-colors shadow-xs"
           >
-            <span>CONTACT RESEARCH TEAM</span>
+            <span>Contact Research Team</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>

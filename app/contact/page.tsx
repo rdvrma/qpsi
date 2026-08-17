@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
-import { ArrowLeft, Mail, Globe, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, Mail, Globe } from 'lucide-react';
 
 export const metadata = {
   title: 'Contact & Collaboration — Q-Psi Independent Quantum Research',
@@ -22,8 +22,8 @@ export default function ContactPage() {
         </Link>
 
         <div className="space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               SCIENTIFIC CORRESPONDENCE
             </span>
@@ -37,20 +37,20 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-mono text-xs">
-          <div className="p-6 bg-surface-raised border border-border rounded-lg space-y-3">
+          <div className="scientific-card p-6 space-y-3 bg-surface-raised border border-border">
             <Mail className="w-5 h-5 text-accent" />
-            <div className="text-text-muted uppercase font-bold">AUTHORITATIVE RESEARCH CONTACT</div>
+            <div className="text-text-muted uppercase font-bold text-[10px]">AUTHORITATIVE RESEARCH CONTACT</div>
             <a href={`mailto:${siteConfig.contact.email}`} className="text-text-primary hover:text-accent font-bold text-sm block">
               {siteConfig.contact.email}
             </a>
             <p className="text-[11px] font-sans text-text-secondary">
-              Use for research inquiries, paper correspondence, compiler access follow-up, or licensing inquiries.
+              Use for research inquiries, manuscript correspondence, future compiler inquiries, or licensing terms.
             </p>
           </div>
 
-          <div className="p-6 bg-surface-raised border border-border rounded-lg space-y-3">
+          <div className="scientific-card p-6 space-y-3 bg-surface-raised border border-border">
             <Globe className="w-5 h-5 text-accent" />
-            <div className="text-text-muted uppercase font-bold">ORGANIZATIONAL HIERARCHY</div>
+            <div className="text-text-muted uppercase font-bold text-[10px]">ORGANIZATIONAL HIERARCHY</div>
             <div className="text-text-primary font-bold text-sm block">
               The Oneness Project
             </div>
@@ -60,19 +60,19 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-surface-raised border border-border p-8 rounded-lg space-y-4">
+        <div className="scientific-card p-8 space-y-4 bg-surface-raised border border-border">
           <h2 className="text-2xl font-serif font-bold text-text-primary">
             Inquiry Guidance
           </h2>
-          <div className="space-y-3 text-xs font-mono text-text-secondary">
+          <div className="space-y-3 text-xs font-sans text-text-secondary">
             <div>
-              <strong className="text-text-primary">Compiler Evaluation Access:</strong> Include your research organization, intended evaluation workload, and target backend requirements.
+              <strong className="text-text-primary font-semibold">Future Compiler Evaluation Access:</strong> Include your research organization, intended evaluation workload, and target backend requirements.
             </div>
             <div>
-              <strong className="text-text-primary">Academic Collaboration:</strong> For co-authoring physical QPU benchmarks or testing new oracle query protocols.
+              <strong className="text-text-primary font-semibold">Academic Collaboration:</strong> For co-authoring physical QPU benchmarks or testing new oracle query protocols.
             </div>
             <div>
-              <strong className="text-text-primary">Commercial Licensing:</strong> For enterprise state-space compiler integration terms.
+              <strong className="text-text-primary font-semibold">Commercial Licensing:</strong> For enterprise state-space compiler integration terms.
             </div>
           </div>
         </div>

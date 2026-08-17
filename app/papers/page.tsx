@@ -16,9 +16,9 @@ export default function PapersPage() {
       <Navbar />
 
       <main className="flex-grow pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="border-b border-border/80 pb-8 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-card border border-border rounded-full">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+        <div className="border-b border-border pb-8 space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               MANUSCRIPTS &amp; RESEARCH NOTES
             </span>
@@ -35,9 +35,9 @@ export default function PapersPage() {
           {siteConfig.papers.map((paper) => (
             <div
               key={paper.id}
-              className="bg-surface-card border border-border/80 p-6 sm:p-8 rounded-xl space-y-4 glass-panel glass-panel-hover"
+              className="scientific-card p-6 sm:p-8 space-y-5 bg-surface-raised border border-border"
             >
-              <div className="flex flex-wrap items-center justify-between border-b border-border/60 pb-4 gap-4">
+              <div className="flex flex-wrap items-center justify-between border-b border-border pb-4 gap-4">
                 <div>
                   <span className="text-xs font-mono font-bold text-accent">MANUSCRIPT</span>
                   <h2 className="text-2xl font-serif font-bold text-text-primary mt-1">{paper.title}</h2>
@@ -46,19 +46,21 @@ export default function PapersPage() {
                   </div>
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold px-3 py-1 bg-surface border border-border/80 rounded text-text-primary uppercase">
+                  <span className="text-xs font-mono font-bold px-3 py-1 bg-surface-subtle border border-border rounded text-text-primary uppercase">
                     STATUS: {paper.status}
                   </span>
                 </div>
               </div>
 
-              <p className="text-xs text-text-secondary font-sans leading-relaxed">
-                {paper.abstract}
-              </p>
+              <div className="paper-abstract">
+                <p className="text-xs text-text-secondary font-sans leading-relaxed">
+                  {paper.abstract}
+                </p>
+              </div>
 
-              <div className="pt-2 flex items-center justify-between border-t border-border/60 text-xs font-mono text-text-muted">
+              <div className="pt-2 flex items-center justify-between border-t border-border text-xs font-mono text-text-muted">
                 <div>AUTHORS: <span className="text-text-primary font-semibold">{paper.authors.join(', ')}</span></div>
-                <div className="text-accent font-bold">PRE-SUBMISSION WORKING DRAFT</div>
+                <div className="text-accent font-semibold">PRE-SUBMISSION WORKING DRAFT</div>
               </div>
             </div>
           ))}

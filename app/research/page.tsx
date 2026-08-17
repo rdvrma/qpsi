@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
-import { ArrowUpRight, CheckCircle2, AlertCircle, HelpCircle } from 'lucide-react';
+import { EvidenceLine } from '@/components/ui/EvidenceLine';
+import { ArrowUpRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Research Programs — Q-Psi Independent Quantum Research',
@@ -15,11 +16,11 @@ export default function ResearchPage() {
     <div className="min-h-screen bg-surface text-text-primary flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-grow pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <main className="flex-grow pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="border-b border-border pb-8 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               RESEARCH OVERVIEW
             </span>
@@ -35,88 +36,108 @@ export default function ResearchPage() {
         {/* Research Streams Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Stream 1 */}
-          <div className="bg-surface-raised border border-border p-8 rounded-lg space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <span className="text-xs font-mono font-bold text-accent">STREAM 01</span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-status-pass-bg text-status-pass rounded">
-                QPU INTEROPERABILITY PASS
-              </span>
+          <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between border-b border-border pb-3">
+                <span className="text-xs font-mono font-bold text-accent">STREAM 01</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-[#16A34A]/10 text-[#15803D] rounded border border-[#16A34A]/25">
+                  QPU INTEROPERABILITY PASS
+                </span>
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-text-primary">
+                State-Space Compiler (Stage-6F)
+              </h2>
+              <p className="text-xs text-text-secondary leading-relaxed font-sans">
+                Compiles large software-repair search spaces into discrete QUBO/Ising Hamiltonians executed on physical IBM Quantum processors. Exact classical parity achieved on instances with N &le; 10. NISQ gate-depth boundaries evaluated for N &ge; 18.
+              </p>
+              <div className="pt-2">
+                <EvidenceLine status="SUPPORTED" claimLabel="INTEROPERABILITY PASS" />
+              </div>
             </div>
-            <h2 className="text-2xl font-serif font-bold text-text-primary">
-              State-Space Compiler (Stage-6F)
-            </h2>
-            <p className="text-xs text-text-secondary leading-relaxed">
-              Compiles large software-repair search spaces into discrete QUBO/Ising Hamiltonians executed on physical IBM Quantum processors. Exact classical parity achieved on instances with N &le; 10. NISQ gate-depth boundaries evaluated for N &ge; 18.
-            </p>
-            <div className="pt-2">
-              <Link href="/compiler" className="text-xs font-mono font-bold text-accent hover:underline flex items-center space-x-1">
-                <span>EXPLORE COMPILER DETAILS</span>
+            <div className="pt-4 border-t border-border">
+              <Link href="/compiler" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <span>Explore Compiler Details</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
 
           {/* Stream 2 */}
-          <div className="bg-surface-raised border border-border p-8 rounded-lg space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <span className="text-xs font-mono font-bold text-accent">STREAM 02</span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-status-pass-bg text-status-pass rounded">
-                QUERY ADVANTAGE SUPPORTED
-              </span>
+          <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between border-b border-border pb-3">
+                <span className="text-xs font-mono font-bold text-accent">STREAM 02</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-[#16A34A]/10 text-[#15803D] rounded border border-[#16A34A]/25">
+                  QUERY ADVANTAGE SUPPORTED
+                </span>
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-text-primary">
+                Dynamic Bernstein-Vazirani Experiment
+              </h2>
+              <p className="text-xs text-text-secondary leading-relaxed font-sans">
+                Single-shot dynamic oracle experiment evaluating time-to-solution scaling. Measured quantum scaling exponent alpha_Q = 0.1532 vs classical alpha_C = 0.6963 (p = 3.47e-7), demonstrating quantum query-complexity advantage under the audited single-shot methodology.
+              </p>
+              <div className="pt-2">
+                <EvidenceLine status="SUPPORTED" claimLabel="QUANTUM ADVANTAGE SUPPORTED" />
+              </div>
             </div>
-            <h2 className="text-2xl font-serif font-bold text-text-primary">
-              Dynamic Bernstein-Vazirani Experiment
-            </h2>
-            <p className="text-xs text-text-secondary leading-relaxed">
-              Single-shot dynamic oracle experiment evaluating time-to-solution scaling. Measured quantum scaling exponent alpha_Q = 0.1532 vs classical alpha_C = 0.6963 (p = 3.47e-7), proving genuine oracle query-complexity advantage.
-            </p>
-            <div className="pt-2">
-              <Link href="/experiments" className="text-xs font-mono font-bold text-accent hover:underline flex items-center space-x-1">
-                <span>VIEW DYNAMIC BV BENCHMARKS</span>
+            <div className="pt-4 border-t border-border">
+              <Link href="/experiments" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <span>View Dynamic BV Benchmarks</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
 
           {/* Stream 3 */}
-          <div className="bg-surface-raised border border-border p-8 rounded-lg space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <span className="text-xs font-mono font-bold text-accent">STREAM 03</span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-status-inconclusive-bg text-status-inconclusive rounded">
-                56-QUBIT EXECUTION VALID
-              </span>
+          <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between border-b border-border pb-3">
+                <span className="text-xs font-mono font-bold text-accent">STREAM 03</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-[#D97706]/10 text-[#B45309] rounded border border-[#D97706]/25">
+                  56-QUBIT EXECUTION VALID
+                </span>
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-text-primary">
+                Restricted-Hamming-Weight Simon Experiment
+              </h2>
+              <p className="text-xs text-text-secondary leading-relaxed font-sans">
+                Constant-depth (15-16 layers) circuit execution across 16 to 56 physical qubits on ibm_marrakesh. Exact period recovered on a subset of instances. Universal asymptotic speedup on raw unmitigated hardware remains inconclusive.
+              </p>
+              <div className="pt-2">
+                <EvidenceLine status="INCONCLUSIVE" claimLabel="SPEEDUP INCONCLUSIVE" />
+              </div>
             </div>
-            <h2 className="text-2xl font-serif font-bold text-text-primary">
-              Restricted-Hamming-Weight Simon Experiment
-            </h2>
-            <p className="text-xs text-text-secondary leading-relaxed">
-              Constant-depth (15-16 layers) circuit execution across 16 to 56 physical qubits on ibm_marrakesh. Exact period recovered on a subset of instances. Universal asymptotic speedup on raw unmitigated hardware remains inconclusive.
-            </p>
-            <div className="pt-2">
-              <Link href="/experiments" className="text-xs font-mono font-bold text-accent hover:underline flex items-center space-x-1">
-                <span>VIEW SIMON RESULTS</span>
+            <div className="pt-4 border-t border-border">
+              <Link href="/experiments" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <span>View Simon Results</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
 
           {/* Stream 4 — Prior Baseline */}
-          <div className="bg-surface-raised border border-border p-8 rounded-lg space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <span className="text-xs font-mono font-bold text-text-muted">PRIOR BASELINE WORK</span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-surface border border-border rounded text-text-primary">
-                PROTOTYPE Baseline
-              </span>
+          <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between border-b border-border pb-3">
+                <span className="text-xs font-mono font-bold text-text-muted">PRIOR BASELINE WORK</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-surface-subtle border border-border rounded text-text-primary">
+                  PROTOTYPE BASELINE
+                </span>
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-text-primary">
+                Persistent World Engine Baseline
+              </h2>
+              <p className="text-xs text-text-secondary leading-relaxed font-sans">
+                Q-Psi prior baseline classical state persistence engine. Demonstrates two-character canonical state persistence, replayable event history, and bit-exact state recovery across restarts.
+              </p>
+              <div className="pt-2">
+                <EvidenceLine status="SUPPORTED" claimLabel="DETERMINISTIC BASELINE PASS" />
+              </div>
             </div>
-            <h2 className="text-2xl font-serif font-bold text-text-primary">
-              Persistent World Engine Baseline
-            </h2>
-            <p className="text-xs text-text-secondary leading-relaxed">
-              Q-Psi prior baseline classical state persistence engine. Demonstrates two-character canonical state persistence, replayable event history, and bit-exact state recovery across restarts.
-            </p>
-            <div className="pt-2">
-              <Link href="/prototype" className="text-xs font-mono font-bold text-accent hover:underline flex items-center space-x-1">
-                <span>RUN CLASSICAL PROTOTYPE</span>
+            <div className="pt-4 border-t border-border">
+              <Link href="/prototype" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <span>Run Classical Prototype</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>

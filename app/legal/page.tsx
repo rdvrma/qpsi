@@ -22,7 +22,7 @@ export default function LegalPage() {
         </Link>
 
         <div className="space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-card border border-border rounded-full">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               DISCLOSURES &amp; POLICY
             </span>
@@ -30,18 +30,18 @@ export default function LegalPage() {
           <h1 className="text-4xl font-serif font-bold text-text-primary">
             Legal &amp; Open Science Disclosures
           </h1>
-          <p className="text-xs font-mono text-text-muted">
-            Parent Initiative: {siteConfig.company.parentCompany} | Initiative: {siteConfig.company.fullName}
+          <p className="text-xs font-sans text-text-muted">
+            Parent Initiative: {siteConfig.company.parentCompany} &bull; Initiative: {siteConfig.company.fullName}
           </p>
         </div>
 
-        <div className="space-y-6 text-sm text-text-secondary leading-relaxed border-t border-border/80 pt-6 font-sans">
-          <section className="p-5 border border-border/80 bg-surface-card rounded-xl space-y-2 glass-panel">
+        <div className="space-y-6 text-sm text-text-secondary leading-relaxed border-t border-border pt-6 font-sans">
+          <section className="scientific-card p-5 space-y-2 bg-surface-raised border border-border">
             <div className="flex items-center space-x-2 text-text-primary font-bold font-mono text-xs uppercase">
               <ShieldAlert className="w-4 h-4 text-accent" />
               <span>Experimental Quantum Software &amp; Open Science Disclaimer</span>
             </div>
-            <p className="text-xs font-mono text-text-secondary leading-relaxed">
+            <p className="text-xs font-sans text-text-secondary leading-relaxed">
               Q-Psi quantum research software, compiler outputs, and physical QPU benchmarks are provided for research and evaluation purposes. Experiments identified as physical-QPU experiments were executed on real quantum hardware (IBM Quantum ibm_marrakesh) and published under open-science principles.
             </p>
           </section>
@@ -72,8 +72,8 @@ export default function LegalPage() {
             <p>
               Q-Psi research materials, compiler technology, marks and unpublished implementation materials remain proprietary unless explicitly released under a stated public license. Legal ownership and licensing terms are defined in the applicable agreement.
             </p>
-            <p className="text-xs font-mono text-text-muted">
-              For scientific licensing or inquiry correspondence: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent font-bold hover:underline">{siteConfig.contact.email}</a>.
+            <p className="text-xs font-sans text-text-muted">
+              For scientific licensing or inquiry correspondence: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent font-semibold hover:underline">{siteConfig.contact.email}</a>.
             </p>
           </section>
         </div>

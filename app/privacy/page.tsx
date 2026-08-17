@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         </Link>
 
         <div className="space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-card border border-border rounded-full">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
               POLICY &amp; PRIVACY
             </span>
@@ -30,12 +30,12 @@ export default function PrivacyPage() {
           <h1 className="text-4xl font-serif font-bold text-text-primary">
             Privacy Policy
           </h1>
-          <p className="text-xs font-mono text-text-muted">
-            Effective Date: January 1, 2026 | Parent Initiative: {siteConfig.company.parentCompany}
+          <p className="text-xs font-sans text-text-muted">
+            Effective Date: January 1, 2026 &bull; Parent Initiative: {siteConfig.company.parentCompany}
           </p>
         </div>
 
-        <div className="space-y-6 text-sm text-text-secondary leading-relaxed border-t border-border/80 pt-6 font-sans">
+        <div className="space-y-6 text-sm text-text-secondary leading-relaxed border-t border-border pt-6 font-sans">
           <section className="space-y-2">
             <h2 className="text-lg font-serif font-bold text-text-primary">1. Information Collection</h2>
             <p>
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-serif font-bold text-text-primary">5. Contact &amp; Inquiries</h2>
             <p>
-              For privacy requests or data inquiries, please email <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline font-bold">{siteConfig.contact.email}</a>.
+              For privacy requests or data inquiries, please email <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline font-semibold">{siteConfig.contact.email}</a>.
             </p>
           </section>
         </div>
