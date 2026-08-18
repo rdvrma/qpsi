@@ -23,11 +23,11 @@ export function Footer({ onOpenModal }: FooterProps = {}) {
                 {siteConfig.company.name}
               </span>
               <span className="text-xs text-text-muted font-sans hidden sm:inline">
-                &bull; Independent Quantum Research
+                &bull; Independent Quantum Compiler &amp; Physical-QPU Research Program
               </span>
             </div>
             <p className="text-xs text-text-secondary font-sans">
-              A research initiative of <strong className="text-text-primary font-semibold">{siteConfig.company.parentCompany}</strong>
+              An independent research initiative of <strong className="text-text-primary font-semibold">{siteConfig.company.parentCompany}</strong>. Sibling initiative <strong className="text-text-primary font-semibold">SattvaOS</strong> focuses on governed AI.
             </p>
           </div>
 
@@ -43,40 +43,43 @@ export function Footer({ onOpenModal }: FooterProps = {}) {
           </div>
         </div>
 
-        {/* Minimal Navigation Links */}
+        {/* Navigation Links */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-sans text-text-secondary">
           <Link href="/research" className="hover:text-accent transition-colors">
-            Research
-          </Link>
-          <Link href="/experiments" className="hover:text-accent transition-colors">
-            Experiments
+            Research Overview
           </Link>
           <Link href="/compiler" className="hover:text-accent transition-colors">
-            Compiler
+            State-Space Compiler
+          </Link>
+          <Link href="/research/data-foundry" className="hover:text-accent transition-colors">
+            Quantum Data Foundry
+          </Link>
+          <Link href="/experiments" className="hover:text-accent transition-colors">
+            Physical Experiments
+          </Link>
+          <Link href="/evidence" className="hover:text-accent transition-colors">
+            Evidence Registry
+          </Link>
+          <Link href="/methodology" className="hover:text-accent transition-colors">
+            Methodology &amp; Audit
           </Link>
           <Link href="/capsule" className="hover:text-accent transition-colors">
             Research Capsule
           </Link>
           <Link href="/papers" className="hover:text-accent transition-colors">
-            Papers
+            Manuscripts
           </Link>
           <Link href="/blog" className="hover:text-accent transition-colors">
-            Blog
-          </Link>
-          <Link href="/evidence" className="hover:text-accent transition-colors">
-            Evidence
-          </Link>
-          <Link href="/support" className="hover:text-accent transition-colors">
-            Support
+            Research Notes &amp; Blog
           </Link>
           <Link href="/about" className="hover:text-accent transition-colors">
-            About
+            About Q-Psi
           </Link>
           <Link href="/contact" className="hover:text-accent transition-colors">
             Contact
           </Link>
           <Link href="/legal" className="hover:text-accent transition-colors">
-            Legal &amp; Disclosures
+            Legal &amp; Claim Boundaries
           </Link>
           <Link href="/privacy" className="hover:text-accent transition-colors">
             Privacy Policy
@@ -89,7 +92,7 @@ export function Footer({ onOpenModal }: FooterProps = {}) {
             &copy; {siteConfig.company.copyrightYear} {siteConfig.company.fullName}. All research published under open-science principles.
           </div>
           <div className="font-mono text-[10px] text-text-muted">
-            PHYSICAL HARDWARE: IBM QUANTUM (ibm_marrakesh &bull; 156Q)
+            PRIMARY BACKEND: IBM QUANTUM (ibm_marrakesh &bull; Heron r2 &bull; 156Q) &bull; FROZEN 2026-08-18
           </div>
         </div>
       </div>

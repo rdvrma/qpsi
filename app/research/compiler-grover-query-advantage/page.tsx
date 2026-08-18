@@ -257,7 +257,7 @@ export default function CompilerGroverResearchNotePage() {
   year = {2026},
   month = {August},
   number = {QPSI-NOTE-2026-02},
-  url = {https://qpsi.vercel.app/research/compiler-grover-query-advantage}
+  url = {https://qpsi.sattvaos.tech/research/compiler-grover-query-advantage}
 }`}
             </pre>
           </section>

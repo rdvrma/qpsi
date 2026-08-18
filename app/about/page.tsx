@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { siteConfig } from '@/content/siteConfig';
-import { ShieldCheck, CheckCircle2, ArrowUpRight, Clock } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowUpRight, Clock, AlertCircle } from 'lucide-react';
 
 export const metadata = {
-  title: 'About Q-Psi & The Oneness Project — International Quantum Research',
-  description: 'Organizational structure of Q-Psi under parent initiative The Oneness Project, sibling SattvaOS, scientific integrity policy, and leadership.',
+  title: 'About Q-Psi & The Oneness Project — Independent Quantum Research',
+  description:
+    'Organizational structure of Q-Psi under parent initiative The Oneness Project, sibling SattvaOS, scientific integrity policy, and leadership.',
 };
 
 export default function AboutPage() {
@@ -21,14 +22,14 @@ export default function AboutPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              ORGANIZATIONAL STRUCTURE &bull; RESEARCH PROGRESS
+              ORGANIZATIONAL STRUCTURE &bull; 14 AUDITED CAMPAIGNS
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
             About Q-Psi &amp; The Oneness Project
           </h1>
           <p className="text-base text-text-secondary max-w-3xl font-sans leading-relaxed">
-            Q-Psi is an international-facing independent quantum research initiative operating under the parent umbrella of <strong>The Oneness Project</strong>.
+            Q-Psi is an independent quantum research initiative operating under the parent umbrella of <strong>The Oneness Project</strong>. Sibling initiative <strong>SattvaOS</strong> focuses on governed AI systems.
           </p>
         </div>
 
@@ -81,64 +82,44 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Research Progress Timeline */}
+        {/* 14-Campaign Research Summary */}
         <div className="scientific-card p-8 sm:p-12 space-y-6 bg-surface-raised border border-border">
           <div className="flex items-center space-x-2 text-accent text-xs font-mono font-bold uppercase tracking-wider">
             <Clock className="w-4 h-4" />
-            <span>PROGRESS &bull; HARDWARE MILESTONES</span>
+            <span>FROZEN HARDWARE EVIDENCE &bull; 14 COMPLETED CAMPAIGNS</span>
           </div>
           <h2 className="text-2xl font-serif font-bold text-text-primary">
-            Q-Psi Research Progress Timeline
+            Audited Research Milestone
           </h2>
 
-          <div className="space-y-4 font-mono text-xs">
-            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+          <div className="space-y-3 font-mono text-xs">
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-text-primary">1. STATE-SPACE COMPILATION</span>
-                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">PASS</span>
+                <span className="font-bold text-text-primary">TIER A LEAD EVIDENCE</span>
+                <span className="text-[#15803D] font-bold">5 AUDITED PROGRAMS</span>
               </div>
               <p className="text-xs font-sans text-text-secondary">
-                Authentic multi-repository software bug state space extraction across 8 programming language ecosystems.
+                Compiler + Grover Query Advantage (2.43x/1.73x/1.19x), Dynamic BV Query Scaling (\(t=-30.65\)), MCM Qubit Reuse (78.1% median width reduction), Quantum Data Foundry V2 (93 verified records in 127.58s), MQT Bench Cross-Compiler (18/18 valid compilations, mixed competitiveness).
               </p>
             </div>
 
-            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-text-primary">2. PHYSICAL-QPU INTEROPERABILITY (Stage-6F)</span>
-                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">PASS (N &le; 10)</span>
+                <span className="font-bold text-text-primary">TIER B SECONDARY TECHNICAL CONTRIBUTIONS</span>
+                <span className="text-[#D97706] font-bold">3 AUDITED STUDIES</span>
               </div>
               <p className="text-xs font-sans text-text-secondary">
-                Exact classical optimum recovery on 100% of tested small instances on <code>ibm_marrakesh</code>. End-to-end runtime quantum advantage not claimed.
+                Dynamic Routing Crossover (2Q depth 73 &rarr; 2 on 13 hops), Stage 6F QUBO/Ising Hardware Parity (\(N \le 10\)), Data Foundry V1 proof-of-concept baseline.
               </p>
             </div>
 
-            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
+            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-text-primary">3. DYNAMIC BERNSTEIN-VAZIRANI EXPERIMENT</span>
-                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">SUPPORTED</span>
+                <span className="font-bold text-text-primary">TIER C NEGATIVE &amp; BOUNDARY COMPARATORS</span>
+                <span className="text-[#DC2626] font-bold">PRESERVED FALSIFYING EVIDENCE</span>
               </div>
               <p className="text-xs font-sans text-text-secondary">
-                Single-shot dynamic oracle query advantage on physical hardware (\(\alpha_Q = 0.1532\) vs \(\alpha_C = 0.6963\), \(p = 3.47 \times 10^{-7}\)).
-              </p>
-            </div>
-
-            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-text-primary">4. COMPILER + GROVER QUERY ADVANTAGE (v1.1)</span>
-                <span className="text-[#15803D] font-bold px-2 py-0.5 bg-[#16A34A]/10 rounded border border-[#16A34A]/25 text-[10px]">SUPPORTED</span>
-              </div>
-              <p className="text-xs font-sans text-text-secondary">
-                Demonstrated compiler-enabled quantum query advantage for candidate-state search on <code>ibm_marrakesh</code> across 9/9 cases and 3/3 sizes (N=4, 8, 16).
-              </p>
-            </div>
-
-            <div className="p-4 bg-surface-subtle border border-border rounded space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-text-primary">5. RESTRICTED SIMON EXPERIMENT</span>
-                <span className="text-[#B45309] font-bold px-2 py-0.5 bg-[#D97706]/10 rounded border border-[#D97706]/25 text-[10px]">INCONCLUSIVE</span>
-              </div>
-              <p className="text-xs font-sans text-text-secondary">
-                Constant-depth circuits up to 56 physical qubits. Universal speedup on raw unmitigated hardware remains inconclusive due to readout error.
+                Calibration-Aware Layout vs Qiskit O3 Best-of-8 (\(-0.0106\) delta, NOT SUPPORTED), Fractional Gate Lowering (MIXED), Directed Execution Selective Twirling (INCONCLUSIVE), Restricted Simon (INCONCLUSIVE).
               </p>
             </div>
           </div>
@@ -170,7 +151,7 @@ export default function AboutPage() {
               Scientific Collaboration &amp; Inquiries
             </h3>
             <p className="text-xs text-text-secondary font-sans">
-              Direct contact: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline font-semibold">{siteConfig.contact.email}</a>
+              Direct correspondence: <a href={`mailto:${siteConfig.contact.email}`} className="text-accent underline font-semibold">{siteConfig.contact.email}</a>
             </p>
           </div>
           <Link

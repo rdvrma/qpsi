@@ -25,11 +25,13 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
   const navItems = [
     { label: 'Research', href: '/research' },
     { label: 'Compiler', href: '/compiler' },
-    { label: 'Capsule', href: '/capsule' },
+    { label: 'Data Foundry', href: '/research/data-foundry' },
     { label: 'Experiments', href: '/experiments' },
-    { label: 'Papers', href: '/papers' },
     { label: 'Evidence', href: '/evidence' },
-    { label: 'About', href: '/about' },
+    { label: 'Methodology', href: '/methodology' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Capsule', href: '/capsule' },
+    { label: 'Papers', href: '/papers' },
   ];
 
   return (
@@ -37,12 +39,12 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
           ? 'bg-surface-raised/95 backdrop-blur-md border-b border-border shadow-xs py-3'
-          : 'bg-surface/90 backdrop-blur-sm border-b border-border/60 py-4'
+          : 'bg-surface/90 backdrop-blur-sm border-b border-border/60 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Masthead: QΨ / Q-Psi */}
-        <Link href="/" className="flex items-center space-x-3 group">
+        <Link href="/" className="flex items-center space-x-3 group shrink-0">
           <span className="font-serif text-3xl font-bold tracking-tight text-text-primary group-hover:text-accent transition-colors">
             {siteConfig.company.mark}
           </span>
@@ -56,19 +58,19 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
                 &bull; Independent Quantum Research
               </span>
             </div>
-            <span className="text-[11px] text-text-secondary font-sans hidden lg:block">
+            <span className="text-[10px] text-text-secondary font-sans hidden lg:block">
               A research initiative of {siteConfig.company.parentCompany}
             </span>
           </div>
         </Link>
 
         {/* Clean Sans Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-6">
+        <nav className="hidden xl:flex items-center space-x-5">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-sans text-text-secondary hover:text-accent font-medium transition-colors py-1 relative group"
+              className="text-xs font-sans text-text-secondary hover:text-accent font-medium transition-colors py-1 relative group"
             >
               <span>{item.label}</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-200 group-hover:w-full" />
@@ -76,23 +78,23 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
           ))}
         </nav>
 
-        {/* Right Action: Clean Support Button */}
-        <div className="hidden sm:flex items-center space-x-4">
+        {/* Right Action: Support Button */}
+        <div className="hidden sm:flex items-center space-x-3">
           <a
             href={siteConfig.funding.payPalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-1.5 px-4 py-2 bg-accent text-white hover:bg-accent-hover font-sans text-xs font-semibold rounded transition-colors shadow-xs"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 bg-accent text-white hover:bg-accent-hover font-sans text-xs font-semibold rounded transition-colors shadow-xs"
           >
-            <span>Support Q-Psi</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>Support Research</span>
+            <ArrowUpRight className="w-3 h-3" />
           </a>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-text-primary hover:text-accent transition-colors"
+          className="xl:hidden p-2 text-text-primary hover:text-accent transition-colors"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -106,15 +108,15 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-surface-raised border-b border-border px-4 py-6 space-y-4 shadow-lg"
+            className="xl:hidden bg-surface-raised border-b border-border px-4 py-6 space-y-4 shadow-lg"
           >
-            <nav className="flex flex-col space-y-3">
+            <nav className="grid grid-cols-2 gap-2">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-sans text-text-primary hover:text-accent font-medium py-1"
+                  className="text-xs font-sans text-text-primary hover:text-accent font-medium py-1.5 px-2 rounded hover:bg-surface-subtle"
                 >
                   {item.label}
                 </Link>
@@ -131,8 +133,8 @@ export function Navbar({ onOpenModal }: NavbarProps = {}) {
                 <span>Support Q-Psi Research</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
-              <div className="text-[11px] font-sans text-text-muted text-center">
-                A research initiative of {siteConfig.company.parentCompany}
+              <div className="text-[10px] font-sans text-text-muted text-center">
+                A research initiative of {siteConfig.company.parentCompany} &bull; Frozen 18 Aug 2026
               </div>
             </div>
           </motion.div>
