@@ -1,4 +1,14 @@
-export type LicenseStatus = 'active' | 'inactive' | 'revoked' | 'expired' | 'suspended';
+export type LicenseStatus =
+  | 'active'
+  | 'inactive'
+  | 'revoked'
+  | 'expired'
+  | 'suspended'
+  | 'ACTIVE'
+  | 'PENDING'
+  | 'SUSPENDED'
+  | 'REVOKED'
+  | 'EXPIRED';
 
 export interface CapsuleLicenseInfo {
   license_id: string;

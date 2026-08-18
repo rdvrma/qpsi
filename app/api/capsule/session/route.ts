@@ -34,7 +34,11 @@ export async function POST(req: NextRequest) {
     // Verify license against Capsule backend
     const licenseInfo = await capsuleClient.getLicenseInfo(cleanKey);
 
-    if (licenseInfo.status && licenseInfo.status !== 'active') {
+    const isLicenseActive =
+      licenseInfo.status &&
+      (licenseInfo.status.toUpperCase() === 'ACTIVE' || licenseInfo.status.toLowerCase() === 'active');
+
+    if (!isLicenseActive) {
       return NextResponse.json(
         {
           error_code: 'LICENSE_INACTIVE',
@@ -129,7 +133,11 @@ export async function GET(req: NextRequest) {
     // Verify against backend to detect revocation, expiry, or invalid status
     try {
       const licenseInfo = await capsuleClient.getLicenseInfo(session.licenseKey);
-      if (licenseInfo.status && licenseInfo.status !== 'active') {
+      const isLicenseActive =
+        licenseInfo.status &&
+        (licenseInfo.status.toUpperCase() === 'ACTIVE' || licenseInfo.status.toLowerCase() === 'active');
+
+      if (!isLicenseActive) {
         const response = NextResponse.json(
           {
             authenticated: false,
