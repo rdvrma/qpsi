@@ -1,15 +1,19 @@
 {
   "milestone": "QPSI-PUBLIC-CLAIMS-FREEZE",
-  "timestamp_utc": "2026-08-17T06:00:00+00:00",
+  "timestamp_utc": "2026-08-18T03:30:00+00:00",
   "authorized_public_claims": [
     "Q-Psi compiler states were successfully mapped to QUBO/Ising and executed on a physical IBM Quantum processor, recovering the exact classical optimum on all four tested instances with 10 or fewer variables.",
     "Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the adopted Pokharel-Lidar-style single-shot methodology.",
-    "Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware and recovered the hidden period on a subset of instances up to 56 physical qubits. Universal asymptotic speedup on the raw hardware results remained inconclusive."
+    "Q-Psi executed constant-depth hardware-aware restricted Simon circuits on physical IBM quantum hardware and recovered the hidden period on a subset of instances up to 56 physical qubits. Universal asymptotic speedup on the raw hardware results remained inconclusive.",
+    "Q-Psi demonstrated compiler-enabled quantum query advantage for candidate-state search on physical quantum hardware under a black-box verifier model.",
+    "On a frozen three-distance physical IBM Heron benchmark, Q-Psi's pre-QPU routing model correctly predicted the winning long-range CNOT implementation on both statistically conclusive tested distances (SHORT and MEDIUM). The dynamic implementation maintained constant two-qubit depth, but did not achieve higher Bell-state fidelity within the tested cohort."
   ],
   "forbidden_claims": [
     "Q-Psi compiler demonstrates quantum advantage over classical software-repair solvers.",
     "Q-Psi demonstrated proven universal algorithmic quantum advantage for Simon's problem on raw unmitigated hardware.",
     "General-purpose, commercial, or computational supremacy over classical computing.",
-    "Metaphysical, spiritual, or consciousness claims from quantum state encoding."
+    "Metaphysical, spiritual, or consciousness claims from quantum state encoding.",
+    "Dynamic circuit routing superiority or general predictive compiler quantum advantage.",
+    "Resolved physical routing crossover or extrapolation to untested distance regimes."
   ]
 }

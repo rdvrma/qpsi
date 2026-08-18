@@ -93,6 +93,15 @@ export default function ExperimentsPage() {
                       <span>Read Research Note</span>
                     </Link>
                   )}
+                  {exp.code === 'QPSI-EXP-ROUTING-01' && (
+                    <Link
+                      href="/research/dynamic-routing-crossover"
+                      className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1"
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Read Research Note</span>
+                    </Link>
+                  )}
                   {exp.code === 'QPSI-EXP-DVBV' && (
                     <Link
                       href="/papers"

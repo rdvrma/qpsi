@@ -136,7 +136,7 @@ export default function HomePage() {
                   HARDWARE CAMPAIGNS
                 </div>
                 <div className="text-[11px] text-text-secondary font-sans">
-                  BV &bull; Compiler Grover &bull; Compiler 6F &bull; Simon &bull; Mantra
+                  BV &bull; Compiler Grover &bull; Dynamic Routing &bull; 6F &bull; Simon &bull; Mantra
                 </div>
               </div>
 

@@ -145,6 +145,36 @@ export default function ResearchPage() {
               </Link>
             </div>
           </div>
+
+          {/* Stream 5: Hardware-Aware Dynamic Routing Study */}
+          <div className="scientific-card p-8 space-y-5 bg-surface-raised border border-border flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between border-b border-border pb-3">
+                <span className="text-xs font-mono font-bold text-accent">STREAM 05</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-[#D97706]/10 text-[#B45309] rounded border border-[#D97706]/25">
+                  SUPPORTED WITH QUALIFICATION
+                </span>
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-text-primary">
+                Hardware-Aware Dynamic Routing Study (v1.0)
+              </h2>
+              <p className="text-xs text-text-secondary leading-relaxed font-sans">
+                Evaluated pre-QPU calibration-aware routing decisions between unitary SWAP routing and dynamic feed-forward routing on <code>ibm_marrakesh</code> across 3 physical distances. Dynamic maintained constant 2Q depth (depth=2 vs 13, 37, 73), but unitary won Bell fidelity on SHORT and MEDIUM. Pre-QPU model correctly predicted 2/2 conclusive distances.
+              </p>
+              <div className="pt-2">
+                <EvidenceLine status="QUALIFIED" claimLabel="ROUTING SIGNAL SUPPORTED WITH QUALIFICATION" />
+              </div>
+            </div>
+            <div className="pt-4 border-t border-border flex items-center space-x-4">
+              <Link href="/research/dynamic-routing-crossover" className="text-xs font-sans font-semibold text-accent hover:underline flex items-center space-x-1">
+                <FileText className="w-3.5 h-3.5" />
+                <span>Read Research Note</span>
+              </Link>
+              <Link href="/experiments" className="text-xs font-sans font-semibold text-text-secondary hover:text-text-primary flex items-center space-x-1">
+                <span>View Benchmarks &rarr;</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
 

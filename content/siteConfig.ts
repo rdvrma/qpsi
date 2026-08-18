@@ -167,11 +167,11 @@ export const siteConfig = {
   },
 
   quantumSummary: {
-    totalPhysicalShots: 96256,
-    campaignsCount: 5,
+    totalPhysicalShots: 114688,
+    campaignsCount: 6,
     backend: 'ibm_marrakesh',
     qubitDescription: '156 programmable qubits',
-    shotsSummary: '96,256 physical shots across the five featured research campaigns on physical IBM Quantum hardware.',
+    shotsSummary: '114,688 physical shots across the six featured research campaigns on physical IBM Quantum hardware.',
   },
 
   claims: [
@@ -247,6 +247,15 @@ export const siteConfig = {
       jobId: 'da1c7rkdedkc73eqs5mg',
       sha256: '8f65edbe0cea3ffdc16f3ff89b07beaf6ab111019a556c1cde56b274c0e18ff2',
     },
+    {
+      id: 'CLAIM-09-HARDWARE-AWARE-ROUTING-SIGNAL',
+      statement: 'On a frozen three-distance physical IBM Heron benchmark, Q-Psi\'s pre-QPU routing model correctly predicted the winning long-range CNOT implementation on both statistically conclusive tested distances (SHORT and MEDIUM). The dynamic implementation maintained constant two-qubit depth, but did not achieve higher Bell-state fidelity within the tested cohort. The routing crossover remained unresolved, and the predictive result depends partly on a predeclared mid-circuit latency heuristic; no general predictive-compiler or quantum-advantage claim is made.',
+      experiment: 'Hardware-Aware Dynamic Routing Crossover Study (v1.0)',
+      status: 'QUALIFIED',
+      qpu: 'ibm_marrakesh (156 programmable qubits)',
+      jobId: 'da1t22mg52gs73cm31i0',
+      sha256: '6c8527a9854651585d5262b3c2399e612573906281ec030eef3be0005dbf83f0',
+    },
   ] as ClaimItem[],
 
   experiments: [
@@ -261,6 +270,18 @@ export const siteConfig = {
       status: 'SUPPORTED',
       advantageBadge: 'QUERY ADVANTAGE — SUPPORTED',
       summary: 'Executed 9 frozen compiler-derived candidate-state instances on ibm_marrakesh across N=4, N=8, and N=16. Measured effective quantum queries beat classical expected black-box cost across all 3 problem sizes (N=4: 1.030 vs 2.5; N=8: 2.595 vs 4.5; N=16: 7.144 vs 8.5; 95% CI upper 7.360 < 8.5) and in 9/9 individual cases. Demonstrates compiler-enabled quantum query advantage under an opaque black-box verifier model.',
+    },
+    {
+      code: 'QPSI-EXP-ROUTING-01',
+      title: 'HARDWARE-AWARE DYNAMIC ROUTING',
+      subtitle: 'Physical IBM Heron Two-Qubit Depth vs Fidelity Crossover Study',
+      backend: 'ibm_marrakesh (156 programmable qubits)',
+      jobId: 'da1t22mg52gs73cm31i0',
+      shots: 18432,
+      qubits: '3 Physical Distances (3, 7, 13 Hops)',
+      status: 'QUALIFIED',
+      advantageBadge: 'SUPPORTED WITH QUALIFICATION',
+      summary: 'Evaluated pre-QPU calibration-aware routing decisions between unitary SWAP routing and dynamic mid-circuit measurement/feed-forward routing across 3 physical separations on ibm_marrakesh (156Q). Dynamic routing maintained constant 2Q depth (depth=2 across all distances vs unitary depth 13, 37, 73), but unitary routing achieved higher Bell fidelity on SHORT (0.8618 vs 0.8209) and MEDIUM (0.8135 vs 0.7651). LONG was inconclusive (0.6669 vs 0.6356, delta 95% CI [-0.0630, +0.0005]). Frozen pre-QPU model correctly predicted 2/2 conclusive distances; crossover was not resolved. Predictive signal supported with qualification; zero quantum-advantage claim.',
     },
     {
       code: 'QPSI-EXP-DVBV',
@@ -321,6 +342,15 @@ export const siteConfig = {
       status: 'DRAFT',
       abstract: 'Reports an empirical demonstration of compiler-enabled quantum query advantage for software-repair candidate-state search on a 156-qubit Heron processor (ibm_marrakesh). Across 9 frozen instances from 7 language ecosystems at N=4, N=8, and N=16, physical quantum execution achieved lower effective verifier query complexity than the classical black-box baseline (9/9 cases, 3/3 problem sizes; N=16 95% CI upper bound 7.360 < 8.5).',
       link: '/research/compiler-grover-query-advantage',
+    },
+    {
+      id: 'paper-dynamic-routing',
+      title: 'Hardware-Aware Compiler Routing on Superconducting Processors: Depth-Fidelity Tradeoffs and Latency Limits in Physical Dynamic Circuits',
+      targetTitle: 'Hardware-Aware Compiler Routing on Superconducting Processors: Depth-Fidelity Tradeoffs and Latency Limits in Physical Dynamic Circuits',
+      authors: ['Q-Psi Research Team'],
+      status: 'RESEARCH MANUSCRIPT',
+      abstract: 'Reports physical QPU benchmark results comparing unitary SWAP routing against dynamic measurement and feed-forward routing on IBM Heron (ibm_marrakesh, 156 programmable qubits, Job da1t22mg52gs73cm31i0, 18,432 shots). While dynamic circuits maintained constant two-qubit depth (2 vs 13, 37, 73), unitary routing won Bell fidelity on SHORT (3 hops) and MEDIUM (7 hops), with LONG (13 hops) inconclusive. Pre-QPU model confirmed 2/2 conclusive predictions under a predeclared latency penalty heuristic. Physical crossover remained unresolved.',
+      link: '/research/dynamic-routing-crossover',
     },
     {
       id: 'paper-dynamic-bv',
@@ -507,6 +537,13 @@ export const siteConfig = {
         status: 'COMPLETED' as const,
         deliverables: ['Compiler Grover v1.1 execution', 'Independent audit SUPPORTED', '9/9 cases with advantage'],
       },
+      {
+        code: 'QPSI-M3',
+        title: 'Hardware-Aware Dynamic Routing Study',
+        summary: 'Physical evaluation of unitary vs dynamic circuit routing depth-fidelity tradeoffs on ibm_marrakesh (156Q).',
+        status: 'COMPLETED' as const,
+        deliverables: ['18,432 physical shots', 'Depth vs fidelity analysis', 'Pre-QPU model evaluation', 'Audit SUPPORTED WITH QUALIFICATION'],
+      },
     ],
   },
   founder: {
@@ -563,7 +600,8 @@ export const siteConfig = {
       { gate: 'Gate 02', title: 'Dynamic BV', detail: 'Demonstrated single-shot query advantage.' },
       { gate: 'Gate 03', title: 'Compiler Query Advantage', detail: 'Demonstrated compiler-enabled query advantage (9/9 cases).' },
       { gate: 'Gate 04', title: 'Restricted Simon', detail: 'Evaluated constant-depth circuits up to 56 qubits.' },
-      { gate: 'Gate 05', title: 'Open Evidence', detail: 'Published IBM job IDs & raw evidence hashes.' },
+      { gate: 'Gate 05', title: 'Dynamic Routing', detail: 'Evaluated hardware-aware dynamic vs unitary routing tradeoffs.' },
+      { gate: 'Gate 06', title: 'Open Evidence', detail: 'Published IBM job IDs & raw evidence hashes.' },
     ],
   },
   faq: {
@@ -626,12 +664,14 @@ export const siteConfig = {
     heading: 'Scientific Claim Boundaries & Open Science Policy',
     allowed: [
       'Compiler-Enabled Query Advantage: Demonstrated quantum query advantage for candidate-state search on ibm_marrakesh under black-box verifier model (9/9 cases, 3/3 problem sizes, N=16 95% CI preserves advantage).',
+      'Hardware-Aware Dynamic Routing: Pre-QPU cost model correctly predicted winning long-range CNOT implementation on 2/2 conclusive physical distances on IBM Heron (SHORT and MEDIUM), with constant 2Q depth maintained.',
       'Dynamic BV Query Advantage: Single-shot oracle speedup (alpha_Q = 0.1532 vs alpha_C = 0.6963, t = -30.65, p = 3.47e-7).',
       'Compiler Interoperability: End-to-end QUBO/Ising mapping and execution on ibm_marrakesh (PASS on N <= 10).',
       'Constant-Depth Simon Execution: 15-16 layer circuits up to 56 physical qubits.',
     ],
     notAllowed: [
       'Wall-clock speedup or general end-to-end software-repair quantum advantage.',
+      'Dynamic circuit routing superiority, resolved physical crossover, or general predictive compiler advantage.',
       'General-purpose, commercial, or computational supremacy over classical computing.',
       'General quantum advantage over all structure-aware classical search algorithms.',
       'Proven universal algorithmic quantum advantage for Simon\'s problem on raw unmitigated hardware.',

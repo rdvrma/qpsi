@@ -83,6 +83,19 @@ export default function EvidencePage() {
                       <span className="text-text-muted font-mono">BOUNDARY: BLACK_BOX_VERIFIER_QUERY_ADVANTAGE</span>
                     </div>
                   )}
+
+                  {claim.id === 'CLAIM-09-HARDWARE-AWARE-ROUTING-SIGNAL' && (
+                    <div className="pt-2 border-t border-border flex items-center justify-between text-[11px]">
+                      <Link
+                        href="/research/dynamic-routing-crossover"
+                        className="text-accent font-semibold hover:underline flex items-center space-x-1"
+                      >
+                        <FileText className="w-3.5 h-3.5" />
+                        <span>Read Formal Research Note &amp; Latency Sensitivity Audit</span>
+                      </Link>
+                      <span className="text-text-muted font-mono">STATUS: SUPPORTED_WITH_QUALIFICATION</span>
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -100,6 +113,9 @@ export default function EvidencePage() {
             <ul className="space-y-3 font-sans text-xs text-text-secondary">
               <li className="p-3 bg-surface-subtle border border-border rounded">
                 <strong>Compiler Query Advantage:</strong> Q-Psi demonstrated compiler-enabled quantum query advantage for candidate-state search on physical quantum hardware (ibm_marrakesh) under an opaque black-box verifier model (9/9 cases, 3/3 problem sizes, N=16 95% CI preserves advantage).
+              </li>
+              <li className="p-3 bg-surface-subtle border border-border rounded">
+                <strong>Hardware-Aware Dynamic Routing:</strong> On a frozen three-distance physical IBM Heron benchmark, Q-Psi&apos;s pre-QPU routing model correctly predicted the winning long-range CNOT implementation on both statistically conclusive tested distances (SHORT and MEDIUM), with constant 2Q depth maintained.
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
                 <strong>Dynamic BV Query Advantage:</strong> Q-Psi demonstrated quantum query-complexity advantage in a dynamic Bernstein-Vazirani oracle experiment on physical IBM quantum hardware using the audited Pokharel-Lidar-style single-shot methodology.
@@ -122,6 +138,9 @@ export default function EvidencePage() {
             <ul className="space-y-3 font-sans text-xs text-text-secondary">
               <li className="p-3 bg-surface-subtle border border-border rounded">
                 Q-Psi compiler demonstrates wall-clock speedup or general end-to-end software-repair quantum advantage over all classical search heuristics. (EXCLUDED)
+              </li>
+              <li className="p-3 bg-surface-subtle border border-border rounded">
+                Dynamic circuit routing superiority, resolved physical routing crossover, or general predictive compiler advantage. (EXCLUDED)
               </li>
               <li className="p-3 bg-surface-subtle border border-border rounded">
                 General computational quantum advantage, commercial quantum advantage, or computational supremacy over classical computing. (EXCLUDED)
