@@ -1,6 +1,6 @@
 # Q-Psi State-Space Compiler — Public Provenance Record
 
-**Document ID**: `QPSI_PUBLIC_PROVENANCE_RECEIPT_2026_08_18`  
+**Document ID**: `QPSI_PUBLIC_PROVENANCE_RECEIPT_2026_08_18_V1_1`  
 **Date**: 18 August 2026  
 **Creator**: Nishant Kumar Sinha  
 **Contact**: `aadisatv@sattvaos.tech`  
@@ -14,11 +14,11 @@
 The proprietary compiler implementation and architecture represented by this record existed before publication of this provenance receipt and before subsequent external Research Capsule evaluation access.
 
 - **Private Source-Tree Root SHA-256**:  
-  `d3913e798e416f4213a3989f964c66b50f1f6bc063027dbc64aebd5892545797`
+  `5ad346fccf0882fbcf7467202c901df556a81f43d208dabb9be31ef4e21b5df3`
 - **Private Source Archive SHA-256**:  
-  `524319a10bc4974f7a5ecbde09a8778e762adcc1e96b2d5c907943072884b806`
+  `7d5795741079c7dcd9c90b026ccd612b509508b4d44a2e323363c46fa52321b0`
 - **Authoritative Private Git Source Commit**:  
-  `412d2110fbf005e0b8acf8a3691a068685b391ba`
+  `ccc307a678a9a19d62a81699727d759ab216851c`
 - **Earliest Relevant Compiler Development Commit**:  
   `44fac1d9f8c62c3e5a31a980757a3e74c8b21c43` (2026-08-14 09:55:44 +0530)
 - **Authoritative Research Evidence Freeze Commit**:  
