@@ -49,7 +49,6 @@ export async function POST(req: NextRequest) {
     }
 
     const workload: any = {
-      schema_version: 'qpsi_capsule_workload_v1',
       workload_id: String(body.workload_id || body.workload_name || 'qpsi_eval_workload').replace(/[^a-zA-Z0-9_\-\.]/g, '_').slice(0, 64),
       problem_statement: String(body.problem_statement || `Evaluation of ${body.problem_type || 'state_space_search'} candidate space`),
       ecosystem: String(body.ecosystem || 'Python'),

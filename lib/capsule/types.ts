@@ -31,10 +31,20 @@ export type JobStatusType =
   | 'CANCELLED';
 
 export interface ResearchCapsuleWorkloadV1 {
+  schema_version?: string;
+  workload_id?: string;
+  problem_statement?: string;
+  ecosystem?: string;
+  repository_files?: string[];
+  visible_tests?: string[];
+  dependency_manifests?: string[];
+  max_candidate_capacity?: number;
+  solver_timeout_seconds?: number;
+  metadata?: Record<string, any>;
   workload_name: string;
-  problem_type: 'state_space_search' | 'qubo_ising' | 'candidate_space' | 'discrete_optimization' | 'graph_coloring' | 'boolean_sat' | 'custom_manifest';
-  input_format: 'json' | 'raw' | 'graph_adj' | 'matrix' | 'cnf' | 'ast';
-  payload: Record<string, any>;
+  problem_type?: 'state_space_search' | 'qubo_ising' | 'candidate_space' | 'discrete_optimization' | 'graph_coloring' | 'boolean_sat' | 'custom_manifest' | string;
+  input_format?: 'json' | 'raw' | 'graph_adj' | 'matrix' | 'cnf' | 'ast' | string;
+  payload?: Record<string, any>;
   compiler_options?: {
     max_candidates?: number;
     target_qubits?: number;
@@ -42,7 +52,9 @@ export interface ResearchCapsuleWorkloadV1 {
     candidate_hash_algorithm?: 'sha256' | 'blake3';
     preserve_intermediates?: boolean;
     reduction_target?: string;
+    [key: string]: any;
   };
+  [key: string]: any;
 }
 
 export interface CapsuleJobStatus {
