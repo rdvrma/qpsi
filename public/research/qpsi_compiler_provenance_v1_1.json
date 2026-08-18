@@ -1,0 +1,21 @@
+{
+  "record_id": "QPSI_PUBLIC_PROVENANCE_V1_1",
+  "project": "Q-Psi State-Space Compiler",
+  "creator": "Nishant Kumar Sinha",
+  "research_program": "Q-Psi — Independent Quantum Research",
+  "parent_initiative": "The Oneness Project",
+  "date": "2026-08-18",
+  "exact_source_commit": "2f568e2eb29c9337c09239a667a8e8de0302d163",
+  "earliest_relevant_compiler_commit": "44fac1d9f8c62c3e5a31a980757a3e74c8b21c43",
+  "compiler_source_files": 308,
+  "compiler_source_tree_root_sha256": "3a58d1fefad88f77dac6b86f414f059adfa98665028ed839d040c4c9fdbe8a9c",
+  "compiler_source_archive_sha256": "05bd2955dfdaa7900b999258e6f5b94dd62b338d5a827176f8fa7acdacc03be3",
+  "compiler_source_archive_name": "QPSI_STATE_SPACE_COMPILER_SOURCE_FREEZE_V1_1_2026_08_18.tar.gz",
+  "research_freeze_commit": "be74ad05187e148e2fc52309f4d7f57be3784157",
+  "research_provenance_sha256": "1b7858f00c7b3b2c0e40a49914f38eb375e4888cc73ac9a9fd9e6eeb98020b36",
+  "proprietary_source": true,
+  "public_source_available": false,
+  "patent_status": "NO_CLAIM",
+  "registered_copyright_status": "NO_CLAIM",
+  "supersedes": "V1"
+}
