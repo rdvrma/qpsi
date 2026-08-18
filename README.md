@@ -4,6 +4,8 @@
 
 Q-Psi is an independent quantum research program conducting physical-QPU experiments, state-space compiler research, and reproducible evidence audits on superconducting quantum processors.
 
+- **Compiler Provenance Record**: [Cryptographic Provenance Receipt (V1.1)](docs/provenance/QPSI_COMPILER_PROVENANCE_V1_1_2026_08_18.md) | [Machine-Readable JSON](public/research/qpsi_compiler_provenance_v1_1.json) | [Historical V1 Receipt](docs/provenance/QPSI_COMPILER_PROVENANCE_2026_08_18.md)
+
 - **Primary Physical Backend**: `ibm_marrakesh` (IBM Heron r2, 156 programmable qubits)
 - **Authoritative Research Freeze**: `2026-08-18` (Commit `be74ad05187e148e2fc52309f4d7f57be3784157`)
 - **Public Research Website**: [https://qpsi.sattvaos.tech](https://qpsi.sattvaos.tech)
