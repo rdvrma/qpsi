@@ -3,10 +3,10 @@
   "freeze_date": "2026-08-18",
   "version": "2.0.0-audited-freeze",
   "program_totals": {
-    "total_physical_shots": 564840,
-    "completed_audited_experiment_families": 14,
-    "production_qpu_jobs": 16,
-    "ibm_runtime_quantum_seconds": 259.38,
+    "total_physical_shots": 601704,
+    "completed_audited_experiment_families": 15,
+    "production_qpu_jobs": 19,
+    "ibm_runtime_quantum_seconds": 288.38,
     "primary_backend": "ibm_marrakesh",
     "processor": "IBM Heron r2 (156 programmable qubits)"
   },
@@ -222,7 +222,7 @@
       ],
       "prohibited_wording": [
         "Universal fidelity improvement from fractional pulse lowering.",
-        "Pulse-level quantum advantage.",
+        "Pulse-level quantum advantage."
       ],
       "qualification": "Only 2/6 cases were conclusive; physical advantage is workload-dependent.",
       "audit_status": "AUDITED_VERIFIED"
@@ -291,24 +291,38 @@
     },
     {
       "claim_id": "CLAIM_MULTI_BACKEND_SELECTION",
-      "short_claim": "Multi-backend retargeting and pre-QPU backend ranking protocol.",
-      "status": "INCOMPLETE_NOT_FROZEN",
-      "publication_tier": "TIER_C",
+      "short_claim": "Multi-backend retargeting across 3 IBM Heron r2 backends with 5/6 top-tier selection accuracy.",
+      "status": "SUPPORTED_WITH_QUALIFICATION",
+      "publication_tier": "TIER_B",
       "experiment_ids": [
         "QPSI_MULTI_BACKEND_SELECTION_V1"
       ],
       "evidence_hashes": {
-        "protocol_manifest_sha256": "74864549731b366b31d9ef792633292e51371fdfb3d94438156e9be615c2f09e"
+        "raw_results_sha256": "4218490b1044e1e99ddda8ffd278ab2f7525d400e7025c181f4810496f3ac576",
+        "protocol_commit": "7679b9d87e645afcc7e1c62bcf1400dbd6a49534"
       },
       "allowed_wording": [
-        "Multi-backend compiler protocol frozen at commit 7679b9d; physical QPU execution not completed."
+        "Across six canonical workloads and three IBM Heron r2 backends, Q-Psi successfully retargeted all 18 workload-backend combinations.",
+        "Its frozen pre-QPU selection heuristic selected a backend in the physically best statistical tier for 5/6 workloads."
       ],
       "prohibited_wording": [
-        "Multi-backend physical ranking verified.",
-        "Multi-backend advantage."
+        "Multi-provider portability.",
+        "Cross-vendor compiler independence.",
+        "General backend-selection superiority.",
+        "Universal compiler advantage.",
+        "General quantum advantage.",
+        "Best backend selected on 5/6 workloads."
       ],
-      "qualification": "Protocol frozen; physical QPU execution excluded from completed campaign totals.",
-      "audit_status": "INCOMPLETE"
+      "qualification": "Tested on three IBM Heron r2 backends from one provider and one processor family. This does not establish multi-provider portability, universal backend-selection superiority, general compiler advantage, or general quantum advantage.",
+      "audit_status": "POST_FREEZE_ADDENDUM_SUPPORTED",
+      "qpu": "ibm_fez, ibm_kingston, ibm_marrakesh (IBM Heron r2, 156 programmable qubits)",
+      "job_ids": [
+        "da1uqsaein7c73bdtkm0",
+        "da1uqtm3kjvs738783qg",
+        "da1uqumg52gs73cm4v50"
+      ],
+      "shots": 36864,
+      "quantum_seconds": 29.0
     },
     {
       "claim_id": "CLAIM_GENERAL_QUANTUM_ADVANTAGE",
@@ -343,5 +357,13 @@
       "qualification": "Explicitly disclaimed; results show specialized advantages and strong baseline parity.",
       "audit_status": "EXPLICITLY_DISCLAIMED"
     }
-  ]
+  ],
+  "historical_master_freeze_totals": {
+    "freeze_date": "2026-08-18",
+    "freeze_commit": "be74ad05187e148e2fc52309f4d7f57be3784157",
+    "completed_audited_experiment_families": 14,
+    "production_qpu_jobs": 16,
+    "total_physical_shots": 564840,
+    "ibm_runtime_quantum_seconds": 259.38
+  }
 }

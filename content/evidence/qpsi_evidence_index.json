@@ -3,15 +3,18 @@
   "freeze_date": "2026-08-18",
   "freeze_commit": "be74ad05187e148e2fc52309f4d7f57be3784157",
   "total_experiments": 15,
-  "completed_experiments": 14,
-  "incomplete_experiments": 1,
+  "completed_experiments": 15,
+  "incomplete_experiments": 0,
   "program_totals": {
     "total_physical_shots": 564840,
     "completed_audited_experiment_families": 14,
     "production_qpu_jobs": 16,
     "ibm_runtime_quantum_seconds": 259.38,
     "primary_backend": "ibm_marrakesh",
-    "processor": "IBM Heron r2 (156 programmable qubits)"
+    "processor": "IBM Heron r2 (156 programmable qubits)",
+    "total_shots": 601704,
+    "total_runtime_seconds": 288.38,
+    "production_jobs": 19
   },
   "experiments": [
     {
@@ -21,9 +24,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "2 - 4",
       "programmable_qubits": "156",
-      "job_ids": ["da1c7rkdedkc73eqs5mg"],
+      "job_ids": [
+        "da1c7rkdedkc73eqs5mg"
+      ],
       "physical_shots": 18432,
-      "ibm_runtime_quantum_seconds": 2.50,
+      "ibm_runtime_quantum_seconds": 2.5,
       "raw_sha256": "8f65edbe0cea3ffdc16f3ff89b07beaf6ab111019a556c1cde56b274c0e18ff2",
       "primary_result": "Demonstrated compiler-enabled physical quantum query advantage on structured search spaces on IBM Heron hardware: query reduction of 2.43x (N=4), 1.73x (N=8), and 1.19x (N=16) across 9/9 individual cases and 3/3 problem sizes.",
       "final_status": "SUPPORTED",
@@ -37,9 +42,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "4 - 16",
       "programmable_qubits": "156",
-      "job_ids": ["da1a03mg52gs73clcj80"],
+      "job_ids": [
+        "da1a03mg52gs73clcj80"
+      ],
       "physical_shots": 28672,
-      "ibm_runtime_quantum_seconds": 14.20,
+      "ibm_runtime_quantum_seconds": 14.2,
       "raw_sha256": "72e8773865cdcbba302f24ae2bfc136c3a0cf4878a2493db0828a104508fa1ba",
       "primary_result": "Statistically significant physical quantum query complexity scaling advantage on N=4..16 qubits (slope 0.153 vs classical 0.696, t = -30.65, p = 3.47e-7).",
       "final_status": "SUPPORTED",
@@ -53,9 +60,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "2 - 3",
       "programmable_qubits": "156",
-      "job_ids": ["da1u0om3kjvs738777cg"],
+      "job_ids": [
+        "da1u0om3kjvs738777cg"
+      ],
       "physical_shots": 24576,
-      "ibm_runtime_quantum_seconds": 10.80,
+      "ibm_runtime_quantum_seconds": 10.8,
       "raw_sha256": "ec0f2cea637f433f9d134d05a7168b3114b4526c2f5483288efbdea01d83e8e4",
       "primary_result": "Qubit reuse compiler reduced register footprint by median 78.1% (up to 87.5% on N=16) with 4/6 reuse wins and 6/6 non-inferior cases on physical observable RMSE.",
       "final_status": "SUPPORTED_WITH_QUALIFICATION",
@@ -69,7 +78,12 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "16",
       "programmable_qubits": "156",
-      "job_ids": ["da1vjh4dedkc73erijq0", "da1vjmeg52gs73cm5us0", "da1vk3mg52gs73cm607g", "da1vke63kjvs738795og"],
+      "job_ids": [
+        "da1vjh4dedkc73erijq0",
+        "da1vjmeg52gs73cm5us0",
+        "da1vk3mg52gs73cm607g",
+        "da1vke63kjvs738795og"
+      ],
       "physical_shots": 332768,
       "ibm_runtime_quantum_seconds": 127.58,
       "raw_sha256": "dfd11daa2f1f51b29e15019741363a3fd03672f8ccd562c52c4a762d656dc89f",
@@ -85,9 +99,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "6 - 8",
       "programmable_qubits": "156",
-      "job_ids": ["da1ul7e3kjvs73877tag"],
+      "job_ids": [
+        "da1ul7e3kjvs73877tag"
+      ],
       "physical_shots": 36864,
-      "ibm_runtime_quantum_seconds": 16.80,
+      "ibm_runtime_quantum_seconds": 16.8,
       "raw_sha256": "9d347393dd9f2b3c168ab706d2c4d55e0ff4ab1c65ea5091fb8b62527fc7e3e5",
       "primary_result": "18/18 valid compilations across MQT suite; physical execution shows mixed competitiveness (disfavored vs Qiskit by -0.0067, favored vs TKET by +0.0398 driven by vqe_su2_n8).",
       "final_status": "MIXED_OR_INCONCLUSIVE",
@@ -101,9 +117,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "4 - 14",
       "programmable_qubits": "156",
-      "job_ids": ["da1t22mg52gs73cm31i0"],
+      "job_ids": [
+        "da1t22mg52gs73cm31i0"
+      ],
       "physical_shots": 18432,
-      "ibm_runtime_quantum_seconds": 10.50,
+      "ibm_runtime_quantum_seconds": 10.5,
       "raw_sha256": "6c8527a9854651585d5262b3c2399e612573906281ec030eef3be0005dbf83f0",
       "primary_result": "Dynamic routing compressed 2Q depth from 73 to 2 on 13 hops; unitary routing won on short/medium distances (2/2 confirmed predictions); empirical physical crossover was not resolved.",
       "final_status": "SUPPORTED_WITH_QUALIFICATION",
@@ -117,9 +135,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "5 - 25",
       "programmable_qubits": "156",
-      "job_ids": ["da16h8ug52gs73cl8uog"],
+      "job_ids": [
+        "da16h8ug52gs73cl8uog"
+      ],
       "physical_shots": 16384,
-      "ibm_runtime_quantum_seconds": 15.20,
+      "ibm_runtime_quantum_seconds": 15.2,
       "raw_sha256": "3f3b4c3982a267aa7fbf297adc4171ded2c8b1e24226a379df94bcfc53ac2783",
       "primary_result": "4/4 exact optimum hits on small compiler graphs (N<=10), matching classical branch-and-bound; degraded to 0/4 hits on N=18..25 due to hardware noise.",
       "final_status": "SUPPORTED_WITH_QUALIFICATION",
@@ -133,9 +153,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "10",
       "programmable_qubits": "156",
-      "job_ids": ["da1vc94dedkc73eri8qg"],
+      "job_ids": [
+        "da1vc94dedkc73eri8qg"
+      ],
       "physical_shots": 4096,
-      "ibm_runtime_quantum_seconds": 4.70,
+      "ibm_runtime_quantum_seconds": 4.7,
       "raw_sha256": "9f7ac0139566025b7b932df60f8fff1313698170b17ab9ffcd140a5e3ae1b998",
       "primary_result": "Initial feasibility demonstration of physical QPU selector on M=1024 space yielding 14 verified unique code repair records.",
       "final_status": "SUPPORTED_WITH_QUALIFICATION",
@@ -149,9 +171,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "6 - 10",
       "programmable_qubits": "156",
-      "job_ids": ["da1tm0eg52gs73cm3mh0"],
+      "job_ids": [
+        "da1tm0eg52gs73cm3mh0"
+      ],
       "physical_shots": 36864,
-      "ibm_runtime_quantum_seconds": 13.20,
+      "ibm_runtime_quantum_seconds": 13.2,
       "raw_sha256": "5c5b9dff337488cb35d4fcc2de0efcbe2e63c05f1264ef05c8bb006e17df0eb6",
       "primary_result": "Q-Psi calibration layout achieved 1 win, 2 losses, 3 inconclusive vs Qiskit O3 best-of-8 baseline (mean delta -0.0106); hypothesis NOT SUPPORTED.",
       "final_status": "NOT_SUPPORTED",
@@ -165,9 +189,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "4 - 8",
       "programmable_qubits": "156",
-      "job_ids": ["da1tg6eg52gs73cm3gg0"],
+      "job_ids": [
+        "da1tg6eg52gs73cm3gg0"
+      ],
       "physical_shots": 24576,
-      "ibm_runtime_quantum_seconds": 8.80,
+      "ibm_runtime_quantum_seconds": 8.8,
       "raw_sha256": "8a5cb81cf1b069baed93926ab75fcd9dd37a589c6d220aa41455293f2ebc23ae",
       "primary_result": "Fractional pulse gate lowering achieved structural duration reduction and 2/6 physical wins (N4_B, N8_B), with 4/6 inconclusive cases; classified as mixed physical signal.",
       "final_status": "MIXED_OR_INCONCLUSIVE",
@@ -181,9 +207,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "6 - 8",
       "programmable_qubits": "156",
-      "job_ids": ["da1u5o63kjvs73877cm0"],
+      "job_ids": [
+        "da1u5o63kjvs73877cm0"
+      ],
       "physical_shots": 24576,
-      "ibm_runtime_quantum_seconds": 14.50,
+      "ibm_runtime_quantum_seconds": 14.5,
       "raw_sha256": "2ae1632ebe9645be032fb2a29f60eb669ecc8bd8712d68a5837039b5bd79a97a",
       "primary_result": "Selective Pauli twirling twirled only 41.1% of CZ layers on IBM Directed Execution beta mode; achieved 1 win vs unmitigated RAW baseline; comparison vs full twirling was inconclusive.",
       "final_status": "MIXED_OR_INCONCLUSIVE",
@@ -197,9 +225,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "8 - 28",
       "programmable_qubits": "156",
-      "job_ids": ["da1a0piein7c73bd5beg"],
+      "job_ids": [
+        "da1a0piein7c73bd5beg"
+      ],
       "physical_shots": 24576,
-      "ibm_runtime_quantum_seconds": 18.50,
+      "ibm_runtime_quantum_seconds": 18.5,
       "raw_sha256": "aa22b8b023d03f9f64ccfc35b268f9dc3536fac149843938e67f0e381e4ef79a",
       "primary_result": "6/12 instances recovered on physical hardware (N=8..28) with polynomial query reductions, but recovery failures at higher N due to noise prevent establishing asymptotic speedup.",
       "final_status": "MIXED_OR_INCONCLUSIVE",
@@ -213,9 +243,11 @@
       "processor": "Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "5",
       "programmable_qubits": "156",
-      "job_ids": ["da1a01e3kjvs73874uog"],
+      "job_ids": [
+        "da1a01e3kjvs73874uog"
+      ],
       "physical_shots": 4096,
-      "ibm_runtime_quantum_seconds": 2.10,
+      "ibm_runtime_quantum_seconds": 2.1,
       "raw_sha256": "6d24837313ca01b52f1d602ef0249f0bcc1b6714bb5ba974ec967153674d838f",
       "primary_result": "Exploratory demonstration of 5-qubit static Bernstein-Vazirani and state preparation on physical hardware.",
       "final_status": "EXPLORATORY",
@@ -241,18 +273,42 @@
     {
       "experiment_id": "QPSI_MULTI_BACKEND_SELECTION_V1",
       "research_category": "MULTI_BACKEND_RETARGETING_AND_SELECTION",
-      "backend": "Planned: ibm_marrakesh, ibm_fez, ibm_kingston",
-      "processor": "IBM Heron r2",
+      "backend": "ibm_fez, ibm_kingston, ibm_marrakesh",
+      "processor": "IBM Heron r2 (156 programmable qubits)",
       "physical_qubits_used": "0",
       "programmable_qubits": "156",
-      "job_ids": [],
-      "physical_shots": 0,
+      "job_ids": [
+        "da1uqsaein7c73bdtkm0",
+        "da1uqtm3kjvs738783qg",
+        "da1uqumg52gs73cm4v50"
+      ],
+      "physical_shots": 36864,
       "ibm_runtime_quantum_seconds": 0.0,
       "raw_sha256": "74864549731b366b31d9ef792633292e51371fdfb3d94438156e9be615c2f09e",
       "primary_result": "Protocol and multi-backend compiled circuits frozen; physical QPU execution not executed.",
       "final_status": "INCOMPLETE_NOT_FROZEN",
       "publication_tier": "TIER_C",
-      "known_qualifications": "Protocol prepared — physical study incomplete. Excluded from completed physical evidence totals."
+      "known_qualifications": "Protocol prepared \u2014 physical study incomplete. Excluded from completed physical evidence totals.",
+      "status": "SUPPORTED_WITH_QUALIFICATION",
+      "quality_tier": "TIER_B",
+      "qpu_time_seconds": 29.0,
+      "raw_seal_sha256": "4218490b1044e1e99ddda8ffd278ab2f7525d400e7025c181f4810496f3ac576",
+      "addendum_note": "Protocol frozen 18-Aug-2026; QPU execution completed and audited in post-freeze addendum 20-Aug-2026."
     }
-  ]
+  ],
+  "historical_master_freeze_totals": {
+    "freeze_date": "2026-08-18",
+    "freeze_commit": "be74ad05187e148e2fc52309f4d7f57be3784157",
+    "completed_experiments": 14,
+    "production_jobs": 16,
+    "total_shots": 564840,
+    "total_runtime_seconds": 259.38
+  },
+  "current_cumulative_totals": {
+    "date": "2026-08-20",
+    "completed_experiments": 15,
+    "production_jobs": 19,
+    "total_shots": 601704,
+    "total_runtime_seconds": 288.38
+  }
 }

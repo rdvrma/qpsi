@@ -21,7 +21,7 @@ export default function ExperimentsPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-surface-raised border border-border rounded-full shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              PHYSICAL QPU LOGS &bull; 14 AUDITED CAMPAIGNS
+              PHYSICAL QPU LOGS &bull; 15 AUDITED CAMPAIGNS
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-text-primary">
@@ -34,15 +34,15 @@ export default function ExperimentsPage() {
           <div className="p-4 bg-surface-raised border border-border rounded-lg grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
             <div>
               <div className="text-[10px] text-text-muted font-bold">TOTAL PHYSICAL SHOTS</div>
-              <div className="text-lg font-bold text-text-primary mt-0.5">564,840</div>
+              <div className="text-lg font-bold text-text-primary mt-0.5">601,704</div>
             </div>
             <div>
               <div className="text-[10px] text-text-muted font-bold">PRODUCTION QPU JOBS</div>
-              <div className="text-lg font-bold text-text-primary mt-0.5">16 Jobs</div>
+              <div className="text-lg font-bold text-text-primary mt-0.5">19 Jobs</div>
             </div>
             <div>
               <div className="text-[10px] text-text-muted font-bold">IBM RUNTIME QUANTUM TIME</div>
-              <div className="text-lg font-bold text-text-primary mt-0.5">259.38s</div>
+              <div className="text-lg font-bold text-text-primary mt-0.5">288.38s</div>
             </div>
             <div>
               <div className="text-[10px] text-text-muted font-bold">PRIMARY HARDWARE</div>

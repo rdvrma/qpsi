@@ -38,13 +38,13 @@ export default function ResearchPage() {
           </p>
 
           <div className="pt-2 flex flex-wrap gap-4 font-mono text-xs text-text-muted">
-            <div>TOTAL SHOTS: <strong className="text-text-primary">564,840</strong></div>
+            <div>TOTAL SHOTS: <strong className="text-text-primary">601,704</strong></div>
             <div>&bull;</div>
-            <div>AUDITED FAMILIES: <strong className="text-text-primary">14</strong></div>
+            <div>AUDITED FAMILIES: <strong className="text-text-primary">15</strong></div>
             <div>&bull;</div>
-            <div>PRODUCTION JOBS: <strong className="text-text-primary">16</strong></div>
+            <div>PRODUCTION JOBS: <strong className="text-text-primary">19</strong></div>
             <div>&bull;</div>
-            <div>RUNTIME: <strong className="text-text-primary">259.38s</strong></div>
+            <div>RUNTIME: <strong className="text-text-primary">288.38s</strong></div>
           </div>
         </div>
 
